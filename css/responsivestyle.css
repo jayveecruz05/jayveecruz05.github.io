@@ -1,0 +1,20 @@
+/*
+	File Name: responsivestyle.css
+	Author: Jayvee O. Cruz
+*/
+
+@media only screen and (max-width: 1024px) {
+	.tagline p {
+	    font-size: 5vw;
+	}
+}
+
+@media only screen and (max-width: 414px) {
+	.br {
+		display: block;
+	}
+
+	.tagline p {
+	    font-size: 8vw;
+	}
+}
