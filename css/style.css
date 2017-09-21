@@ -1,0 +1,55 @@
+/*
+	File Name: style.css
+	Author: Jayvee O. Cruz
+*/
+
+* {
+	margin: 0;
+	padding: 0;
+
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	outline: none;
+
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);  /* mobile webkit */
+	-moz-tap-highlight-color: rgba(255, 255, 255, 0);
+	-ms-tap-highlight-color: rgba(255, 255, 255, 0);
+	tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+body, html {
+    height: 100%;
+    background-color: #0071bc;
+}
+
+.themeColor {
+	color: #0071bc;
+}
+
+.background1 {
+	width: 100vw;
+	height: 100vh;
+	background-image: url("../assets/background1.jpg");
+	position: relative;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
+	display: table;
+}
+
+.tagline {
+	display: table-cell;
+    vertical-align: middle;
+    margin: 0 1em;
+    font-size: 2.5em;
+    text-shadow: 0px 0px 30px #000;
+    font-family: monospace, sans-serif;
+    text-align: center;
+    color: #FFF;
+    background-color: rgba(9, 13, 58, 0.5);
+}
