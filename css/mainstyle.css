@@ -34,7 +34,15 @@ body, html {
 	color: #0071bc;
 }
 
-.header {
+.mainContainer {
+	overflow: hidden;
+}
+
+.mainContainer * {
+	cursor: default;
+}
+
+.background1 {
 	width: 100vw;
 	height: 100vh;
 	background-image: url("../assets/background1.jpg");
@@ -65,4 +73,16 @@ body, html {
 	width: 100vw;
 	height: 100vh;
 	background-color: #0071bc;
+}
+
+.background2 {
+	width: 100vw;
+	height: 100vh;
+	background-image: url("../assets/background2.jpg");
+	position: relative;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
+	display: table;
 }
