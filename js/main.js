@@ -4,17 +4,24 @@
 */
 
 function initiate() {
-	window.addEventListener('scroll', initiateMonitorElementIfVisible);
-
 	customStyle();
+
+	checkElementIfVisible();
+	window.addEventListener('scroll', checkElementIfVisible);
 }
 
 function customStyle() {
 	
 }
 
-function initiateMonitorElementIfVisible() {
-
+function checkElementIfVisible() {
+	if (checkIfVisible('taglineP')) {
+		selectElementToStyle('#taglineP').setStyle({
+			'opacity': 1,
+			'transform': 'perspective(1000px) scale(1)',
+			'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
+		});
+	}
 }
 
 // Automatic Functions
@@ -70,15 +77,15 @@ var getElementById = function(elementId) {
 					if (property in selected_element[e].style) {
 						if (property == 'transition' || property == 'transform') {
 							if (style[property].indexOf('transform') > -1) {
-								// console.log('-webkit-' + property + ': -webkit-' + style[property] + ';\n' +
-								// 			'-moz-' + property + ': -moz-' + style[property] + ';\n' +
-								// 			'-ms-' + property + ': -ms-' + style[property] + ';\n' +
+								// console.log('-webkit-' + property + ': ' + style[property].replace('transform', '-webkit-transform') + ';\n' +
+								// 			'-moz-' + property + ': ' + style[property].replace('transform', '-moz-transform') + ';\n' +
+								// 			'-ms-' + property + ': ' + style[property].replace('transform', '-ms-transform') + ';\n' +
 								// 			property + ': ' + style[property] + ';');
 
-								selected_element[e].style.cssText += '-webkit-' + property + ': -webkit-' + style[property] + ';\n' +
-																			   '-moz-' + property + ': -moz-' + style[property] + ';\n' +
-																			   '-ms-' + property + ': -ms-' + style[property] + ';\n' +
-																			   property + ': ' + style[property] + ';';
+								selected_element[e].style.cssText += '-webkit-' + property + ': ' + style[property].replace('transform', '-webkit-transform') + ';\n' +
+																	 '-moz-' + property + ': ' + style[property].replace('transform', '-moz-transform') + ';\n' +
+																	 '-ms-' + property + ': ' + style[property].replace('transform', '-ms-transform') + ';\n' +
+																	 property + ': ' + style[property] + ';';
 							} else {
 								// console.log('-webkit-' + property + ': ' + style[property] + ';\n' +
 								// 			'-moz-' + property + ': ' + style[property] + ';\n' +
@@ -86,9 +93,9 @@ var getElementById = function(elementId) {
 								// 			property + ': ' + style[property] + ';');
 
 								selected_element[e].style.cssText += '-webkit-' + property + ': ' + style[property] + ';\n' +
-																			   '-moz-' + property + ': ' + style[property] + ';\n' +
-																			   '-ms-' + property + ': ' + style[property] + ';\n' +
-																			   property + ': ' + style[property] + ';';
+																	 '-moz-' + property + ': ' + style[property] + ';\n' +
+																	 '-ms-' + property + ': ' + style[property] + ';\n' +
+																	 property + ': ' + style[property] + ';';
 							}
 						} else {
 							// console.log(property + ': ' + style[property]);
@@ -103,4 +110,9 @@ var getElementById = function(elementId) {
 		}
 	};
 
-window.addEventListener('load', initiate);
+var ifEverythingIsLoaded = setInterval(function() {
+	if (/loaded|complete/.test(document.readyState)) {
+		clearInterval(ifEverythingIsLoaded);
+		initiate(); // this is the function that gets called when everything is loaded
+	}
+}, 8);
