@@ -113,6 +113,6 @@ var getElementById = function(elementId) {
 var ifEverythingIsLoaded = setInterval(function() {
 	if (/loaded|complete/.test(document.readyState)) {
 		clearInterval(ifEverythingIsLoaded);
-		initiate(); // this is the function that gets called when everything is loaded
+		setTimeout(initiate, 1000); // this is the function that gets called when everything is loaded
 	}
 }, 8);
