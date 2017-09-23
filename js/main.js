@@ -3,6 +3,13 @@
 	Author: Jayvee O. Cruz
 */
 
+var imageLoaded = 0,
+	images = [
+		'iconv1.ico',
+		'background1.jpg',
+		'background2.jpg'
+	];
+
 function initiate() {
 	// Display The Website
 	selectElementToStyle('html, body').setStyle({
@@ -18,7 +25,7 @@ function initiate() {
 }
 
 function customStyle() {
-	
+
 }
 
 function checkElementIfVisible() {
@@ -39,6 +46,20 @@ var getElementById = function(elementId) {
 			return element_id;
 		} else {
 			throw 'SyntaxError: element id "' + elementId + '" does not defined!';
+		}
+	},
+	preloadImages = function() {
+		for (var i = 0; i < images.length; i++) {
+			var image = new Image();
+				image.src = 'assets/' + images[i];
+				image.addEventListener('load', checkIfImagesIsLoaded, false);
+		}
+	},
+	checkIfImagesIsLoaded = function() {
+		imageLoaded++;
+
+		if (imageLoaded === images.length) {
+			setTimeout(initiate, 1000);
 		}
 	},
 	checkIfVisible = function(elementId) {
@@ -120,6 +141,6 @@ var getElementById = function(elementId) {
 var ifEverythingIsLoaded = setInterval(function() {
 	if (/loaded|complete/.test(document.readyState)) {
 		clearInterval(ifEverythingIsLoaded);
-		setTimeout(initiate, 1000); // this is the function that gets called when everything is loaded
+		preloadImages(); // this is the function that gets called when everything is loaded
 	}
 }, 8);
