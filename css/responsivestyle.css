@@ -4,6 +4,10 @@
 */
 
 @media only screen and (max-width: 1024px) {
+	.background1, .background2 {
+		background-attachment: scroll;
+	}
+
 	.tagline #taglineP {
 	    font-size: 5vw;
 	}
