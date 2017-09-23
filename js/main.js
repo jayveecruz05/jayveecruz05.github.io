@@ -4,8 +4,15 @@
 */
 
 function initiate() {
+	// Display The Website
+	selectElementToStyle('html, body').setStyle({
+		'display': 'block'
+	});
+
+	// Custom Style
 	customStyle();
 
+	// Check If The Element Is Visible
 	checkElementIfVisible();
 	window.addEventListener('scroll', checkElementIfVisible);
 }
