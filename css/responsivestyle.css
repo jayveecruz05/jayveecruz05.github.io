@@ -4,17 +4,17 @@
 */
 
 @media only screen and (max-width: 1024px) {
-	.tagline p {
+	.tagline #taglineP {
 	    font-size: 5vw;
 	}
 }
 
 @media only screen and (max-width: 414px) {
-	.br {
+	#taglinePBr {
 		display: block;
 	}
 
-	.tagline p {
+	.tagline #taglineP {
 	    font-size: 8vw;
 	}
 }
