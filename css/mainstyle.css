@@ -3,6 +3,15 @@
 	Author: Jayvee O. Cruz
 */
 
+@font-face {
+    font-family: 'CourierNew';
+    src: url('../assets/CourierNew.eot');
+    src: url('../assets/CourierNew.eot') format('embedded-opentype'),
+         url('../assets/CourierNew.woff2') format('woff2'),
+         url('../assets/CourierNew.woff') format('woff'),
+         url('../assets/CourierNew.ttf') format('truetype');
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -28,7 +37,7 @@ body, html {
 }
 
 .title {
-	font-family: Courier New, sans-serif;
+	font-family: CourierNew, sans-serif;
 	font-weight: bold;
 	font-size: 3vw;
 	text-align: center;
@@ -52,7 +61,7 @@ body, html {
 	margin: 0 auto;
 	display: table-cell;
 	padding: 15px 15px 20px 15px;
-	font-family: Courier New, sans-serif;
+	font-family: CourierNew, sans-serif;
 	color: #FFF;
 	opacity: 0;
 
@@ -104,7 +113,7 @@ body, html {
 	width: 100%;
     font-size: 4vw;
     text-shadow: 0px 0px 30px #2A2D34;
-    font-family: Courier New, sans-serif;
+    font-family: CourierNew, sans-serif;
     font-weight: bold;
     text-align: center;
     color: #FFF;
