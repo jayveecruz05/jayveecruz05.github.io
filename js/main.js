@@ -7,7 +7,10 @@ var imageLoaded = 0,
 	images = [
 		'iconv1.ico',
 		'background1.jpg',
-		'background2.jpg'
+		'background2.jpg',
+		'monitor.png',
+		'gear.png',
+		'megaphone.png'
 	];
 
 function initiate() {
