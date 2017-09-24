@@ -29,7 +29,7 @@ function customStyle() {
 }
 
 function checkElementIfVisible() {
-	if (select('#taglineParagraph').checkIfVisible()) {
+	if (checkIfVisibleById('taglineParagraph')) {
 		select('#taglineParagraph').setStyle({
 			'opacity': 1,
 			'transform': 'translate3d(0px, 0px, 0px)',
@@ -37,15 +37,15 @@ function checkElementIfVisible() {
 		});
 	}
 
-	if (select('.title').checkIfVisible()) {
-		select('.title').setStyle({
+	if (checkIfVisibleById('title1')) {
+		select('#title1').setStyle({
 			'opacity': 1,
 			'transform': 'perspective(1000px) scale(1)',
 			'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
 		});
 	}
 
-	if (select('.content').checkIfVisible()) {
+	if (checkIfVisibleById('contentsHolder1')) {
 		select('.content').setStyle({
 			'opacity': 1,
 			'transform': 'perspective(1000px) scale(1)',
@@ -78,6 +78,30 @@ var getElementById = function(elementId) {
 			setTimeout(initiate, 1000);
 		}
 	},
+	checkIfVisibleById = function(elementId) {
+		var element_id = document.getElementById(elementId);
+
+		if (element_id != null) {
+			var selected_element_top = element_id.getBoundingClientRect().top,
+				selected_element_bottom = element_id.getBoundingClientRect().bottom,
+				window_inner_height = window.innerHeight;
+
+			if (selected_element_top <= window_inner_height && selected_element_bottom >= 0) {
+				// console.log('Element:', element_id);
+				// console.log('Element Top:', selected_element_top);
+				// console.log('Element Bottom:', selected_element_bottom);
+				// console.log('Window Inner Height:', window_inner_height);
+
+				return true;
+				console.log('element:', element_id, 'is visible:', isVisible);
+			} else {
+				return false;
+				console.log('element:', element_id, 'is visible:', isVisible);
+			}
+		} else {
+			throw 'SyntaxError: element id "' + elementId + '" does not defined!';
+		}
+	},
 	select = function(selected) {
 		var selected_element = document.querySelectorAll(selected);
 
@@ -88,33 +112,6 @@ var getElementById = function(elementId) {
 		}
 	},
 	customFunction = function(selected_element) {
-		this.checkIfVisible = function() {
-			var selected_element_top,
-				selected_element_bottom,
-				window_inner_height = window.innerHeight;
-
-			for (var e = 0; e < selected_element.length; e++) {
-				selected_element_top = selected_element[e].getBoundingClientRect().top,
-				selected_element_bottom = selected_element[e].getBoundingClientRect().bottom;
-
-				if (selected_element_top <= window_inner_height && selected_element_bottom >= 0) {
-					// console.log('Element:', selected_element[e]);
-					// console.log('Element Top:', selected_element_top);
-					// console.log('Element Bottom:', selected_element_bottom);
-					// console.log('Window Inner Height:', window_inner_height);
-
-					isVisible = true;
-
-					// console.log('element:', selected_element[e], 'is visible:', isVisible);
-				} else {
-					isVisible = false;
-
-					// console.log('element:', selected_element[e], 'is visible:', isVisible);
-				}
-			}
-			return isVisible;
-		}
-
 		this.setStyle = function(style) {
 			for (var e = 0; e < selected_element.length; e++) {
 				for (property in style) {

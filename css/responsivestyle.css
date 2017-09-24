@@ -23,7 +23,7 @@
 	}
 
 	.content {
-		width: inherit;
+		width: auto;
 		display: block;
 	}
 }
