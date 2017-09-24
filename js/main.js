@@ -32,7 +32,7 @@ function checkElementIfVisible() {
 	if (select('#taglineParagraph').checkIfVisible()) {
 		select('#taglineParagraph').setStyle({
 			'opacity': 1,
-			'transform': 'perspective(1000px) scale(1)',
+			'transform': 'translate3d(0px, 0px, 0px)',
 			'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
 		});
 	}
@@ -40,7 +40,16 @@ function checkElementIfVisible() {
 	if (select('.title').checkIfVisible()) {
 		select('.title').setStyle({
 			'opacity': 1,
-			'transition': 'opacity 1s ease-in-out'
+			'transform': 'perspective(1000px) scale(1)',
+			'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
+		});
+	}
+
+	if (select('.content').checkIfVisible()) {
+		select('.content').setStyle({
+			'opacity': 1,
+			'transform': 'perspective(1000px) scale(1)',
+			'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
 		});
 	}
 }
