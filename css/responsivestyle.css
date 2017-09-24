@@ -34,9 +34,6 @@
 	}
 
 	.tagline #taglineParagraph {
-		width: 50%;
-    	text-align: left;
     	font-size: 13vw;
-    	margin: 0 auto 0 8%;
 	}
 }
