@@ -12,7 +12,7 @@ var imageLoaded = 0,
 
 function initiate() {
 	// Display The Website
-	selectElementToStyle('html, body').setStyle({
+	select('html, body').setStyle({
 		'display': 'block'
 	});
 
@@ -29,11 +29,18 @@ function customStyle() {
 }
 
 function checkElementIfVisible() {
-	if (checkIfVisible('taglineP')) {
-		selectElementToStyle('#taglineP').setStyle({
+	if (select('#taglineParagraph').checkIfVisible()) {
+		select('#taglineParagraph').setStyle({
 			'opacity': 1,
 			'transform': 'perspective(1000px) scale(1)',
 			'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
+		});
+	}
+
+	if (select('.title').checkIfVisible()) {
+		select('.title').setStyle({
+			'opacity': 1,
+			'transition': 'opacity 1s ease-in-out'
 		});
 	}
 }
@@ -62,43 +69,43 @@ var getElementById = function(elementId) {
 			setTimeout(initiate, 1000);
 		}
 	},
-	checkIfVisible = function(elementId) {
-		var element_id = document.getElementById(elementId),
-			element_top,
-			element_bottom,
-			window_inner_height = window.innerHeight;
-
-		if (element_id != null) {
-			element_top = element_id.getBoundingClientRect().top,
-			element_bottom = element_id.getBoundingClientRect().bottom;
-
-			if (element_top <= window_inner_height && element_bottom >= 0) {
-				// console.log('Element Id:', elementId);
-				// console.log('Element Top:',element_top);
-				// console.log('Element Bottom:',element_bottom);
-				// console.log('Window Inner Height:',window_inner_height);
-
-				isVisible = true;
-			} else {
-				isVisible = false;
-			}
-		} else {
-			throw 'SyntaxError: element id "' + elementId + '" does not defined!';
-		}
-
-		// console.log('element id: "' + elementId + '" is visible:', isVisible);
-		return isVisible;
-	},
-	selectElementToStyle = function(selectedElement) {
-		var selected_element = document.querySelectorAll(selectedElement);
+	select = function(selected) {
+		var selected_element = document.querySelectorAll(selected);
 
 		if (selected_element.length != 0) {
 			return new customSetStyle(selected_element);
 		} else {
-			throw 'SyntaxError: element "' + selectedElement + '" does not defined!';
+			throw 'SyntaxError: element "' + selected + '" does not defined!';
 		}
 	},
 	customSetStyle = function(selected_element) {
+		this.checkIfVisible = function() {
+			var selected_element_top,
+				selected_element_bottom,
+				window_inner_height = window.innerHeight;
+
+			for (var e = 0; e < selected_element.length; e++) {
+				selected_element_top = selected_element[e].getBoundingClientRect().top,
+				selected_element_bottom = selected_element[e].getBoundingClientRect().bottom;
+
+				if (selected_element_top <= window_inner_height && selected_element_bottom >= 0) {
+					// console.log('Element:', selected_element[e]);
+					// console.log('Element Top:', selected_element_top);
+					// console.log('Element Bottom:', selected_element_bottom);
+					// console.log('Window Inner Height:', window_inner_height);
+
+					isVisible = true;
+
+					// console.log('element:', selected_element[e], 'is visible:', isVisible);
+				} else {
+					isVisible = false;
+
+					// console.log('element:', selected_element[e], 'is visible:', isVisible);
+				}
+			}
+			return isVisible;
+		}
+
 		this.setStyle = function(style) {
 			for (var e = 0; e < selected_element.length; e++) {
 				for (property in style) {

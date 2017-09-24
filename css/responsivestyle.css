@@ -8,17 +8,31 @@
 		background-attachment: scroll;
 	}
 
-	.tagline #taglineP {
+	.title {
+		font-size: 5vw;
+	}
+
+	.tagline #taglineParagraph {
 	    font-size: 5vw;
 	}
 }
 
-@media only screen and (max-width: 414px) {
-	#taglinePBr {
+@media only screen and (max-width: 768px) {
+	.content {
+		width: inherit;
 		display: block;
 	}
+}
 
-	.tagline #taglineP {
-	    font-size: 8vw;
+@media only screen and (max-width: 414px) {
+	.title {
+		font-size: 11vw;
+	}
+
+	.tagline #taglineParagraph {
+		width: 50%;
+	    padding: 0 0 0 8%;
+	    text-align: left;
+	    font-size: 13vw;
 	}
 }
