@@ -7,7 +7,6 @@
     font-family: 'CourierNew';
     src: url('../assets/CourierNew.eot');
     src: url('../assets/CourierNew.eot') format('embedded-opentype'),
-         url('../assets/CourierNew.woff2') format('woff2'),
          url('../assets/CourierNew.woff') format('woff'),
          url('../assets/CourierNew.ttf') format('truetype');
 }
