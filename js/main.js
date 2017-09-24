@@ -95,11 +95,11 @@ var getElementById = function(elementId) {
 				// console.log('Element Bottom:', selected_element_bottom);
 				// console.log('Window Inner Height:', window_inner_height);
 
+				// console.log('element:', elementId, 'is visible:', true);
 				return true;
-				console.log('element:', element_id, 'is visible:', isVisible);
 			} else {
+				// console.log('element:', elementId, 'is visible:', false);
 				return false;
-				console.log('element:', element_id, 'is visible:', isVisible);
 			}
 		} else {
 			throw 'SyntaxError: element id "' + elementId + '" does not defined!';
