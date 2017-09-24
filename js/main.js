@@ -82,12 +82,12 @@ var getElementById = function(elementId) {
 		var selected_element = document.querySelectorAll(selected);
 
 		if (selected_element.length != 0) {
-			return new customSetStyle(selected_element);
+			return new customFunction(selected_element);
 		} else {
 			throw 'SyntaxError: element "' + selected + '" does not defined!';
 		}
 	},
-	customSetStyle = function(selected_element) {
+	customFunction = function(selected_element) {
 		this.checkIfVisible = function() {
 			var selected_element_top,
 				selected_element_bottom,
