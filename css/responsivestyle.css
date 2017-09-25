@@ -18,6 +18,11 @@
 
 	.wordCloud {
 		width: 90%;
+
+		-webkit-transform: perspective(1000px) scale(1.2);
+	    -moz-transform: perspective(1000px) scale(1.2);
+	    -ms-transform: perspective(1000px) scale(1.2);
+	    transform: perspective(1000px) scale(1.2);
 	}
 }
 
@@ -49,5 +54,10 @@
 
 	.wordCloud {
 		width: 100%;
+
+		-webkit-transform: perspective(1000px) scale(1.7);
+	    -moz-transform: perspective(1000px) scale(1.7);
+	    -ms-transform: perspective(1000px) scale(1.7);
+	    transform: perspective(1000px) scale(1.7);
 	}
 }

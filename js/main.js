@@ -66,8 +66,8 @@ function checkElementIfVisible() {
 		});
 	}
 
-	if (checkIfVisibleById('skillSetContainer')) {
-		select('#skillSetContainer').setStyle({
+	if (checkIfVisibleById('wordCloudContainer')) {
+		select('#wordCloudContainer').setStyle({
 			'opacity': 1,
 			'transform': 'perspective(1000px) scale(1)',
 			'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
