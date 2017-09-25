@@ -79,7 +79,7 @@ function tagCanvas() {
 	TagCanvas.Start('wordCloud', 'tags', {
 		textFont: 'Courier New, sans-serif',
 		textColour: '#FFF',
-		shadow: '#2A2D34',
+		shadow: '#FFF',
 		shadowBlur: 10,
 		textHeight: 30,
 		stretchX: 2,
