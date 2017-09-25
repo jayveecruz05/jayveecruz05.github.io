@@ -15,6 +15,10 @@
 	.tagline #taglineParagraph {
 	    font-size: 5vw;
 	}
+
+	.wordCloud {
+		width: 90%;
+	}
 }
 
 @media only screen and (max-width: 736px) {
@@ -41,5 +45,9 @@
     	width: 50%;
 	    font-size: 12vw;
 	    text-align: left;
+	}
+
+	.wordCloud {
+		width: 100%;
 	}
 }

@@ -25,6 +25,8 @@ function initiate() {
 	// Check If The Element Is Visible
 	checkElementIfVisible();
 	window.addEventListener('scroll', checkElementIfVisible);
+
+	tagCanvas();
 }
 
 function customStyle() {
@@ -55,6 +57,42 @@ function checkElementIfVisible() {
 			'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
 		});
 	}
+
+	if (checkIfVisibleById('title2')) {
+		select('#title2').setStyle({
+			'opacity': 1,
+			'transform': 'perspective(1000px) scale(1)',
+			'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
+		});
+	}
+
+	if (checkIfVisibleById('skillSetContainer')) {
+		select('#skillSetContainer').setStyle({
+			'opacity': 1,
+			'transform': 'perspective(1000px) scale(1)',
+			'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
+		});
+	}
+}
+
+function tagCanvas() {
+	TagCanvas.Start('wordCloud', 'tags', {
+		textFont: 'Courier New, sans-serif',
+		textColour: '#FFF',
+		shadow: '#2A2D34',
+		shadowBlur: 10,
+		textHeight: 30,
+		stretchX: 2,
+		noSelect: true,
+		activeCursor: 'default',
+		animTiming: 'Smooth',
+		wheelZoom: false,
+		noMouse: true,
+		reverse: true,
+		initial: [0.1, 0.05],
+		depth: 1,
+    	maxSpeed: 0.1,
+	});
 }
 
 // Automatic Functions

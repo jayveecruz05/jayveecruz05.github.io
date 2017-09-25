@@ -41,6 +41,7 @@ body, html {
 	font-size: 3vw;
 	text-align: center;
 	color: #0071bc;
+	text-shadow: 0px 0px 30px #2A2D34;
 	padding: 10px 0 50px 0;
 	opacity: 0;
 
@@ -91,10 +92,12 @@ body, html {
 }
 
 .background1 {
+	position: relative;
 	width: 100%;
 	height: 100vh;
 	background-image: url("../assets/background1.jpg");
-	position: relative;
+	background-color: rgba(42, 45, 52, 0.7);
+	background-blend-mode: overlay;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
@@ -105,7 +108,6 @@ body, html {
 .tagline {
 	display: table-cell;
 	vertical-align: middle;
-    background-color: rgba(42, 45, 52, 0.7);
 }
 
 .tagline #taglineParagraph {
@@ -171,13 +173,45 @@ body, html {
 }
 
 .background2 {
-	width: 100%;
-	height: 100vh;
-	background-image: url("../assets/background2.jpg");
 	position: relative;
+	width: 100%;
+	height: auto;
+	background-image: url("../assets/background2.jpg");
+	background-color: rgba(42, 45, 52, 0.7);
+	background-blend-mode: overlay;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
 	background-position: center;
+	padding: 50px 0px;
+}
+
+.skillSetContainer {
+	width: 100%;
+	height: auto;
 	display: table;
+	text-align: center;
+	opacity: 0;
+
+	-webkit-transform: perspective(1000px) scale(0.8);
+    -moz-transform: perspective(1000px) scale(0.8);
+    -ms-transform: perspective(1000px) scale(0.8);
+    transform: perspective(1000px) scale(0.8)
+}
+
+.wordCloudContainer {
+	width: 100%;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.wordCloud {
+	width: 80%;
+}
+
+.creations {
+	width: 100%;
+	height: 100vh;
+	background-color: #022B3A;
+	padding: 50px 0px;
 }
