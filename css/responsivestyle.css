@@ -12,6 +12,10 @@
 		font-size: 5vw;
 	}
 
+	.subTitle {
+		font-size: 4.5vw;
+	}
+
 	.tagline #taglineParagraph {
 	    font-size: 5vw;
 	}
@@ -31,6 +35,10 @@
 		font-size: 7vw;
 	}
 
+	.subTitle {
+		font-size: 6.5vw;
+	}
+
 	.content {
 		width: auto;
 		display: block;
@@ -40,6 +48,10 @@
 @media only screen and (max-width: 414px) {
 	.title {
 		font-size: 10vw;
+	}
+
+	.subTitle {
+		font-size: 9.5vw;
 	}
 
 	.tagline {

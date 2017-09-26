@@ -73,6 +73,14 @@ function checkElementIfVisible() {
 			'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
 		});
 	}
+
+	if (checkIfVisibleById('title3')) {
+		select('#title3').setStyle({
+			'opacity': 1,
+			'transform': 'perspective(1000px) scale(1)',
+			'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
+		});
+	}
 }
 
 function tagCanvas() {

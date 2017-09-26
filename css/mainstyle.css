@@ -51,6 +51,22 @@ body, html {
     transform: perspective(1000px) scale(0.8);
 }
 
+.subTitle {
+	font-family: CourierNew, sans-serif;
+	font-weight: bold;
+	font-size: 2.5vw;
+	text-align: center;
+	color: #0071bc;
+	text-shadow: 0px 0px 30px #2A2D34;
+	padding: 10px 0 50px 0;
+	/*opacity: 0;*/
+
+	-webkit-transform: perspective(1000px) scale(0.8);
+    -moz-transform: perspective(1000px) scale(0.8);
+    -ms-transform: perspective(1000px) scale(0.8);
+    transform: perspective(1000px) scale(0.8);
+}
+
 .contentsHolder {
 	display: table;
 	margin: 0 auto;
@@ -63,12 +79,26 @@ body, html {
 	padding: 15px 15px 40px 15px;
 	font-family: CourierNew, sans-serif;
 	color: #FFF;
+	text-align: center;
 	opacity: 0;
 
 	-webkit-transform: perspective(1000px) scale(0.8);
     -moz-transform: perspective(1000px) scale(0.8);
     -ms-transform: perspective(1000px) scale(0.8);
     transform: perspective(1000px) scale(0.8);
+}
+
+.contentIcon {
+	width: 5em;
+	height: 5em;
+	background-repeat: no-repeat;
+	background-size: contain;
+	margin: 0 auto 20px auto;
+	
+	-webkit-transform: perspective(1000px);
+	-moz-transform: perspective(1000px);
+	-ms-transform: perspective(1000px);
+	transform: perspective(1000px);
 }
 
 .contentTitle {
@@ -80,6 +110,13 @@ body, html {
 
 .contentParagraph {
 	text-align: center;
+}
+
+.contentIframe {
+	width: 300px;
+    height: 250px;
+    border: 1px solid #FFF;
+    overflow: hidden;
 }
 
 .themeColor {
@@ -129,46 +166,16 @@ body, html {
 	padding: 50px 0px;
 }
 
-.monitor {
-	width: 5em;
-	height: 5em;
+#monitor {
 	background-image: url("../assets/monitor.png");
-	background-repeat: no-repeat;
-	background-size: contain;
-	margin: 0 auto 20px auto;
-	
-	-webkit-transform: perspective(1000px);
-	-moz-transform: perspective(1000px);
-	-ms-transform: perspective(1000px);
-	transform: perspective(1000px);
 }
 
-.gear {
-	width: 5em;
-	height: 5em;
+#gear {
 	background-image: url("../assets/gear.png");
-	background-repeat: no-repeat;
-	background-size: contain;
-	margin: 0 auto 20px auto;
-	
-	-webkit-transform: perspective(1000px);
-	-moz-transform: perspective(1000px);
-	-ms-transform: perspective(1000px);
-	transform: perspective(1000px);
 }
 
-.megaphone {
-	width: 5em;
-	height: 5em;
+#megaphone {
 	background-image: url("../assets/megaphone.png");
-	background-repeat: no-repeat;
-	background-size: contain;
-	margin: 0 auto 20px auto;
-	
-	-webkit-transform: perspective(1000px);
-	-moz-transform: perspective(1000px);
-	-ms-transform: perspective(1000px);
-	transform: perspective(1000px);
 }
 
 .background2 {
