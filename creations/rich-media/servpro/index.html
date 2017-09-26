@@ -401,7 +401,14 @@
 						'opacity': '1'
 					});
 
-					setTimeout(animation1, 3000);
+					var animationGo = setInterval(function() {
+						if (localStorage['creativeName'].indexOf('servpro') > -1) {
+							clearInterval(animationGo);
+							animation1();
+						}
+					}, 1000);
+
+					// setTimeout(animation1, 3000);
 				}
 			
 				function animation1() {

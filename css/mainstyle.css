@@ -102,6 +102,7 @@ body, html {
 }
 
 .contentCaption {
+	font-family: CourierNew, sans-serif;
 	color: #FFF;
 	text-align: center;
 	padding: 0 0 20px 0;
@@ -130,8 +131,9 @@ body, html {
     overflow: hidden;
 }
 
-.themeColor {
+.subTaglineText {
 	color: #0071bc;
+	background-color: #FFF;
 }
 
 #mainContainer {
@@ -159,11 +161,12 @@ body, html {
 
 .tagline #taglineParagraph {
     font-size: 4vw;
-    text-shadow: 0px 0px 30px #2A2D34;
+    /*text-shadow: 0px 0px 30px #2A2D34;*/
     font-family: CourierNew, sans-serif;
     font-weight: bold;
     text-align: center;
     color: #FFF;
+    line-height: 55px;
     opacity: 0;
     
     -webkit-transform: translate3d(0px, 30px, 0px);

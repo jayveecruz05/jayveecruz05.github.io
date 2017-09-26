@@ -3,6 +3,8 @@
 	Author: Jayvee O. Cruz
 */
 
+localStorage['creativeName'] = '';
+
 var imageLoaded = 0,
 	images = [
 		'iconv1.ico',
@@ -29,6 +31,7 @@ function initiate() {
 	tagCanvas();
 
 	// iFrame();
+	// Iframe Animation
 }
 
 function customStyle() {
@@ -53,7 +56,7 @@ function checkElementIfVisible() {
 	}
 
 	if (checkIfVisibleById('contentsHolder1')) {
-		select('.content').setStyle({
+		select('#contentsHolder1 .content').setStyle({
 			'opacity': 1,
 			'transform': 'perspective(1000px) scale(1)',
 			'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
@@ -82,6 +85,32 @@ function checkElementIfVisible() {
 			'transform': 'perspective(1000px) scale(1)',
 			'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
 		});
+	}
+
+	if (checkIfVisibleById('contentsHolder2')) {
+		select('#contentsHolder2 .content').setStyle({
+			'opacity': 1,
+			'transform': 'perspective(1000px) scale(1)',
+			'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
+		});
+
+		setTimeout(function() {
+			localStorage['creativeName'] += 'adidas,';
+			localStorage['creativeName'] += 'pill-pockets,';
+		}, 1000);
+	}
+
+	if (checkIfVisibleById('contentsHolder3')) {
+		select('#contentsHolder3 .content').setStyle({
+			'opacity': 1,
+			'transform': 'perspective(1000px) scale(1)',
+			'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
+		});
+
+		setTimeout(function() {
+			localStorage['creativeName'] += 'servpro,';
+			localStorage['creativeName'] += 'maui-jim,';
+		}, 1000);
 	}
 }
 

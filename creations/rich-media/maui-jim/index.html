@@ -425,11 +425,18 @@
 						'opacity': '1'
 					});
 
-					if (labAd.dpr > 1) {
-						setTimeout(animation1, 2000);
-					} else {
-						setTimeout(animation1, 1000);
-					}
+					var animationGo = setInterval(function() {
+						if (localStorage['creativeName'].indexOf('maui-jim') > -1) {
+							clearInterval(animationGo);
+							animation1();
+						}
+					}, 1000);
+
+					// if (labAd.dpr > 1) {
+					// 	setTimeout(animation1, 2000);
+					// } else {
+					// 	setTimeout(animation1, 1000);
+					// }
 				}
 			
 				function animation1() {
