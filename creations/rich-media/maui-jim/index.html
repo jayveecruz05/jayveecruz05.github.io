@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TWC287 - Maui Jim Mobile, Cloud</title>
+	
+	<!--
+
+		Project Name: TWC287 - Maui Jim Mobile, Cloud;
+
+		Ads Size: 300x250;
+
+		Client: The Weather Channel;
+
+		File Name: index.html;
+
+		Author: Jayvee O. Cruz;
+
+	-->
+
+	<!-- Meta's Codes -->
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- /Meta's Codes -->
+
+	<!-- CSS Codes -->
+		<style type="text/css">
+			/*nomalize.min.css*/
+			
+			/*
+			@font-face {
+					 font-family: 'OpenSansBold';
+					 src: url('http://creativepreview.wideout.com/TWC/TWC219/Branded/OpenSans-Bold.eot');
+					 src: url('http://creativepreview.wideout.com/TWC/TWC219/Branded/OpenSans-Bold.eot?#iefix') format('embedded-opentype'),
+					 url('http://creativepreview.wideout.com/TWC/TWC219/Branded/OpenSans-Bold.woff') format('woff'),
+					 url('http://creativepreview.wideout.com/TWC/TWC219/Branded/OpenSans-Bold.ttf')  format('truetype');
+			}
+			*/
+
+			@font-face {
+			    font-family: 'gotham_narrow_bold';
+			    src: url('assets/gotham_narrow_bold.eot');
+			    src: url('assets/gotham_narrow_bold.eot') format('embedded-opentype'),
+			         url('assets/gotham_narrow_bold.woff') format('woff'),
+			         url('assets/gotham_narrow_bold.ttf') format('truetype');
+			}
+
+			@font-face {
+			    font-family: 'gotham_narrow_book';
+			    src: url('assets/gotham_narrow_book.eot');
+			    src: url('assets/gotham_narrow_book.eot') format('embedded-opentype'),
+			         url('assets/gotham_narrow_book.woff') format('woff'),
+			         url('assets/gotham_narrow_book.ttf') format('truetype');
+			}
+
+			@font-face {
+			    font-family: 'gotham_narrow_medium';
+			    src: url('assets/gotham_narrow_medium.eot');
+			    src: url('assets/gotham_narrow_medium.eot') format('embedded-opentype'),
+			         url('assets/gotham_narrow_medium.woff') format('woff'),
+			         url('assets/gotham_narrow_medium.ttf') format('truetype');
+			}
+			
+			* {
+				margin: 0;
+				padding: 0;
+				line-height: 0;
+				-webkit-touch-callout: none;
+				-webkit-user-select: none;
+				-khtml-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+				outline: none;
+				-webkit-tap-highlight-color: rgba(255, 255, 255, 0);  /* mobile webkit */
+				-moz-tap-highlight-color: rgba(255, 255, 255, 0);
+				-ms-tap-highlight-color: rgba(255, 255, 255, 0);
+				tap-highlight-color: rgba(255, 255, 255, 0);
+			}
+			
+			#labAd div {
+				position: absolute;
+				background-repeat: no-repeat !important;
+			}
+
+			#labAd img {
+				position: absolute;
+			}
+
+			#labAd p {
+				color: #FFF;
+				text-shadow: 0px 1px 2px #000;
+			}
+			
+			#labAd {
+				width: 300px;
+				height: 250px;
+				position: relative;
+				margin: 0 auto;
+				cursor: default;
+				overflow: hidden;
+				visibility: hidden;
+				opacity: 0;
+			}
+
+			.border {
+				width: 300px;
+				height: 250px;
+				border: 1px solid #FFF;
+				box-sizing: border-box;
+			}
+			
+			.background {
+				width: 300px;
+			}
+
+			.copyHolder {
+				width: 161px;
+				height: auto;
+				text-align: center;
+				top: 18px;
+				left: 3px;
+				opacity: 0;
+
+				-webkit-transition: opacity 1s ease-in-out;
+				-moz-transition: opacity 1s ease-in-out;
+				-ms-transition: opacity 1s ease-in-out;
+				transition: opacity 1s ease-in-out;
+			}
+
+			.cityName {
+				font-family: 'gotham_narrow_bold';
+				line-height: 11px;
+				font-size: 10.4px;
+				width: 90px;
+    			margin: 0 auto;
+			}
+
+			.monthDay {
+				font-family: 'gotham_narrow_book';
+				line-height: 13px;
+				font-size: 9px;
+    			margin-left: 1px;
+			}
+
+			.temperature {
+				font-family: 'gotham_narrow_medium';
+				line-height: 39px;
+				font-size: 30px;
+    			margin-left: 9px;
+			}
+		</style>
+	<!-- /CSS Codes -->
+</head>
+<body>
+	<div id="csTracking" style="display:none;">
+		<!-- Line Item %eaid! ==  Creative ID %ecid! -->
+	</div>
+	
+	<div id="labAd">
+		<!-- <div id="background" class="background"></div> -->
+		<img id="background" class="background" src="" alt="" />
+		<div id="copyHolder" class="copyHolder">
+			<p id="cityName" class="cityName"></p>
+			<p id="monthDay" class="monthDay"></p>
+			<p id="temperature" class="temperature"></p>
+		</div>
+		<div id="border" class="border"></div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="jquery.min.js"><\/script>')</script>
+	
+	<!-- JavaScript Codes -->
+		<script type="text/javascript">
+			var labAd = {
+				dir: "",
+				width: 300,
+				height: 250,
+				defaultImg: "background",
+				alt: "TWC287 - Maui Jim Mobile, Cloud",
+				dpr: window.devicePixelRatio,
+				data: {},
+				ids: { // various id strings for this ad
+					creative: "%ecid!",
+					lineItem: "%eaid!",
+					loc: "%%PATTERN:zip%%"
+				},
+				errors: [],
+				isMobile: false,
+				tracking: {
+					dfpClick:"%%CLICK_URL_UNESC%%",
+					pixel:"",
+					clickTAG:"",
+					pixel2:""
+				},
+				vars: {},
+				testVars: {
+					loc: "92688",
+					temp: "83"
+				},
+				testMode: false
+			}
+
+			// Image Pixel Ratio
+				if (labAd.dpr > 1) {
+					var image_pixel_ratio = '_retina';
+				} else {
+					var image_pixel_ratio = '_non_retina';
+				}
+
+			$(function() {
+				csWritePixel()
+				try{
+					// jump into testMode for DFP preview
+					//if (window.location.origin == 'http://partner.googleadservices.com') {labAd.testMode = true};
+					if (!window.location.origin)
+						 window.location.origin = window.location.protocol+"//"+window.location.host;
+					if(/(file|wideout|localhost)/i.test(window.location.origin)) labAd.testMode = true;
+					// adjust for testMode
+					if (labAd.testMode) {
+						try {
+							labAd.ids.loc = parent.testProps.zip;
+							labAd.testVars.loc = parent.testProps.zip;
+							console.log("TestProps ZipCode: " + labAd.ids.loc);
+							labAd.tracking.dfpClick = "";
+						} catch(err) {
+							labAd.ids.loc = labAd.testVars.loc;
+							console.log("TestVars ZipCode: " + labAd.ids.loc);
+							labAd.tracking.dfpClick = "";
+						}
+
+						// labAd.dpr = 1;
+						// $("body").append("<div style='position:absolute;top:0;right:0;background-color:#f00;color:#fff;padding:5px;'>TestMode</div>");
+					};
+					// define console for browsers that do not support it so no errors are thrown
+					if (!window.console) console = {
+						log: function() {}
+					};
+
+					// get dsx data
+					// $.ajax({
+					// 	url:"https://dsx.weather.com/wxd/v2/(loc;MORecord)/en_US/(" + labAd.ids.loc + ":4:US)?api=7bb1c920-7027-4289-9c96-ae5e263980bc&jsonp=dataSave",
+					// 		dataType: "script",
+					// 	type: "GET"
+					// })
+
+
+					// Comment dsx data ajax code when not needed and uncomment showAd(setVars());
+					// showAd(setVars());
+					showAd();
+
+					// .success(function(data) {
+					//         console.log("ajax success",labAd.vars);
+					//     })
+					// .fail(function() {
+					//     alert( "failed" );
+					//   })
+					// .always(function() {
+					//     // alert( "complete" );
+					//   });
+
+					// set click handlers
+					// $('#labAd').click(function(event) {
+					// 	exitClick();
+					// });
+
+					console.log(labAd);
+				}catch(err){
+					labAd.errors.push(err);
+					showDefault(err.message);
+					console.log(labAd.errors);
+				}
+			});
+
+			function initAdCond(a) {
+				var b;
+				switch (String(a)) {
+					case "0":b = {i: "0",b: "Stormy",d: "Tornado", t: "na"};break;
+					case "1":b = {i: "1",b: "Stormy",d: "Tropical Storm",t: "na"};break;
+					case "2":b = {i: "2",b: "Stormy",d: "Hurricane",t: "na"};break;
+					case "3":b = {i: "3",b: "Stormy",d: "Strong Thunderstorms",t: "na"};break;
+					case "4":b = {i: "4",b: "Stormy",d: "Thunderstorms",t: "na"};break;
+					case "5":b = {i: "5",b: "Snowy",d: "Rain and Snow",t: "na"};break;
+					case "6":b = {i: "6",b: "Snowy",d: "Rain and Sleet",t: "na"};break;
+					case "7":b = {i: "7",b: "Snowy",d: "Wintry Mix",t: "na"};break;
+					case "8":b = {i: "8",b: "Snowy",d: "Freezing Drizzle",t: "na"};break;
+					case "9":b = {i: "9",b: "Rainy",d: "Drizzle",t: "na"};break;
+					case "10":b = {i: "10",b: "Rainy",d: "Freezing Rain",t: "na"};break;
+					case "11":b = {i: "11",b: "Rainy",d: "Showers",t: "na"};break;
+					case "12":b = {i: "12",b: "Rainy",d: "Rain",t: "na"};break;
+					case "13":b = {i: "13",b: "Snowy",d: "Flurries",t: "na"};break;
+					case "14":b = {i: "14",b: "Snowy",d: "Snow Showers",t: "na"};break;
+					case "15":b = {i: "15",b: "Snowy",d: "Blowing Snow",t: "na"};break;
+					case "16":b = {i: "16",b: "Snowy",d: "Snow",t: "na"};break;
+					case "17":b = {i: "17",b: "Snowy",d: "Hail",t: "na"};break;
+					case "18":b = {i: "18",b: "Snowy",d: "Sleet",t: "na"};break;
+					case "19":b = {i: "19",b: "Low Visibility",d: "Dust",t: "na"};break;
+					case "20":b = {i: "20",b: "Low Visibility",d: "Fog",t: "na"};break;
+					case "21":b = {i: "21",b: "Low Visibility",d: "Haze",t: "na"};break;
+					case "22":b = {i: "22",b: "Low Visibility",d: "Smoke",t: "na"};break;
+					case "23":b = {i: "23",b: "Windy",d: "Breezy",t: "na"};break;
+					case "24":b = {i: "24",b: "Windy",d: "Windy",t: "na"};break;
+					case "25":b = {i: "25",b: "Snowy",d: "Frigid",t: "na"};break;
+					case "26":b = {i: "26",b: "Cloudy",d: "Cloudy",t: "na"};break;
+					case "27":b = {i: "27",b: "Cloudy",d: "Mostly Cloudy",t: "night"};break;
+					case "28":b = {i: "28",b: "Cloudy",d: "Mostly Cloudy",t: "day"};break;
+					case "29":b = {i: "29",b: "Cloudy",d: "Partly Cloudy",t: "night"};break;
+					case "30":b = {i: "30",b: "Cloudy",d: "Partly Cloudy",t: "day"};break;
+					case "31":b = {i: "31",b: "Clear",d: "Clear",t: "night"};break;
+					case "32":b = {i: "32",b: "Sunny",d: "Sunny",t: "day"};break;
+					case "33":b = {i: "33",b: "Clear",d: "Mostly Clear",t: "night"};break;
+					case "34":b = {i: "34",b: "Sunny",d: "Mostly Sunny",t: "day"};break;
+					case "35":b = {i: "35",b: "Snowy",d: "Mixed Rain/Hail",t: "na"};break;
+					case "36":b = {i: "36",b: "Sunny",d: "Hot",t: "day"};break;
+					case "37":b = {i: "37",b: "Stormy",d: "Isolated Thunderstorms",t: "day"};break;
+					case "38":b = {i: "38",b: "Stormy",d: "Scattered Thunderstorms",t: "day"};break;
+					case "39":b = {i: "39",b: "Rainy",d: "Scattered Showers", t: "day"};break;
+					case "40":b = {i: "40",b: "Rainy",d: "Heavy Rain", t: "na"};break;
+					case "41":b = {i: "41",b: "Snowy",d: "Scattered Snow Showers",t: "na"};break;
+					case "42":b = {i: "42",b: "Snowy",d: "Heavy Snow",t: "na"};break;
+					case "43":b = {i: "43",b: "Snowy",d: "Blizzard",t: "na"};break;
+					case "44":b = {i: "44",b: "Default",d: "Not Available",t: "na"};break;
+					case "45":b = {i: "45",b: "Rainy",d: "Scattered Showers",t: "night"};break;
+					case "46":b = {i: "46",b: "Snowy",d: "Scattered Snow Showers",t: "night"};break;
+					case "47":b = {i: "47",b: "Stormy",d: "Scattered Thunderstorms",t: "night"};break;
+					default:b = {i: "na",b: "Default",d: "Not Available",t: "na"};break;
+				}
+				return b
+			}
+
+			var images,
+				loadedImage = 0,
+				date = new Date(),
+				city_name = [
+					'NEW YORK',
+					'RANCHO SANTA MARGARITA',
+					'LAKE HIAWATHA',
+					'MOUNTAIN VIEW',
+					'INDIANAPOLIS'
+				],
+				state_name = [
+					'NY',
+					'CA',
+					'NJ',
+					'OK',
+					'IN'
+				],
+				temp = [
+					80,
+					78,
+					83,
+					64,
+					89
+				];
+				// cachebuster = '?%%CACHEBUSTER%%'
+
+			function showAd(adVars) {
+				try{
+					labAd.vars = adVars;
+					// set dynamic text
+					//no dynamic text
+					// pixel ratio adjustments
+
+					var randomWeatherSky = Math.floor((Math.random() * 5));
+					cityname = city_name[randomWeatherSky];
+					statename = state_name[randomWeatherSky];
+					month = date.getMonth();
+					day = date.getDate();
+					temp = temp[randomWeatherSky];
+
+					getMonth = ['JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER'];
+
+					console.log('City Name: ' + cityname);
+					console.log('State Name: ' + statename);
+					console.log('Month: ' + getMonth[month]);
+					console.log('Day: ' + parseInt(day));
+					console.log('Temperature: ' + temp);
+
+					cityName.innerHTML = cityname + ',&nbsp;' + statename;
+					monthDay.innerHTML = getMonth[month] + '&nbsp;' + parseInt(day);
+					temperature.innerHTML = temp + '&deg';
+					
+					/* Array of Images */
+						images = new Array(
+							labAd.dir + "assets/background" + image_pixel_ratio + ".jpg" // + cachebuster
+						);
+					/* /Array of Images */
+					
+					/* Looping of the images */
+						for (var i = 0; i <= images.length - 1; i++) {
+							imageObj = new Image();
+							imageObj.src = images[i];
+							imageObj.addEventListener("load", iLoad, false)
+						}
+					/* /Looping of the images */
+
+				}catch(err){
+					labAd.errors.push(err);
+					showDefault(err.message);
+					console.log(labAd.errors);
+				}
+			}
+			
+			/* Loading of the all things */
+				function iLoad() {
+
+					loadedImage++;
+					
+					/* Loading of the images */
+						if (images.length == loadedImage) {
+							// background.style.background = 'url("' + images[0] + '")';
+							background.src = images[0];
+							
+							init();
+						}
+					/* /Loading of the images */
+
+				}
+			/* /Loading of the all things */
+			
+			/* Transitions of the animations */
+				function init() {
+					$('#labAd').css({
+						'visibility': 'visible',
+						'opacity': '1'
+					});
+
+					if (labAd.dpr > 1) {
+						setTimeout(animation1, 2000);
+					} else {
+						setTimeout(animation1, 1000);
+					}
+				}
+			
+				function animation1() {
+					copyHolder.style.opacity = 1;
+				}
+			/* /Transitions of the animations */
+
+			function dataSave(JSON) {
+				try{
+					labAd.data = JSON;
+					if (JSON.status == 200) {
+						// var adVars = setVars();
+						showAd(setVars());
+					} else {
+						showDefault("dataSaveReboot: status = " + JSON.status);
+					}
+				}catch(err){
+					labAd.errors.push(err);
+					showDefault(err.message);
+					console.log(labAd.errors);
+				}
+			}
+
+			function exitClick() {
+				console.log("exitClick");
+				window.open(labAd.tracking.dfpClick + labAd.tracking.clickTAG,"_blank");
+			}
+
+			function setVars() {
+				try{
+					// change this function to return build a local vars object and return it
+					var adVars = {};
+						// adVars.zipcode = labAd.data.body[0].doc.locId; // This is the code to get and set current zipcode
+						adVars.cityname = labAd.data.body[0].doc.cityNm; // This is the code to get and set the current city name
+						adVars.statename = labAd.data.body[0].doc.stCd;
+						// adVars.sky = labAd.data.body[1].doc.MOData.sky; // This is the code to get and set the current sky value
+						// adVars.weather = initAdCond(adVars.sky).b.toLowerCase(); // This is the code to get and set the current weather
+						adVars.temp = labAd.data.body[1].doc.MOData.tmpF; // This is the code to get and set the current temperature
+						adVars.month = date.getMonth();
+						adVars.day = date.getDate();
+
+					if (labAd.testMode) {
+						try {
+						// For Local LiveTest
+							adVars.cityname = labAd.data.body[0].doc.cityNm;
+							adVars.statename = labAd.data.body[0].doc.stCd;
+							adVars.temp = parent.testProps.temp;
+							console.log('Current Date: ' + parent.testProps.dates);
+							adVars.month = parent.testProps.dates.slice(5, 7) - 1;
+							adVars.day = parent.testProps.dates.slice(8);
+						// For Local LiveTest
+						} catch(err) {
+						// For Local Test
+							adVars.cityname = labAd.data.body[0].doc.cityNm;
+							adVars.statename = labAd.data.body[0].doc.stCd;
+							adVars.temp = labAd.data.body[1].doc.MOData.tmpF;
+							adVars.month = date.getMonth();
+							adVars.day = date.getDate();
+						// For Local Test
+						}
+					}
+
+					// create vars to store the specific info the ad needs from loaded data
+
+					return adVars;
+				}catch(err){
+					labAd.errors.push(err);
+					showDefault(err.message);
+					console.log(labAd.errors);
+				}
+			}
+
+			function toTitleCase(str) {
+				return str.replace(/\w\S*/g, function(txt) {
+					return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+				});
+			}
+
+			function showDefault(reason) {
+				try{
+					$('#labAd').css({
+						'background': 'url(' + labAd.dir + "images/" + labAd.defaultImg + image_pixel_ratio + '.jpg) no-repeat 0 0',
+						'background-size': labAd.width + 'px ' + labAd.height + 'px',
+						'visibility': 'visible',
+						'opacity': '1'
+					});
+					$("#labAd").children().hide();
+					$("#border").show();
+					$('#labAd').append('<span style="display:none;">'+reason+'</span>');
+				}catch(err){
+					labAd.errors.push(err);
+					console.log(labAd.errors);
+				}
+			}
+
+			function csWritePixel(){
+				if (labAd.tracking.pixel!="") {
+						var tDiv = document.createElement("div");
+						tDiv.innerHTML="<img src="+labAd.tracking.pixel+" height='1' width='1' border='0' style='display:none'>";
+						document.body.appendChild(tDiv);
+				}
+			}
+			
+			function csWritePixel2() {
+				if (labAd.tracking.pixel2!="") {
+						var tDiv = document.createElement("div");
+						tDiv.innerHTML="<img src="+labAd.tracking.pixel2+" height='1' width='1' border='0' style='display:none'>";
+						document.body.appendChild(tDiv);
+				}
+			}
+		</script>
+	<!-- /JavaScript Codes -->
+</body>
+</html>

@@ -38,6 +38,9 @@
 			*/
 			
 			* {
+				margin: 0;
+				padding: 0;
+				line-height: 0;
 				-webkit-touch-callout: none;
 				-webkit-user-select: none;
 				-khtml-user-select: none;
@@ -90,9 +93,8 @@
 			.border {
 				width: 300px;
 				height: 250px;
-				border: 1px solid #000;
+				border: 1px solid #FFF;
 				box-sizing: border-box;
-				display: none !important;
 			}
 			
 			.background, .background1, .background2,
@@ -414,8 +416,8 @@
 				loadedImage = 0;
 
 			var totalObjects = 5,
-				width = 300,
-				showSideObjects = false;
+				width = 230,
+				showSideObjects = true;
 				pastLeftObject = totalObjects,
 				currentObject = 1,
 				pastRightObject = (currentObject + 1),
@@ -458,7 +460,8 @@
 					// weather = labAd.vars.weather;
 					// dayOrNight = labAd.vars.dayOrNight;
 
-					weather = 'sunny';
+					var randomWeatherSky = Math.floor((Math.random() * 48));
+					weather = initAdCond(randomWeatherSky).b.toLowerCase();
 					dayOrNight = getDayOrNight();
 
 					switch (weather) {

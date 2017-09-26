@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TWC284 - Pill Pockets</title>
+	
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<!-- CSS Codes -->
+		<style type="text/css">
+			/*nomalize.min.css*/
+
+			@font-face {
+			    font-family: 'avenir_next_condensed_medium';
+			    src: url('assets/avenir_next_condensed_medium.eot');
+			    src: url('assets/avenir_next_condensed_medium.eot') format('embedded-opentype'),
+			         url('assets/avenir_next_condensed_medium.woff') format('woff'),
+			         url('assets/avenir_next_condensed_medium.ttf') format('truetype');
+			}
+			
+			* {
+				margin: 0;
+				padding: 0;
+				line-height: 0;
+				-webkit-touch-callout: none;
+				-webkit-user-select: none;
+				-khtml-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+				outline: none;
+				-webkit-tap-highlight-color: rgba(255, 255, 255, 0);  /* mobile webkit */
+				-moz-tap-highlight-color: rgba(255, 255, 255, 0);
+				-ms-tap-highlight-color: rgba(255, 255, 255, 0);
+				tap-highlight-color: rgba(255, 255, 255, 0);
+				-webkit-transform-style: preserve-3d;
+				-moz-transform-style: preserve-3d;
+				-o-transform-style: preserve-3d;
+				-ms-transform-style: preserve-3d;
+				transform-style: preserve-3d;
+			}
+			
+			#labAd div {
+				position: absolute;
+				background-repeat: no-repeat !important;
+			}
+
+			#labAd img {
+				position: absolute;
+			}
+			
+			#labAd {
+				background-color: #A2D2B9;
+				width: 300px;
+				height: 250px;
+				position: relative;
+				margin: 0 auto;
+				cursor: default;
+				overflow: hidden;
+				visibility: hidden;
+				opacity: 0;
+			}
+
+			.border {
+				width: 300px;
+				height: 250px;
+				border: 1px solid #FFF;
+				box-sizing: border-box;
+			}
+			
+			.background1 {
+				width: 300px;
+				opacity: 0;
+
+				-webkit-transition: opacity .7s ease-in-out;
+				-moz-transition: opacity .7s ease-in-out;
+				-ms-transition: opacity .7s ease-in-out;
+				transition: opacity .7s ease-in-out;
+			}
+			
+			.background2 {
+				width: 300px;
+				opacity: 0;
+			}
+
+			.background2_logo_block {
+				background-color: #A2D2B9;
+				width: 70px;
+			    height: 75px;
+			    top: 154px;
+			    left: 4px;
+				opacity: 0;
+
+				-webkit-transition: opacity .7s ease-in-out;
+				-moz-transition: opacity .7s ease-in-out;
+				-ms-transition: opacity .7s ease-in-out;
+				transition: opacity .7s ease-in-out;
+			}
+
+			.photo1 {
+				width: 300px;
+				opacity: 0;
+
+				-webkit-transform: translate3d(300px, 0, 0);
+				-moz-transform: translate3d(300px, 0, 0);
+				-ms-transform: translate3d(300px, 0, 0);
+				transform: translate3d(300px, 0, 0);
+
+				-webkit-transition: opacity .7s ease-in-out, -webkit-transform .7s ease-in-out;
+				-moz-transition: opacity .7s ease-in-out, -moz-transform .7s ease-in-out;
+				-ms-transition: opacity .7s ease-in-out, -ms-transform .7s ease-in-out;
+				transition: opacity .7s ease-in-out, transform .7s ease-in-out;
+			}
+
+			.photo1_translate3d_0 {
+				-webkit-transform: translate3d(0, 0, 0);
+				-moz-transform: translate3d(0, 0, 0);
+				-ms-transform: translate3d(0, 0, 0);
+				transform: translate3d(0, 0, 0);
+			}
+
+			.photo1_translate3d_-300 {
+				-webkit-transform: translate3d(-300px, 0, 0);
+				-moz-transform: translate3d(-300px, 0, 0);
+				-ms-transform: translate3d(-300px, 0, 0);
+				transform: translate3d(-300px, 0, 0);
+			}
+			
+			.photo2 {
+				width: 300px;
+				opacity: 1;
+
+				-webkit-transform: translate3d(6px, -300px, 0) rotateZ(15deg);
+				-moz-transform: translate3d(6px, -300px, 0) rotateZ(15deg);
+				-ms-transform: translate3d(6px, -300px, 0) rotateZ(15deg);
+				transform: translate3d(6px, -300px, 0) rotateZ(15deg);
+
+				-webkit-transform-origin: 75% 65%;
+				-moz-transform-origin: 75% 65%;
+				-ms-transform-origin: 75% 65%;
+				transform-origin: 75% 65%;
+
+				-webkit-transition: opacity .7s ease-in-out, -webkit-transform .9s ease-in-out;
+				-moz-transition: opacity .7s ease-in-out, -moz-transform .9s ease-in-out;
+				-ms-transition: opacity .7s ease-in-out, -ms-transform .9s ease-in-out;
+				transition: opacity .7s ease-in-out, transform .9s ease-in-out;
+			}
+
+			.photo2_translate3d_0 {
+				-webkit-transform: translate3d(6px, -2px, 0) rotateZ(15deg);
+				-moz-transform: translate3d(6px, -2px, 0) rotateZ(15deg);
+				-ms-transform: translate3d(6px, -2px, 0) rotateZ(15deg);
+				transform: translate3d(6px, -2px, 0) rotateZ(15deg);
+			}
+
+			.photo2_rotateZ_0 {
+				-webkit-transform: translate3d(6px, -2px, 0) rotateZ(0deg);
+				-moz-transform: translate3d(6px, -2px, 0) rotateZ(0deg);
+				-ms-transform: translate3d(6px, -2px, 0) rotateZ(0deg);
+				transform: translate3d(6px, -2px, 0) rotateZ(0deg);
+
+				-webkit-transition: opacity .7s ease-in-out, -webkit-transform .1s;
+				-moz-transition: opacity .7s ease-in-out, -moz-transform .1s;
+				-ms-transition: opacity .7s ease-in-out, -ms-transform .1s;
+				transition: opacity .7s ease-in-out, transform .1s;
+			}
+
+			.photo2_rotateZ_5 {
+				-webkit-transform: translate3d(6px, -2px, 0) rotateZ(5deg);
+				-moz-transform: translate3d(6px, -2px, 0) rotateZ(5deg);
+				-ms-transform: translate3d(6px, -2px, 0) rotateZ(5deg);
+				transform: translate3d(6px, -2px, 0) rotateZ(5deg);
+
+				-webkit-transition: opacity .7s ease-in-out, -webkit-transform .1s;
+				-moz-transition: opacity .7s ease-in-out, -moz-transform .1s;
+				-ms-transition: opacity .7s ease-in-out, -ms-transform .1s;
+				transition: opacity .7s ease-in-out, transform .1s;
+			}
+
+			.photo2_shadow {
+				width: 300px;
+				top: 12px;
+				left: -6px;
+				opacity: 0;
+
+				-webkit-transition: opacity .7s ease-in-out;
+				-moz-transition: opacity .7s ease-in-out;
+				-ms-transition: opacity .7s ease-in-out;
+				transition: opacity .7s ease-in-out;
+			}
+
+			.photo2_shadow_opacity {
+				opacity: 1;
+
+				-webkit-transition: opacity 1.5s ease-in-out;
+				-moz-transition: opacity 1.5s ease-in-out;
+				-ms-transition: opacity 1.5s ease-in-out;
+				transition: opacity 1.5s ease-in-out;
+			}
+
+			.photo3_left {
+				width: 165px;
+				opacity: 0;
+
+				-webkit-transform: translate3d(-50px, 28.5px, 0) scale(1.3);
+				-moz-transform: translate3d(-50px, 28.5px, 0) scale(1.3);
+				-ms-transform: translate3d(-50px, 28.5px, 0) scale(1.3);
+				transform: translate3d(-50px, 28.5px, 0) scale(1.3);
+
+				-webkit-transition: opacity .1s ease-in-out, -webkit-transform 1s ease-in-out;
+				-moz-transition: opacity .1s ease-in-out, -moz-transform 1s ease-in-out;
+				-ms-transition: opacity .1s ease-in-out, -ms-transform 1s ease-in-out;
+				transition: opacity .1s ease-in-out, transform 1s ease-in-out;
+			}
+
+			.photo3_left_transform {
+				opacity: 1;
+
+				-webkit-transform: translate3d(-2px, 21.5px, 0) scale(1);
+				-moz-transform: translate3d(-2px, 21.5px, 0) scale(1);
+				-ms-transform: translate3d(-2px, 21.5px, 0) scale(1);
+				transform: translate3d(-2px, 21.5px, 0) scale(1);
+			}
+
+			.photo3_right {
+				width: 159px;
+				opacity: 0;
+
+				-webkit-transform: translate3d(198.5px, 164px, 0) scale(1.3);
+				-moz-transform: translate3d(198.5px, 164px, 0) scale(1.3);
+				-ms-transform: translate3d(198.5px, 164px, 0) scale(1.3);
+				transform: translate3d(198.5px, 164px, 0) scale(1.3);
+
+				-webkit-transition: opacity .1s ease-in-out, -webkit-transform 1s ease-in-out;
+				-moz-transition: opacity .1s ease-in-out, -moz-transform 1s ease-in-out;
+				-ms-transition: opacity .1s ease-in-out, -ms-transform 1s ease-in-out;
+				transition: opacity .1s ease-in-out, transform 1s ease-in-out;
+			}
+
+			.photo3_right_transform {
+				opacity: 1;
+
+				-webkit-transform: translate3d(143.5px, 74px, 0) scale(1);
+				-moz-transform: translate3d(143.5px, 74px, 0) scale(1);
+				-ms-transform: translate3d(143.5px, 74px, 0) scale(1);
+				transform: translate3d(143.5px, 74px, 0) scale(1);
+			}
+
+			.photo4_left {
+				width: 120px;
+				opacity: 0;
+
+				-webkit-transform: translate3d(-35px, -32px, 0);
+				-moz-transform: translate3d(-35px, -32px, 0);
+				-ms-transform: translate3d(-35px, -32px, 0);
+				transform: translate3d(-35px, -32px, 0);
+
+				-webkit-transition: opacity .1s ease-in-out, -webkit-transform 1s ease-in-out;
+				-moz-transition: opacity .1s ease-in-out, -moz-transform 1s ease-in-out;
+				-ms-transition: opacity .1s ease-in-out, -ms-transform 1s ease-in-out;
+				transition: opacity .1s ease-in-out, transform 1s ease-in-out;
+			}
+
+			.photo4_left_transform {
+				opacity: 1;
+
+				-webkit-transform: translate3d(27px, -1px, 0);
+				-moz-transform: translate3d(27px, -1px, 0);
+				-ms-transform: translate3d(27px, -1px, 0);
+				transform: translate3d(27px, -1px, 0);
+			}
+
+			.photo4_center {
+				width: 188px;
+				top: 49px;
+				left: 89.5px;
+				opacity: 0;
+			}
+
+			.photo4_opacity_transition {
+				-webkit-transition: opacity .7s ease-in-out;
+				-moz-transition: opacity .7s ease-in-out;
+				-ms-transition: opacity .7s ease-in-out;
+				transition: opacity .7s ease-in-out;
+			}
+
+			.photo5 {
+				width: 300px;
+				opacity: 0;
+
+				-webkit-transition: opacity .7s ease-in-out;
+				-moz-transition: opacity .7s ease-in-out;
+				-ms-transition: opacity .7s ease-in-out;
+				transition: opacity .7s ease-in-out;
+			}
+
+			.copy0 {
+			    position: absolute;
+			    width: 300px;
+			    font-family: 'avenir_next_condensed_medium';
+			    text-transform: capitalize;
+			    font-size: 29px;
+			    text-align: center;
+			    line-height: 36px;
+			    letter-spacing: 0.1px;
+			    top: 107px;
+			    opacity: 0;
+
+				-webkit-transition: opacity .7s ease-in-out;
+				-moz-transition: opacity .7s ease-in-out;
+				-ms-transition: opacity .7s ease-in-out;
+				transition: opacity .7s ease-in-out;
+			}
+
+			.copy1 {
+				width: 300px;
+				opacity: 0;
+
+				-webkit-transition: opacity .7s ease-in-out;
+				-moz-transition: opacity .7s ease-in-out;
+				-ms-transition: opacity .7s ease-in-out;
+				transition: opacity .7s ease-in-out;
+			}
+
+			.copy2 {
+				width: 300px;
+				opacity: 0;
+
+				-webkit-transition: opacity .7s ease-in-out;
+				-moz-transition: opacity .7s ease-in-out;
+				-ms-transition: opacity .7s ease-in-out;
+				transition: opacity .7s ease-in-out;
+			}
+
+			.copy3 {
+				width: 300px;
+				opacity: 0;
+
+				-webkit-transition: opacity .7s ease-in-out;
+				-moz-transition: opacity .7s ease-in-out;
+				-ms-transition: opacity .7s ease-in-out;
+				transition: opacity .7s ease-in-out;
+			}
+
+			.copy4 {
+				width: 300px;
+				opacity: 0;
+
+				-webkit-transition: opacity .7s ease-in-out;
+				-moz-transition: opacity .7s ease-in-out;
+				-ms-transition: opacity .7s ease-in-out;
+				transition: opacity .7s ease-in-out;
+			}
+		</style>
+	<!-- /CSS Codes -->
+</head>
+<body>
+	<div id="csTracking" style="display:none;">
+		<!-- Line Item %eaid! ==  Creative ID %ecid! -->
+	</div>
+	
+	<div id="labAd">
+		<!-- <div id="background" class="background"></div> -->
+		<img id="copy1" class="copy1" src="" alt="" />
+		<img id="copy2" class="copy2" src="" alt="" />
+		<img id="photo1" class="photo1" src="" alt="" />
+		<img id="photo2_shadow" class="photo2_shadow" src="" alt="" />
+		<img id="photo2" class="photo2" src="" alt="" />
+		<img id="photo3_right" class="photo3_right" src="" alt="" />
+		<img id="photo3_left" class="photo3_left" src="" alt="" />
+		<img id="photo4_left" class="photo4_left" src="" alt="" />
+		<img id="photo4_center" class="photo4_center" src="" alt="" />
+		<img id="background2" class="background2" src="" alt="" />
+		<div id="background2_logo_block" class="background2_logo_block"></div>
+		<img id="copy3" class="copy3" src="" alt="" />
+		<img id="copy4" class="copy4" src="" alt="" />
+		<img id="photo5" class="photo5" src="" alt="" />
+		<img id="background1" class="background1" src="" alt="" />
+		<p id="copy0" class="copy0"></p>
+		<div id="border" class="border"></div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="jquery.min.js"><\/script>')</script>
+	
+	<!-- JavaScript Codes -->
+		<script type="text/javascript">
+			var labAd = {
+				dir: "assets/",
+				width: 300,
+				height: 250,
+				defaultImg: "default",
+				alt: "TWC284 - Pill Pockets",
+				dpr: window.devicePixelRatio,
+				data: {},
+				ids: { // various id strings for this ad
+					creative: "%ecid!",
+					lineItem: "%eaid!",
+					loc: "%%PATTERN:zip%%"
+				},
+				errors: [],
+				isMobile: false,
+				tracking: {
+					dfpClick:"%%CLICK_URL_UNESC%%",
+					pixel:"",
+					clickTAG:"",
+					pixel2:""
+				},
+				vars: {},
+				testVars: {
+					loc: "92688"
+				},
+				testMode: false
+			}
+			// Image Pixel Ratio
+				if (labAd.dpr > 1) {
+					var image_pixel_ratio = '_retina';
+				} else {
+					var image_pixel_ratio = '_non_retina';
+				}
+
+			$(function() {
+				csWritePixel()
+				try{
+					// jump into testMode for DFP preview
+					//if (window.location.origin == 'http://partner.googleadservices.com') {labAd.testMode = true};
+					if (!window.location.origin)
+						 window.location.origin = window.location.protocol+"//"+window.location.host;
+					if(/(file|wideout|localhost)/i.test(window.location.origin)) labAd.testMode = true;
+					// adjust for testMode
+					if (labAd.testMode) {
+						try {
+							labAd.ids.loc = parent.testProps.zip;
+							labAd.testVars.loc = parent.testProps.zip;
+							console.log("TestProps ZipCode: " + labAd.ids.loc);
+							labAd.tracking.dfpClick = "";
+						} catch(err) {
+							labAd.ids.loc = labAd.testVars.loc;
+							console.log("TestVars ZipCode: " + labAd.ids.loc);
+							labAd.tracking.dfpClick = "";
+						}
+
+						// labAd.dpr = 1;
+						// $("body").append("<div style='position:absolute;top:0;right:0;background-color:#f00;color:#fff;padding:5px;'>TestMode</div>");
+					};
+					// define console for browsers that do not support it so no errors are thrown
+					if (!window.console) console = {
+						log: function() {}
+					};
+
+					// get dsx data
+					// $.ajax({
+					// 	url:"https://dsx.weather.com/wxd/v2/(loc)/en_US/(" + labAd.ids.loc + ":4:US)?api=7bb1c920-7027-4289-9c96-ae5e263980bc&jsonp=dataSave",
+					// 		dataType: "script",
+					// 	type: "GET"
+					// })
+
+
+					// Comment dsx data ajax code when not needed and uncomment showAd(setVars());
+					// showAd(setVars());
+					showAd();
+
+					// .success(function(data) {
+					//         console.log("ajax success",labAd.vars);
+					//     })
+					// .fail(function() {
+					//     alert( "failed" );
+					//   })
+					// .always(function() {
+					//     // alert( "complete" );
+					//   });
+
+					// set click handlers
+					// $('#labAd').click(function(event) {
+					// 	exitClick();
+					// });
+
+					console.log(labAd);
+				}catch(err){
+					labAd.errors.push(err);
+					showDefault(err.message);
+					console.log(labAd.errors);
+				}
+			});
+
+			function initAdCond(a) {
+				var b;
+				switch (String(a)) {
+					case "0":b = {i: "0",b: "Stormy",d: "Tornado", t: "na"};break;
+					case "1":b = {i: "1",b: "Stormy",d: "Tropical Storm",t: "na"};break;
+					case "2":b = {i: "2",b: "Stormy",d: "Hurricane",t: "na"};break;
+					case "3":b = {i: "3",b: "Stormy",d: "Strong Thunderstorms",t: "na"};break;
+					case "4":b = {i: "4",b: "Stormy",d: "Thunderstorms",t: "na"};break;
+					case "5":b = {i: "5",b: "Snowy",d: "Rain and Snow",t: "na"};break;
+					case "6":b = {i: "6",b: "Snowy",d: "Rain and Sleet",t: "na"};break;
+					case "7":b = {i: "7",b: "Snowy",d: "Wintry Mix",t: "na"};break;
+					case "8":b = {i: "8",b: "Snowy",d: "Freezing Drizzle",t: "na"};break;
+					case "9":b = {i: "9",b: "Rainy",d: "Drizzle",t: "na"};break;
+					case "10":b = {i: "10",b: "Rainy",d: "Freezing Rain",t: "na"};break;
+					case "11":b = {i: "11",b: "Rainy",d: "Showers",t: "na"};break;
+					case "12":b = {i: "12",b: "Rainy",d: "Rain",t: "na"};break;
+					case "13":b = {i: "13",b: "Snowy",d: "Flurries",t: "na"};break;
+					case "14":b = {i: "14",b: "Snowy",d: "Snow Showers",t: "na"};break;
+					case "15":b = {i: "15",b: "Snowy",d: "Blowing Snow",t: "na"};break;
+					case "16":b = {i: "16",b: "Snowy",d: "Snow",t: "na"};break;
+					case "17":b = {i: "17",b: "Snowy",d: "Hail",t: "na"};break;
+					case "18":b = {i: "18",b: "Snowy",d: "Sleet",t: "na"};break;
+					case "19":b = {i: "19",b: "Low Visibility",d: "Dust",t: "na"};break;
+					case "20":b = {i: "20",b: "Low Visibility",d: "Fog",t: "na"};break;
+					case "21":b = {i: "21",b: "Low Visibility",d: "Haze",t: "na"};break;
+					case "22":b = {i: "22",b: "Low Visibility",d: "Smoke",t: "na"};break;
+					case "23":b = {i: "23",b: "Windy",d: "Breezy",t: "na"};break;
+					case "24":b = {i: "24",b: "Windy",d: "Windy",t: "na"};break;
+					case "25":b = {i: "25",b: "Snowy",d: "Frigid",t: "na"};break;
+					case "26":b = {i: "26",b: "Cloudy",d: "Cloudy",t: "na"};break;
+					case "27":b = {i: "27",b: "Cloudy",d: "Mostly Cloudy",t: "night"};break;
+					case "28":b = {i: "28",b: "Cloudy",d: "Mostly Cloudy",t: "day"};break;
+					case "29":b = {i: "29",b: "Cloudy",d: "Partly Cloudy",t: "night"};break;
+					case "30":b = {i: "30",b: "Cloudy",d: "Partly Cloudy",t: "day"};break;
+					case "31":b = {i: "31",b: "Clear",d: "Clear",t: "night"};break;
+					case "32":b = {i: "32",b: "Sunny",d: "Sunny",t: "day"};break;
+					case "33":b = {i: "33",b: "Clear",d: "Mostly Clear",t: "night"};break;
+					case "34":b = {i: "34",b: "Sunny",d: "Mostly Sunny",t: "day"};break;
+					case "35":b = {i: "35",b: "Snowy",d: "Mixed Rain/Hail",t: "na"};break;
+					case "36":b = {i: "36",b: "Sunny",d: "Hot",t: "day"};break;
+					case "37":b = {i: "37",b: "Stormy",d: "Isolated Thunderstorms",t: "day"};break;
+					case "38":b = {i: "38",b: "Stormy",d: "Scattered Thunderstorms",t: "day"};break;
+					case "39":b = {i: "39",b: "Rainy",d: "Scattered Showers", t: "day"};break;
+					case "40":b = {i: "40",b: "Rainy",d: "Heavy Rain", t: "na"};break;
+					case "41":b = {i: "41",b: "Snowy",d: "Scattered Snow Showers",t: "na"};break;
+					case "42":b = {i: "42",b: "Snowy",d: "Heavy Snow",t: "na"};break;
+					case "43":b = {i: "43",b: "Snowy",d: "Blizzard",t: "na"};break;
+					case "44":b = {i: "44",b: "Default",d: "Not Available",t: "na"};break;
+					case "45":b = {i: "45",b: "Rainy",d: "Scattered Showers",t: "night"};break;
+					case "46":b = {i: "46",b: "Snowy",d: "Scattered Snow Showers",t: "night"};break;
+					case "47":b = {i: "47",b: "Stormy",d: "Scattered Thunderstorms",t: "night"};break;
+					default:b = {i: "na",b: "Default",d: "Not Available",t: "na"};break;
+				}
+				return b
+			}
+
+			var images,
+				loadedImage = 0,
+				cityName = [
+					'NEW YORK',
+					'RANCHO SANTA MARGARITA',
+					'LAKE HIAWATHA',
+					'MOUNTAIN VIEW',
+					'INDIANAPOLIS'
+				];
+				// cachebuster = '?%%CACHEBUSTER%%'
+
+			function showAd(adVars) {
+				try{
+					labAd.vars = adVars;
+					// set dynamic text
+					//no dynamic text
+					// pixel ratio adjustments
+
+					var randomWeatherSky = Math.floor((Math.random() * 5));
+					cityname = cityName[randomWeatherSky].toLowerCase();
+					console.log('City Name: ' + cityname);
+					
+					/* Array of Images */
+						images = new Array(
+							labAd.dir + "background1" + image_pixel_ratio + ".jpg", // + cachebuster
+							labAd.dir + "background2" + image_pixel_ratio + ".png",
+							labAd.dir + "photo1" + image_pixel_ratio + ".png",
+							labAd.dir + "photo2" + image_pixel_ratio + ".png",
+							labAd.dir + "photo2_shadow" + image_pixel_ratio + ".png",
+							labAd.dir + "photo3_left" + image_pixel_ratio + ".png",
+							labAd.dir + "photo3_right" + image_pixel_ratio + ".png",
+							labAd.dir + "photo4_left" + image_pixel_ratio + ".png",
+							labAd.dir + "photo4_center" + image_pixel_ratio + ".png",
+							labAd.dir + "photo5" + image_pixel_ratio + ".png",
+							labAd.dir + "copy1" + image_pixel_ratio + ".png",
+							labAd.dir + "copy2" + image_pixel_ratio + ".png",
+							labAd.dir + "copy3" + image_pixel_ratio + ".png",
+							labAd.dir + "copy4" + image_pixel_ratio + ".png"
+						);
+					/* /Array of Images */
+					
+					/* Looping of the images */
+						for (var i = 0; i <= images.length - 1; i++) {
+							imageObj = new Image();
+							imageObj.src = images[i];
+							imageObj.addEventListener("load", iLoad, false)
+						}
+					/* /Looping of the images */
+
+				}catch(err){
+					labAd.errors.push(err);
+					showDefault(err.message);
+					console.log(labAd.errors);
+				}
+			}
+			
+			/* Loading of the all things */
+				function iLoad() {
+
+					loadedImage++;
+					
+					/* Loading of the images */
+						if (images.length == loadedImage) {
+							// background.style.background = 'url("' + images[0] + '")';
+							background1.src = images[0];
+							background2.src = images[1];
+							photo1.src = images[2];
+							photo2.src = images[3];
+							photo2_shadow.src = images[4];
+							photo3_left.src = images[5];
+							photo3_right.src = images[6];
+							photo4_left.src = images[7];
+							photo4_center.src = images[8];
+							photo5.src = images[9];
+							copy1.src = images[10];
+							copy2.src = images[11];
+							copy3.src = images[12];
+							copy4.src = images[13];
+							copy0.innerHTML = 'Watch Out<br/>' + cityname;
+							
+							init();
+						}
+					/* /Loading of the images */
+
+				}
+			/* /Loading of the all things */
+			
+			/* Transitions of the animations */
+				function init() {
+					$('#labAd').css({
+						'visibility': 'visible',
+						'opacity': '1'
+					});
+
+					if (labAd.dpr > 1) {
+						setTimeout(animation1, 2000);
+					} else {
+						setTimeout(animation1, 1000);
+					}
+				}
+			
+				function animation1() {
+					background1.style.opacity = 1;
+
+					setTimeout(function() {
+						copy0.style.opacity = 1;
+						background2.style.opacity = 1;
+						copy1.style.opacity = 1;
+						photo1.style.opacity = 1;
+
+						setTimeout(function() {
+							background1.style.opacity = 0;
+							copy0.style.opacity = 0;
+
+							setTimeout(function() {
+								photo1.classList.add('photo1_translate3d_0');
+
+								setTimeout(function() {
+									photo1.classList.add('photo1_translate3d_-300');
+
+									setTimeout(function() {
+										copy1.style.opacity = 0;
+										copy2.style.opacity = 1;
+
+										setTimeout(function() {
+											photo2.classList.add('photo2_translate3d_0');
+											photo2_shadow.classList.add('photo2_shadow_opacity');
+
+											setTimeout(function() {
+												photo2.classList.add('photo2_rotateZ_0');
+
+												setTimeout(function() {
+													photo2.classList.add('photo2_rotateZ_5');
+
+													setTimeout(function() {
+														photo2.classList.remove('photo2_rotateZ_5');
+
+														setTimeout(function() {
+															photo2.style.opacity = 0;
+															photo2_shadow.classList.remove('photo2_shadow_opacity');
+															copy2.style.opacity = 0;
+
+															setTimeout(function() {
+																photo3_left.classList.add('photo3_left_transform');
+																photo3_right.classList.add('photo3_right_transform');
+
+																setTimeout(function() {
+																	photo3_left.style.opacity = 0;
+																	photo3_right.style.opacity = 0;
+																	
+																	photo4_center.style.opacity = 1;
+																	photo4_left.classList.add('photo4_left_transform');
+
+																	setTimeout(function() {
+																		photo4_left.classList.add('photo4_opacity_transition');
+																		photo4_left.style.opacity = 0;
+																		photo4_center.classList.add('photo4_opacity_transition');
+																		photo4_center.style.opacity = 0;
+																		background2_logo_block.style.opacity = 1;
+
+																		setTimeout(function() {
+																			copy3.style.opacity = 1;
+
+																			setTimeout(function() {
+																				copy4.style.opacity = 1;
+
+																				setTimeout(function() {
+																					photo5.style.opacity = 1;
+																				}, 500);
+																			}, 500);
+																		}, 500);
+																	}, 1000);
+																}, 1500);
+															}, 500);
+														}, 2000);
+													}, 100);
+												}, 100);
+											}, 800);
+										}, 500);
+									}, 500);
+								}, 3000);
+							}, 1000);
+						}, 2000);
+					}, 1000);
+				}
+			/* /Transitions of the animations */
+
+			function dataSave(JSON) {
+				try{
+					labAd.data = JSON;
+					if (JSON.status == 200) {
+						// var adVars = setVars();
+						showAd(setVars());
+					} else {
+						showDefault("dataSaveReboot: status = " + JSON.status);
+					}
+				}catch(err){
+					labAd.errors.push(err);
+					showDefault(err.message);
+					console.log(labAd.errors);
+				}
+			}
+
+			function exitClick() {
+				console.log("exitClick");
+				window.open(labAd.tracking.dfpClick + labAd.tracking.clickTAG,"_blank");
+			}
+
+			function setVars() {
+				try{
+					// change this function to return build a local vars object and return it
+					var adVars = {};
+						// adVars.zipcode = labAd.data.body[0].doc.locId; // This is the code to get and set current zipcode
+						// adVars.cityname = labAd.data.body[0].doc.cityNm; // This is the code to get and set the current city name
+						// adVars.sky = labAd.data.body[1].doc.MOData.sky; // This is the code to get and set the current sky value
+						// adVars.weather = initAdCond(adVars.sky).b.toLowerCase(); // This is the code to get and set the current weather
+						// adVars.temperature = labAd.data.body[1].doc.MOData.tmpF; // This is the code to get and set the current temperature
+
+						adVars.cityname = labAd.data.body[0].doc.cityNm;
+
+					// if (labAd.testMode) {
+					// 	try {
+						// For Local LiveTest
+							// adVars.temp = parent.testProps.temp;
+							// adVars.weather = parent.testProps.weatherCond;
+						// /For Local LiveTest
+					// 	} catch(err) {
+						// For Local Test
+							// adVars.temp = labAd.testVars.temp;
+							// adVars.weather = labAd.testVars.weather;
+						// /For Local Test
+					// 	}
+					// }
+
+					// create vars to store the specific info the ad needs from loaded data
+
+					return adVars;
+				}catch(err){
+					labAd.errors.push(err);
+					showDefault(err.message);
+					console.log(labAd.errors);
+				}
+			}
+
+			function toTitleCase(str) {
+				return str.replace(/\w\S*/g, function(txt) {
+					return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+				});
+			}
+
+			function showDefault(reason) {
+				try{
+					$('#labAd').css({
+						'background': 'url(' + labAd.dir + labAd.defaultImg + image_pixel_ratio + '.jpg) no-repeat 0 0',
+						'background-size': '300px 250px',
+						'visibility': 'visible',
+						'opacity': '1'
+					});
+					$("#labAd").children().hide();
+					$("#border").show();
+					$('#labAd').append('<span style="display:none;">'+reason+'</span>');
+				}catch(err){
+					labAd.errors.push(err);
+					console.log(labAd.errors);
+				}
+			}
+
+			function csWritePixel(){
+				if (labAd.tracking.pixel!="") {
+						var tDiv = document.createElement("div");
+						tDiv.innerHTML="<img src="+labAd.tracking.pixel+" height='1' width='1' border='0' style='display:none'>";
+						document.body.appendChild(tDiv);
+				}
+			}
+			
+			function csWritePixel2() {
+				if (labAd.tracking.pixel2!="") {
+						var tDiv = document.createElement("div");
+						tDiv.innerHTML="<img src="+labAd.tracking.pixel2+" height='1' width='1' border='0' style='display:none'>";
+						document.body.appendChild(tDiv);
+				}
+			}
+		</script>
+	<!-- /JavaScript Codes -->
+</body>
+</html>

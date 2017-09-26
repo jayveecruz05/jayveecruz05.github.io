@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TWC380 - ServPro</title>
+	
+	<!--
+
+		Project Name: TWC380 - ServPro;
+
+		Ads Size: 300x250, Mobile;
+
+		Client: The Weather Channel;
+
+		File Name: index.html;
+
+		Author: Jayvee O. Cruz;
+
+	-->
+
+	<!-- Meta's Codes -->
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<!-- /Meta's Codes -->
+
+	<!-- CSS Codes -->
+		<style type="text/css">
+			/*nomalize.min.css*/
+			
+			/*
+			@font-face {
+					 font-family: 'OpenSansBold';
+					 src: url('http://creativepreview.wideout.com/TWC/TWC219/Branded/OpenSans-Bold.eot');
+					 src: url('http://creativepreview.wideout.com/TWC/TWC219/Branded/OpenSans-Bold.eot?#iefix') format('embedded-opentype'),
+					 url('http://creativepreview.wideout.com/TWC/TWC219/Branded/OpenSans-Bold.woff') format('woff'),
+					 url('http://creativepreview.wideout.com/TWC/TWC219/Branded/OpenSans-Bold.ttf')  format('truetype');
+			}
+			*/
+			
+			* {
+				margin: 0;
+				padding: 0;
+				line-height: 0;
+				-webkit-touch-callout: none;
+				-webkit-user-select: none;
+				-khtml-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+				outline: none;
+
+				-webkit-tap-highlight-color: rgba(255, 255, 255, 0);  /* mobile webkit */
+				-moz-tap-highlight-color: rgba(255, 255, 255, 0);
+				-ms-tap-highlight-color: rgba(255, 255, 255, 0);
+				tap-highlight-color: rgba(255, 255, 255, 0);
+
+				-webkit-transform-style: preserve-3d;
+				-moz-transform-style: preserve-3d;
+				-ms-transform-style: preserve-3d;
+				transform-style: preserve-3d;
+			}
+
+			#labAd {
+				margin: 0;
+				padding: 0;
+				line-height: 0;
+				width: 300px;
+				height: 250px;
+				position: relative;
+				background-color: #FFF;
+				cursor: default;
+				overflow: hidden;
+				visibility: hidden;
+				opacity: 0;
+			}
+
+			#labAd * {
+				margin: 0;
+				padding: 0;
+				line-height: 0;
+			}
+			
+			#labAd div {
+				position: absolute;
+				background-size: cover;
+				background-repeat: no-repeat;
+			}
+
+			#labAd img {
+				position: absolute;
+			}
+
+			.border {
+				width: 300px;
+				height: 250px;
+				border: 1px solid #FFF;
+				box-sizing: border-box;
+			}
+			
+			.background1, .background2,
+			.copy, .background3 {
+				opacity: 0;
+				width: 300px;
+				height: 250px;
+
+				-webkit-transition: opacity 1s ease-in-out;
+				-moz-transition: opacity 1s ease-in-out;
+				-ms-transition: opacity 1s ease-in-out;
+				transition: opacity 1s ease-in-out;
+			}
+
+			.background1 {
+				opacity: 1;
+			}
+		</style>
+	<!-- /CSS Codes -->
+</head>
+<body>
+	<div id="csTracking" style="display:none;">
+		<!-- Line Item %eaid! ==  Creative ID %ecid! -->
+	</div>
+	
+	<div id="labAd">
+		<!-- <img id="background" class="background" src="" alt="" /> -->
+		<div id="background1" class="background1"></div>
+		<div id="background2" class="background2"></div>
+		<div id="copy" class="copy"></div>
+		<div id="background3" class="background3"></div>
+		<div id="border" class="border"></div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="jquery.min.js"><\/script>')</script>
+	
+	<!-- JavaScript Codes -->
+		<script type="text/javascript">
+			var labAd = {
+				// dir: "",
+				dir: "",
+				width: 300,
+				height: 250,
+				defaultImg: "default",
+				alt: "TWC380 - ServPro",
+				dpr: window.devicePixelRatio,
+				data: {},
+				ids: { // various id strings for this ad
+					creative: "%ecid!",
+					lineItem: "%eaid!",
+					loc: "%%PATTERN:zip%%"
+				},
+				errors: [],
+				isMobile: false,
+				tracking: {
+					dfpClick:"%%CLICK_URL_UNESC%%",
+					pixel:"",
+					clickTAG:"",
+					pixel2:""
+				},
+				vars: {},
+				testVars: {
+					loc: "90210",
+					temp: "45",
+					weather: "Sunny"
+				},
+				testMode: false,
+				urlTest: {
+					test: false
+				}
+			}
+
+			// Image Pixel Ratio
+				if (labAd.dpr > 1) {
+					var image_pixel_ratio = '@2x/';
+				} else {
+					var image_pixel_ratio = '@1x/';
+				}
+
+			$(function() {
+				csWritePixel()
+				try{
+					// jump into testMode for DFP preview
+					//if (window.location.origin == 'http://partner.googleadservices.com') {labAd.testMode = true};
+					if (!window.location.origin)
+						 window.location.origin = window.location.protocol+"//"+window.location.host;
+					if(/(file|wideout|localhost)/i.test(window.location.origin)) labAd.testMode = true;
+					// adjust for testMode
+					if (labAd.testMode) {
+						try {
+							labAd.ids.loc = parent.testProps.zip;
+							labAd.testVars.loc = parent.testProps.zip;
+							console.log("TestProps ZipCode: " + labAd.ids.loc);
+							labAd.tracking.dfpClick = "";
+						} catch(err) {
+							labAd.ids.loc = labAd.testVars.loc;
+							console.log("TestVars ZipCode: " + labAd.ids.loc);
+							labAd.tracking.dfpClick = "";
+						}
+
+						// labAd.dpr = 1;
+						// $("body").append("<div style='position:absolute;top:0;right:0;background-color:#f00;color:#fff;padding:5px;'>TestMode</div>");
+					};
+					// define console for browsers that do not support it so no errors are thrown
+					if (!window.console) console = {
+						log: function() {}
+					};
+
+					// get dsx data
+					// $.ajax({
+					// 	url:"https://dsx.weather.com/wxd/v2/(MORecord)/en_US/(" + labAd.ids.loc + ":4:US)?api=7bb1c920-7027-4289-9c96-ae5e263980bc&jsonp=dataSave",
+					// 		dataType: "script",
+					// 	type: "GET"
+					// })
+
+
+					// Comment dsx data ajax code when not needed and uncomment showAd(setVars());
+					// showAd(setVars());
+					showAd();
+
+					// .success(function(data) {
+					//         console.log("ajax success",labAd.vars);
+					//     })
+					// .fail(function() {
+					//     alert( "failed" );
+					//   })
+					// .always(function() {
+					//     // alert( "complete" );
+					//   });
+
+					// set click handlers
+					// $('#labAd').click(function(event) {
+					// 	exitClick();
+					// });
+
+					console.log(labAd);
+				}catch(err){
+					labAd.errors.push(err);
+					showDefault(err.message);
+					console.log(labAd.errors);
+				}
+			});
+
+			function initAdCond(a) {
+				var b;
+				switch (String(a)) {
+					case "0":b = {i: "0",b: "Cloudy",d: "Tornado", t: "na"};break;
+					case "1":b = {i: "1",b: "Cloudy",d: "Tropical Storm",t: "na"};break;
+					case "2":b = {i: "2",b: "Cloudy",d: "Hurricane",t: "na"};break;
+					case "3":b = {i: "3",b: "Cloudy",d: "Strong Thunderstorms",t: "na"};break;
+					case "4":b = {i: "4",b: "Cloudy",d: "Thunderstorms",t: "na"};break;
+					case "5":b = {i: "5",b: "Wintry",d: "Rain and Snow",t: "na"};break;
+					case "6":b = {i: "6",b: "Wintry",d: "Rain and Sleet",t: "na"};break;
+					case "7":b = {i: "7",b: "Wintry",d: "Wintry Mix",t: "na"};break;
+					case "8":b = {i: "8",b: "Wintry",d: "Freezing Drizzle",t: "na"};break;
+					case "9":b = {i: "9",b: "Rainy",d: "Drizzle",t: "na"};break;
+					case "10":b = {i: "10",b: "Rainy",d: "Freezing Rain",t: "na"};break;
+					case "11":b = {i: "11",b: "Rainy",d: "Showers",t: "na"};break;
+					case "12":b = {i: "12",b: "Rainy",d: "Rain",t: "na"};break;
+					case "13":b = {i: "13",b: "Wintry",d: "Flurries",t: "na"};break;
+					case "14":b = {i: "14",b: "Wintry",d: "Snow Showers",t: "na"};break;
+					case "15":b = {i: "15",b: "Wintry",d: "Blowing Snow",t: "na"};break;
+					case "16":b = {i: "16",b: "Wintry",d: "Snow",t: "na"};break;
+					case "17":b = {i: "17",b: "Wintry",d: "Hail",t: "na"};break;
+					case "18":b = {i: "18",b: "Wintry",d: "Sleet",t: "na"};break;
+					case "19":b = {i: "19",b: "Cloudy",d: "Dust",t: "na"};break;
+					case "20":b = {i: "20",b: "Cloudy",d: "Fog",t: "na"};break;
+					case "21":b = {i: "21",b: "Cloudy",d: "Haze",t: "na"};break;
+					case "22":b = {i: "22",b: "Cloudy",d: "Smoke",t: "na"};break;
+					case "23":b = {i: "23",b: "Cloudy",d: "Breezy",t: "na"};break;
+					case "24":b = {i: "24",b: "Cloudy",d: "Windy",t: "na"};break;
+					case "25":b = {i: "25",b: "Wintry",d: "Frigid",t: "na"};break;
+					case "26":b = {i: "26",b: "Cloudy",d: "Cloudy",t: "na"};break;
+					case "27":b = {i: "27",b: "Cloudy",d: "Mostly Cloudy",t: "night"};break;
+					case "28":b = {i: "28",b: "Cloudy",d: "Mostly Cloudy",t: "day"};break;
+					case "29":b = {i: "29",b: "Cloudy",d: "Partly Cloudy",t: "night"};break;
+					case "30":b = {i: "30",b: "Cloudy",d: "Partly Cloudy",t: "day"};break;
+					case "31":b = {i: "31",b: "Cloudy",d: "Clear",t: "night"};break;
+					case "32":b = {i: "32",b: "Sunny",d: "Sunny",t: "day"};break;
+					case "33":b = {i: "33",b: "Cloudy",d: "Mostly Clear",t: "night"};break;
+					case "34":b = {i: "34",b: "Sunny",d: "Mostly Sunny",t: "day"};break;
+					case "35":b = {i: "35",b: "Wintry",d: "Mixed Rain/Hail",t: "na"};break;
+					case "36":b = {i: "36",b: "Sunny",d: "Hot",t: "day"};break;
+					case "37":b = {i: "37",b: "Cloudy",d: "Isolated Thunderstorms",t: "day"};break;
+					case "38":b = {i: "38",b: "Cloudy",d: "Scattered Thunderstorms",t: "day"};break;
+					case "39":b = {i: "39",b: "Rainy",d: "Scattered Showers", t: "day"};break;
+					case "40":b = {i: "40",b: "Rainy",d: "Heavy Rain", t: "na"};break;
+					case "41":b = {i: "41",b: "Wintry",d: "Scattered Snow Showers",t: "na"};break;
+					case "42":b = {i: "42",b: "Wintry",d: "Heavy Snow",t: "na"};break;
+					case "43":b = {i: "43",b: "Wintry",d: "Blizzard",t: "na"};break;
+					case "44":b = {i: "44",b: "Default",d: "Not Available",t: "na"};break;
+					case "45":b = {i: "45",b: "Rainy",d: "Scattered Showers",t: "night"};break;
+					case "46":b = {i: "46",b: "Wintry",d: "Scattered Snow Showers",t: "night"};break;
+					case "47":b = {i: "47",b: "Cloudy",d: "Scattered Thunderstorms",t: "night"};break;
+					default:b = {i: "na",b: "Default",d: "Not Available",t: "na"};break;
+				}
+				return b
+			}
+
+			var images,
+				loadedImage = 0;
+				// cachebuster = '?%%CACHEBUSTER%%'
+
+			// function fontStyle() {
+			// 	var fontStyle = document.createElement('style');
+			// 		fontStyle.type = 'text/css';
+			// 		fontStyle.innerHTML = '@font-face {' +
+	  //   								  'font-family: "ITCAvantGardeGothicBold";' +
+	  //   								  'src: url("' + labAd.dir + 'assets/ITCAvantGardeGothicBold.eot");' +
+	  //   								  'src: url("' + labAd.dir + 'assets/ITCAvantGardeGothicBold.eot") format("embedded-opentype"),' +
+	  //        							       'url("' + labAd.dir + 'assets/ITCAvantGardeGothicBold.woff") format("woff"),' +
+	  //        							       'url("' + labAd.dir + 'assets/ITCAvantGardeGothicBold.ttf") format("truetype");' +
+			// 							  '}' +
+
+			// 							  '@font-face {' +
+			// 						      'font-family: "ITCAvantGardeGothicExtraLight";' +
+			// 						      'src: url("' + labAd.dir + 'assets/ITCAvantGardeGothicExtraLight.eot");' +
+			// 						      'src: url("' + labAd.dir + 'assets/ITCAvantGardeGothicExtraLight.eot") format("embedded-opentype"),' +
+			// 						           'url("' + labAd.dir + 'assets/ITCAvantGardeGothicExtraLight.woff") format("woff"),' +
+			// 						           'url("' + labAd.dir + 'assets/ITCAvantGardeGothicExtraLight.ttf") format("truetype");' +
+			// 						      '}';
+
+			// 	document.head.appendChild(fontStyle);
+			// }
+
+			function showAd(adVars) {
+				try{
+					labAd.vars = adVars;
+					// set dynamic text
+					//no dynamic text
+					// pixel ratio adjustments
+
+					var randomWeatherSky = Math.floor((Math.random() * 48));
+					weather = initAdCond(randomWeatherSky).b.toLowerCase();
+
+					switch (weather) {
+						case "cloudy":
+						case "sunny":
+							weathers = "cloudy_sunny";
+						break;
+
+						case "rainy":
+						case "wintry":
+							weathers = "rainy_wintry";
+						break;
+
+						default:
+							weather = "cloudy";
+							weathers = "cloudy_sunny";
+						break;
+					}
+
+					console.log("Current Weather:", weather);
+					
+					/* Array of Images */
+						images = new Array(
+							labAd.dir + "assets/" + image_pixel_ratio + "background1_" + weather + ".jpg", // + cachebuster
+							labAd.dir + "assets/" + image_pixel_ratio + "background2_" + weather + ".jpg",
+							labAd.dir + "assets/" + image_pixel_ratio + "background3_" + weathers + ".jpg",
+							labAd.dir + "assets/" + image_pixel_ratio + "copyAll.jpg"
+						);
+					/* /Array of Images */
+					
+					/* Looping of the images */
+						for (i = 0; i < images.length; i++) {
+							imageObj = new Image();
+							imageObj.src = images[i];
+							imageObj.addEventListener("load", iLoad, false);
+						}
+					/* /Looping of the images */
+
+				}catch(err){
+					labAd.errors.push(err);
+					showDefault(err.message);
+					console.log(labAd.errors);
+				}
+			}
+			
+			/* Loading of the all things */
+				function iLoad() {
+
+					loadedImage++;
+					
+					/* Loading of the images */
+						if (images.length == loadedImage) {
+							// background.src = images[0];
+							background1.style.backgroundImage = 'url("' + images[0] + '")';
+							background2.style.backgroundImage = 'url("' + images[1] + '")';
+							background3.style.backgroundImage = 'url("' + images[2] + '")';
+							copy.style.backgroundImage = 'url("' + images[3] + '")';
+							
+							init();
+						}
+					/* /Loading of the images */
+
+				}
+			/* /Loading of the all things */
+			
+			/* Transitions of the animations */
+				function init() {
+					$('#labAd').css({
+						'visibility': 'visible',
+						'opacity': '1'
+					});
+
+					setTimeout(animation1, 3000);
+				}
+			
+				function animation1() {
+					background2.style.opacity = 1;
+
+					setTimeout(animation2, 3000);
+				}
+
+				function animation2() {
+					copy.style.opacity = 1;
+
+					setTimeout(animation3, 1500);
+				}
+
+				function animation3() {
+					background3.style.opacity = 1;
+				}
+			/* /Transitions of the animations */
+
+			function dataSave(JSON) {
+				try{
+					labAd.data = JSON;
+					if (labAd.data.body[0].status == 200) {
+						// var adVars = setVars();
+						showAd(setVars());
+					} else {
+						showDefault("dataSaveReboot: Status = " + labAd.data.body[0].status);
+					}
+				}catch(err){
+					labAd.errors.push(err);
+					showDefault(err.message);
+					console.log(labAd.errors);
+				}
+			}
+
+			function exitClick() {
+				console.log("exitClick");
+				window.open(labAd.tracking.dfpClick + labAd.tracking.clickTAG,"_blank");
+			}
+
+			function setVars() {
+				try{
+					// change this function to return build a local vars object and return it
+					var adVars = {};
+						// adVars.zipcode = labAd.data.body[0].doc.locId; // This is the code to get and set current zipcode
+						// adVars.cityname = labAd.data.body[0].doc.cityNm; // This is the code to get and set the current city name
+						adVars.sky = labAd.data.body[0].doc.MOData.sky; // This is the code to get and set the current sky value
+						adVars.weather = initAdCond(adVars.sky).b.toLowerCase(); // This is the code to get and set the current weather
+						// adVars.temperature = labAd.data.body[1].doc.MOData.tmpF; // This is the code to get and set the current temperature
+
+					if (labAd.testMode) {
+						try {
+						// For Local LiveTest
+							// adVars.temperature = parent.testProps.temperature;
+							adVars.sky = parent.testProps.weatherConditionSky;
+							adVars.weather = initAdCond(adVars.sky).b.toLowerCase();
+							console.log('Data Status: Data From TestProps');
+						// /For Local LiveTest
+						} catch(err) {
+						// For Local Test
+							// adVars.temperature = labAd.data.body[1].doc.MOData.tmpF;
+							adVars.sky = labAd.data.body[0].doc.MOData.sky;
+							adVars.weather = initAdCond(adVars.sky).b.toLowerCase();
+							console.log('Data Status: Data From DSX Server');
+						// /For Local Test
+						}
+					}
+
+					// allow urlTest.on to be set via url - if test=true
+					getUrlParameter('test');
+
+					// do test parameters override?
+					if (labAd.urlTest.test == true) {
+					   adVars.weather = getUrlParameter('cond').toLowerCase();
+
+					   console.log("Url Test: " + labAd.urlTest.test);
+					   console.log(labAd.urlTest);
+					} else {
+					   console.log("Url Test: " + labAd.urlTest.test);
+					}
+
+					// create vars to store the specific info the ad needs from loaded data
+
+					return adVars;
+				}catch(err){
+					labAd.errors.push(err);
+					showDefault(err.message);
+					console.log(labAd.errors);
+				}
+			}
+
+			function getUrlParameter(sParam) {
+			   try {
+			       var sPageURL = decodeURIComponent(parent.window.location.search.substring(1)),
+			           sURLVariables = sPageURL.split('&'),
+			           sParameterName,
+			           i,
+			           matched,
+			           len = sURLVariables.length;
+
+			           // data of every array data
+			           // console.log(sURLVariables);
+
+			       for (i = 0; i < len; i++) {
+			           sParameterName = sURLVariables[i].split('=');
+
+			           // define data of every array data
+			           // console.log(sParameterName);
+
+			           // add all params to the config obj
+			           labAd.urlTest[sParameterName[0]] = sParameterName[1];
+
+			           // if called for a specific param, return that too
+			           if (sParameterName[0] === sParam) {
+			               matched = sParameterName[1] === undefined ? true : sParameterName[1];
+
+			               // if matched param is test and value is true, set test.on = true
+			               if (sParam == 'test' && matched == 'true') {
+			                   labAd.urlTest.test = true;
+			               }
+			           }
+			       }
+			       return matched;
+			   } catch(err) {
+					labAd.errors.push(err);
+					showDefault(err.message);
+					console.log(labAd.errors);
+			   }
+			}
+
+			// .toTitleCase(); = Converting any string Title Case
+			String.prototype.toTitleCase = function() {
+			    return this.replace(/\w\S*/g, function(txt) {
+			      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+			    });
+			};
+
+			function showDefault(reason) {
+				try{
+					$('#labAd').css({
+						'background': 'url(' + labAd.dir + "assets/" + image_pixel_ratio + labAd.defaultImg + '.jpg) no-repeat 0 0',
+						'background-size': labAd.width + 'px ' + labAd.height + 'px',
+						'visibility': 'visible',
+						'opacity': '1'
+					});
+					$("#labAd").children().hide();
+					$("#border").show();
+					$('#labAd').append('<span style="display:none;">'+reason+'</span>');
+					console.log(reason);
+				}catch(err){
+					labAd.errors.push(err);
+					console.log(labAd.errors);
+				}
+			}
+
+			function csWritePixel(){
+				if (labAd.tracking.pixel!="") {
+						var tDiv = document.createElement("div");
+						tDiv.innerHTML="<img src="+labAd.tracking.pixel+" height='1' width='1' border='0' style='display:none'>";
+						document.body.appendChild(tDiv);
+				}
+			}
+			
+			function csWritePixel2() {
+				if (labAd.tracking.pixel2!="") {
+						var tDiv = document.createElement("div");
+						tDiv.innerHTML="<img src="+labAd.tracking.pixel2+" height='1' width='1' border='0' style='display:none'>";
+						document.body.appendChild(tDiv);
+				}
+			}
+		</script>
+	<!-- /JavaScript Codes -->
+</body>
+</html>

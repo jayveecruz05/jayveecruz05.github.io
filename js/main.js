@@ -28,7 +28,7 @@ function initiate() {
 
 	tagCanvas();
 
-	iFrame();
+	// iFrame();
 }
 
 function customStyle() {
@@ -105,19 +105,19 @@ function tagCanvas() {
 	});
 }
 
-function iFrame() {
-	var iFrame = document.getElementsByTagName('iframe');
+// function iFrame() {
+// 	var iFrame = document.getElementsByTagName('iframe');
 
-	for (var f = 0; f < iFrame.length; f++) {
-		iFrame[f].contentWindow.window.document.body.style.cssText = 'margin: 0; padding:0';
+// 	for (var f = 0; f < iFrame.length; f++) {
+// 		iFrame[f].contentWindow.window.document.body.style.cssText = 'margin: 0; padding:0';
 
-		var offsetWidth = iFrame[f].contentWindow.window.document.body.offsetWidth,
-			offsetHeight = iFrame[f].contentWindow.window.document.body.offsetHeight;
+// 		var offsetWidth = iFrame[f].contentWindow.window.document.body.offsetWidth,
+// 			offsetHeight = iFrame[f].contentWindow.window.document.body.offsetHeight;
 
-		iFrame[f].style.cssText = 'width: ' + offsetWidth + 'px;' +
-								  'height: ' + offsetHeight + 'px';
-	}
-}
+// 		iFrame[f].style.cssText = 'width: ' + offsetWidth + 'px;' +
+// 								  'height: ' + offsetHeight + 'px';
+// 	}
+// }
 
 // Automatic Functions
 var getElementById = function(elementId) {
