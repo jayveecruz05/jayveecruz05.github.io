@@ -109,6 +109,12 @@ body, html {
 	font-weight: bold;
 	font-size: 2em;
 	display: table-caption;
+	opacity: 0;
+
+	-webkit-transform: perspective(1000px) scale(0.8);
+    -moz-transform: perspective(1000px) scale(0.8);
+    -ms-transform: perspective(1000px) scale(0.8);
+    transform: perspective(1000px) scale(0.8);
 }
 
 .contentTitle {

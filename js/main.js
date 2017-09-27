@@ -13,7 +13,9 @@ var imageLoaded = 0,
 		'monitor.png',
 		'gear.png',
 		'megaphone.png'
-	];
+	],
+	iframeCount = 0,
+	richMediaAnimationGo = 0;
 
 function initiate() {
 	// Display The Website
@@ -28,10 +30,11 @@ function initiate() {
 	checkElementIfVisible();
 	window.addEventListener('scroll', checkElementIfVisible);
 
+	// Initiate Word Cloud
 	tagCanvas();
 
-	// iFrame();
-	// Iframe Animation
+	// Rich Media
+	iFrame();
 }
 
 function customStyle() {
@@ -88,29 +91,58 @@ function checkElementIfVisible() {
 	}
 
 	if (checkIfVisibleById('contentsHolder2')) {
-		select('#contentsHolder2 .content').setStyle({
+		select('#contentsHolder2 .contentCaption').setStyle({
 			'opacity': 1,
 			'transform': 'perspective(1000px) scale(1)',
 			'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
 		});
 
-		setTimeout(function() {
+		if (checkIfVisibleById('richMedia1')) {
+			select('#contentsHolder2 #richMedia1').setStyle({
+				'opacity': 1,
+				'transform': 'perspective(1000px) scale(1)',
+				'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
+			});
+
+			richMediaAnimationGo++;
 			localStorage['creativeName'] += 'adidas,';
+		}
+
+		if (checkIfVisibleById('richMedia2')) {
+			select('#contentsHolder2 #richMedia2').setStyle({
+				'opacity': 1,
+				'transform': 'perspective(1000px) scale(1)',
+				'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
+			});
+
+			richMediaAnimationGo++;
 			localStorage['creativeName'] += 'pill-pockets,';
-		}, 1000);
+		}
 	}
 
 	if (checkIfVisibleById('contentsHolder3')) {
-		select('#contentsHolder3 .content').setStyle({
-			'opacity': 1,
-			'transform': 'perspective(1000px) scale(1)',
-			'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
-		});
 
-		setTimeout(function() {
+		if (checkIfVisibleById('richMedia3')) {
+			select('#contentsHolder3 #richMedia3').setStyle({
+				'opacity': 1,
+				'transform': 'perspective(1000px) scale(1)',
+				'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
+			});
+
+			richMediaAnimationGo++;
 			localStorage['creativeName'] += 'servpro,';
+		}
+
+		if (checkIfVisibleById('richMedia4')) {
+			select('#contentsHolder3 #richMedia4').setStyle({
+				'opacity': 1,
+				'transform': 'perspective(1000px) scale(1)',
+				'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
+			});
+
+			richMediaAnimationGo++;
 			localStorage['creativeName'] += 'maui-jim,';
-		}, 1000);
+		}
 	}
 }
 
@@ -134,19 +166,20 @@ function tagCanvas() {
 	});
 }
 
-// function iFrame() {
-// 	var iFrame = document.getElementsByTagName('iframe');
+function iFrame() {
+	var iFrame = document.getElementsByTagName('iframe');
+		iframeCount = iFrame.length;
 
-// 	for (var f = 0; f < iFrame.length; f++) {
-// 		iFrame[f].contentWindow.window.document.body.style.cssText = 'margin: 0; padding:0';
+	// for (var f = 0; f < iFrame.length; f++) {
+	// 	iFrame[f].contentWindow.window.document.body.style.cssText = 'margin: 0; padding:0';
 
-// 		var offsetWidth = iFrame[f].contentWindow.window.document.body.offsetWidth,
-// 			offsetHeight = iFrame[f].contentWindow.window.document.body.offsetHeight;
+	// 	var offsetWidth = iFrame[f].contentWindow.window.document.body.offsetWidth,
+	// 		offsetHeight = iFrame[f].contentWindow.window.document.body.offsetHeight;
 
-// 		iFrame[f].style.cssText = 'width: ' + offsetWidth + 'px;' +
-// 								  'height: ' + offsetHeight + 'px';
-// 	}
-// }
+	// 	iFrame[f].style.cssText = 'width: ' + offsetWidth + 'px;' +
+	// 							  'height: ' + offsetHeight + 'px';
+	// }
+}
 
 // Automatic Functions
 var getElementById = function(elementId) {
