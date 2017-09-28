@@ -31,7 +31,7 @@
 
 body, html {
     height: 100%;
-    background-color: #022B3A;
+    background-color: #0071bc;
     display: none;
 }
 
@@ -245,4 +245,32 @@ body, html {
 .creations .content {
 	width: 25em;
 	padding: 15px 0 40px 0;
+}
+
+.footer {
+	width: 100%;
+	height: auto;
+	background-color: #0071bc;
+	font-family: CourierNew, sans-serif;
+	font-weight: bold;
+	text-align: center;
+	font-size: 100%;
+	color: #FFF;
+	padding: 3em 0;
+}
+
+.footer p {
+	padding: 1.5em 0 0 0;
+}
+
+#email {
+	background-color: #FFF;
+	color: #0071bc !important;
+	display: inline-block;
+	padding: 1em;
+	font-size: 1.4em;
+}
+
+#copyright span {
+	display: inline-block;
 }

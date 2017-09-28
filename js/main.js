@@ -13,9 +13,7 @@ var imageLoaded = 0,
 		'monitor.png',
 		'gear.png',
 		'megaphone.png'
-	],
-	iframeCount = 0,
-	richMediaAnimationGo = 0;
+	];
 
 function initiate() {
 	// Display The Website
@@ -34,7 +32,7 @@ function initiate() {
 	tagCanvas();
 
 	// Rich Media
-	iFrame();
+	// iFrame();
 }
 
 function customStyle() {
@@ -91,57 +89,65 @@ function checkElementIfVisible() {
 	}
 
 	if (checkIfVisibleById('contentsHolder2')) {
-		select('#contentsHolder2 .contentCaption').setStyle({
+		select('.contentCaption').setStyle({
 			'opacity': 1,
 			'transform': 'perspective(1000px) scale(1)',
 			'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
 		});
 
 		if (checkIfVisibleById('richMedia1')) {
-			select('#contentsHolder2 #richMedia1').setStyle({
-				'opacity': 1,
-				'transform': 'perspective(1000px) scale(1)',
-				'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
-			});
+			if (getElementById('richMedia1').classList.value.indexOf('active') == -1) {
+				select('#contentsHolder2 #richMedia1').setStyle({
+					'opacity': 1,
+					'transform': 'perspective(1000px) scale(1)',
+					'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
+				});
 
-			richMediaAnimationGo++;
-			localStorage['creativeName'] += 'adidas,';
+				localStorage['creativeName'] += 'adidas,';
+				getElementById('richMedia1').classList.add('active');
+			}
 		}
 
 		if (checkIfVisibleById('richMedia2')) {
-			select('#contentsHolder2 #richMedia2').setStyle({
-				'opacity': 1,
-				'transform': 'perspective(1000px) scale(1)',
-				'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
-			});
+			if (getElementById('richMedia2').classList.value.indexOf('active') == -1) {
+				select('#contentsHolder2 #richMedia2').setStyle({
+					'opacity': 1,
+					'transform': 'perspective(1000px) scale(1)',
+					'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
+				});
 
-			richMediaAnimationGo++;
-			localStorage['creativeName'] += 'pill-pockets,';
+				localStorage['creativeName'] += 'pill-pockets,';
+				getElementById('richMedia2').classList.add('active');
+			}
 		}
 	}
 
 	if (checkIfVisibleById('contentsHolder3')) {
 
 		if (checkIfVisibleById('richMedia3')) {
-			select('#contentsHolder3 #richMedia3').setStyle({
-				'opacity': 1,
-				'transform': 'perspective(1000px) scale(1)',
-				'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
-			});
+			if (getElementById('richMedia3').classList.value.indexOf('active') == -1) {
+				select('#contentsHolder3 #richMedia3').setStyle({
+					'opacity': 1,
+					'transform': 'perspective(1000px) scale(1)',
+					'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
+				});
 
-			richMediaAnimationGo++;
-			localStorage['creativeName'] += 'servpro,';
+				localStorage['creativeName'] += 'servpro,';
+				getElementById('richMedia3').classList.add('active');
+			}
 		}
 
 		if (checkIfVisibleById('richMedia4')) {
-			select('#contentsHolder3 #richMedia4').setStyle({
-				'opacity': 1,
-				'transform': 'perspective(1000px) scale(1)',
-				'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
-			});
+			if (getElementById('richMedia4').classList.value.indexOf('active') == -1) {
+				select('#contentsHolder3 #richMedia4').setStyle({
+					'opacity': 1,
+					'transform': 'perspective(1000px) scale(1)',
+					'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
+				});
 
-			richMediaAnimationGo++;
-			localStorage['creativeName'] += 'maui-jim,';
+				localStorage['creativeName'] += 'maui-jim,';
+				getElementById('richMedia4').classList.add('active');
+			}
 		}
 	}
 }
@@ -166,20 +172,20 @@ function tagCanvas() {
 	});
 }
 
-function iFrame() {
-	var iFrame = document.getElementsByTagName('iframe');
-		iframeCount = iFrame.length;
+// function iFrame() {
+// 	var iFrame = document.getElementsByTagName('iframe');
+// 		iframeCount = iFrame.length;
 
-	// for (var f = 0; f < iFrame.length; f++) {
-	// 	iFrame[f].contentWindow.window.document.body.style.cssText = 'margin: 0; padding:0';
+// 	// for (var f = 0; f < iFrame.length; f++) {
+// 	// 	iFrame[f].contentWindow.window.document.body.style.cssText = 'margin: 0; padding:0';
 
-	// 	var offsetWidth = iFrame[f].contentWindow.window.document.body.offsetWidth,
-	// 		offsetHeight = iFrame[f].contentWindow.window.document.body.offsetHeight;
+// 	// 	var offsetWidth = iFrame[f].contentWindow.window.document.body.offsetWidth,
+// 	// 		offsetHeight = iFrame[f].contentWindow.window.document.body.offsetHeight;
 
-	// 	iFrame[f].style.cssText = 'width: ' + offsetWidth + 'px;' +
-	// 							  'height: ' + offsetHeight + 'px';
-	// }
-}
+// 	// 	iFrame[f].style.cssText = 'width: ' + offsetWidth + 'px;' +
+// 	// 							  'height: ' + offsetHeight + 'px';
+// 	// }
+// }
 
 // Automatic Functions
 var getElementById = function(elementId) {

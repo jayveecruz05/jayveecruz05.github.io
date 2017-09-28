@@ -561,7 +561,7 @@
 					var animationGo = setInterval(function() {
 						if (localStorage['creativeName'].indexOf('adidas') > -1) {
 							clearInterval(animationGo);
-							animation1();
+							setTimeout(animation1, 1000);
 						}
 					}, 1000);
 
