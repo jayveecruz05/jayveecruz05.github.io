@@ -73,6 +73,10 @@
 	    transform: perspective(1000px) scale(1.7);
 	}
 
+	#title2 {
+		margin: 50px 0 70px 0;
+	}
+
 	#copyright span {
 	    display: block;
 	}
