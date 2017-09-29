@@ -280,6 +280,11 @@ body, html {
     font-size: 1.4em;
 }
 
+#number a {
+	color: #FFF;
+	text-decoration: none
+}
+
 #copyright span {
 	font-size: 1em;
 	line-height: 140%;
