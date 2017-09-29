@@ -254,7 +254,6 @@ body, html {
 	font-family: CourierNew, sans-serif;
 	font-weight: bold;
 	text-align: center;
-	font-size: 100%;
 	color: #FFF;
 	padding: 3em 0;
 }
@@ -271,6 +270,13 @@ body, html {
 	font-size: 1.4em;
 }
 
+#number {
+	word-spacing: -0.3em;
+    font-size: 1.4em;
+}
+
 #copyright span {
+	font-size: 1em;
+	line-height: 140%;
 	display: inline-block;
 }
