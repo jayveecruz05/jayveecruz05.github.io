@@ -662,11 +662,12 @@
 
 				hammerTime_carousel.get('swipe').set({
 					enable: true,
-					direction: Hammer.DIRECTION_ALL
+					direction: Hammer.DIRECTION_HORIZONTAL
+					// direction: Hammer.DIRECTION_ALL
 				});
 
-				hammerTime_carousel.on('swipedown', up);
-				hammerTime_carousel.on('swipeup', down);
+				// hammerTime_carousel.on('swipedown', up);
+				// hammerTime_carousel.on('swipeup', down);
 
 				hammerTime_carousel.on('swipeleft', right);
 				hammerTime_carousel.on('swiperight', left);
@@ -679,8 +680,8 @@
 				previous.removeEventListener('touchstart', left, false);
 				next.removeEventListener('touchstart', right, false);
 
-				hammerTime_carousel.off('swipedown', up);
-				hammerTime_carousel.off('swipeup', down);
+				// hammerTime_carousel.off('swipedown', up);
+				// hammerTime_carousel.off('swipeup', down);
 
 				hammerTime_carousel.off('swipeleft', right);
 				hammerTime_carousel.off('swiperight', left);
@@ -697,9 +698,10 @@
 					e.preventDefault();
 					event.preventDefault();
 				} catch(error) { // for Hammer API
-					event.stopImmediatePropagation();
-					event.stopPropagation();
-					event.preventDefault();
+					// event.stopImmediatePropagation();
+					// event.stopPropagation();
+					// event.preventDefault();
+					e.preventDefault();
 				}
 			}
 
