@@ -239,12 +239,12 @@ var getElementById = function(elementId) {
 		var selected_element = document.querySelectorAll(selected);
 
 		if (selected_element.length != 0) {
-			return new customFunction(selected_element);
+			return new CustomFunction(selected_element);
 		} else {
 			throw 'SyntaxError: element "' + selected + '" does not defined!';
 		}
 	},
-	customFunction = function(selected_element) {
+	CustomFunction = function(selected_element) {
 		this.setStyle = function(style) {
 			for (var e = 0; e < selected_element.length; e++) {
 				for (property in style) {
