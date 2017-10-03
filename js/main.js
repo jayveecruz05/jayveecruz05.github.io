@@ -177,7 +177,7 @@ function tagCanvas() {
 // 		iframeCount = iFrame.length;
 
 // 	// for (var f = 0; f < iFrame.length; f++) {
-// 	// 	iFrame[f].contentWindow.window.document.body.style.cssText = 'margin: 0; padding:0';
+// 	// 	iFrame[f].contentWindow.window.document.body.style.cssText = 'margin: 0; padding: 0;';
 
 // 	// 	var offsetWidth = iFrame[f].contentWindow.window.document.body.offsetWidth,
 // 	// 		offsetHeight = iFrame[f].contentWindow.window.document.body.offsetHeight;
