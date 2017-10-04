@@ -32,7 +32,7 @@ function initiate() {
 	tagCanvas();
 
 	// Rich Media
-	// iFrame();
+	richMediaIframe();
 }
 
 function customStyle() {
@@ -172,20 +172,22 @@ function tagCanvas() {
 	});
 }
 
-// function iFrame() {
-// 	var iFrame = document.getElementsByTagName('iframe');
-// 		iframeCount = iFrame.length;
+function richMediaIframe() {
+	var iFrame = document.getElementsByTagName('iframe');
 
-// 	// for (var f = 0; f < iFrame.length; f++) {
-// 	// 	iFrame[f].contentWindow.window.document.body.style.cssText = 'margin: 0; padding: 0;';
+	for (var f = 0; f < iFrame.length; f++) {
+		iFrame[f].marginWidth = 0;
+		iFrame[f].marginHeight = 0;
+		iFrame[f].frameBorder = 0;
+		iFrame[f].scrolling = 'no';
 
-// 	// 	var offsetWidth = iFrame[f].contentWindow.window.document.body.offsetWidth,
-// 	// 		offsetHeight = iFrame[f].contentWindow.window.document.body.offsetHeight;
+		// var offsetWidth = iFrame[f].contentWindow.window.document.body.offsetWidth,
+		// 	offsetHeight = iFrame[f].contentWindow.window.document.body.offsetHeight;
 
-// 	// 	iFrame[f].style.cssText = 'width: ' + offsetWidth + 'px;' +
-// 	// 							  'height: ' + offsetHeight + 'px';
-// 	// }
-// }
+		// iFrame[f].style.cssText = 'width: ' + offsetWidth + 'px;' +
+		// 						  'height: ' + offsetHeight + 'px';
+	}
+}
 
 // Automatic Functions
 var getElementById = function(elementId) {
