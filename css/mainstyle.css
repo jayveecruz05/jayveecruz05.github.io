@@ -32,6 +32,7 @@
 body, html {
     height: 100%;
     background-color: #0071bc;
+    overflow: hidden;
 }
 
 .title {
@@ -146,7 +147,41 @@ body, html {
 #mainContainer {
 	overflow: hidden;
 	cursor: default;
-	display: none;
+	opacity: 0;
+}
+
+#loadingScreen {
+	position: absolute;
+	width: 100%;
+	height: 100vh;
+	display: table;
+}
+
+#iconHolder {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.loadingIcon {
+	width: 100%;
+	max-width: 500px;
+	height: 100%;
+	max-height: 500px;
+	background-image: url("../assets/my_icon_v2.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	margin: 0 auto;
+	opacity: 0;
+
+	-webkit-transform: scale(0.25) perspective(1000px);
+	-moz-transform: scale(0.25) perspective(1000px);
+	-ms-transform: scale(0.25) perspective(1000px);
+	transform: scale(0.25) perspective(1000px);
+
+	-webkit-transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+	-moz-transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+	-ms-transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+	transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
 .background1 {

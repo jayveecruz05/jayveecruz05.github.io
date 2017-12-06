@@ -17,22 +17,70 @@ var imageLoaded = 0,
 
 function initiate() {
 	// Display The Website
-	select('#mainContainer').setStyle({
-		'display': 'block'
+	select('#loadingIcon').setStyle({
+		'opacity': "0"
 	});
 
-	// Custom Style
-	customStyle();
+	select('#mainContainer').setStyle({
+		'opacity': '1',
+		'transition': 'opacity 1s ease-in-out'
+	});
 
-	// Check If The Element Is Visible
-	checkElementIfVisible();
-	window.addEventListener('scroll', checkElementIfVisible);
+	setTimeout(function() {
+		// Custom Style
+		customStyle();
 
-	// Initiate Word Cloud
-	tagCanvas();
+		// Check If The Element Is Visible
+		checkElementIfVisible();
+		window.addEventListener('scroll', checkElementIfVisible);
 
-	// Rich Media
-	richMediaIframe();
+		// Initiate Word Cloud
+		tagCanvas();
+
+		// Rich Media
+		richMediaIframe();
+
+		setTimeout(function() {
+			select('body, html').setStyle({
+				'overflow': 'visible'
+			});
+		}, 1000);
+	}, 1000);
+}
+
+function setIcon() {
+	if (userDevice.isMobile()) {
+		getElementById('iconLink1').href = 'assets/iconv2.ico';
+		getElementById('iconLink1').href = 'assets/iconv2.ico';
+	} else {
+		getElementById('iconLink1').href = 'assets/iconv1.ico';
+		getElementById('iconLink1').href = 'assets/iconv1.ico';
+	}
+}
+
+var loadingIconAnimation,
+	loadingIconAnimationCount = 0;
+
+function iconAnimation() {
+	loadingIconAnimationCount++;
+
+	select('#loadingIcon').setStyle({
+		'opacity': "1",
+		'transform': 'scale(0.3) perspective(1000px)'
+	});
+
+	if (loadingIconAnimationCount < 5) {
+		setTimeout(function() {
+			select('#loadingIcon').setStyle({
+				'opacity': "0.5",
+				'transform': 'scale(0.25) perspective(1000px)'
+			});
+
+			var loadingIconAnimation = setTimeout(iconAnimation, 500);
+		}, 500);
+	} else {
+		setTimeout(initiate, 500);
+	}
 }
 
 function customStyle() {
@@ -190,7 +238,60 @@ function richMediaIframe() {
 }
 
 // Automatic Functions
-var getElementById = function(elementId) {
+var userDevice = { // Check user device
+		isWindows: function() {
+	        if (navigator.platform.indexOf("Win") > -1) {
+	            return true;
+	        } else {
+	            return false;
+	        }
+	    },
+	    isMacintosh: function() {
+	        if (navigator.platform.indexOf("Mac") > -1) {
+	            return true;
+	        } else {
+	            return false;
+	        }
+	    },
+	    isMobile: function() {
+	        if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+	            return true;
+	        } else {
+	            return false;
+	        }
+	    }
+	},
+	userBrowser = { // Check user browser
+		isChrome: function() {
+	        if (/Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor)) {
+	            return true;
+	        } else {
+	            return false;
+	        }
+	    },
+	    isFireFox: function() {
+	        if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
+	            return true;
+	        } else {
+	            return false;
+	        }
+	    },
+	    isSafari: function() {
+	        if (navigator.vendor.indexOf('Apple') > -1) {
+	            return true;
+	        } else {
+	            return false;
+	        }
+	    },
+	    isMsie: function() {
+	        if (window.navigator.userAgent.indexOf("MSIE ") > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+	            return true;   
+	        } else {
+	            return false;
+	        }
+	    }
+	},
+	getElementById = function(elementId) {
 		var element_id = document.getElementById(elementId);
 
 		if (element_id != null) {
@@ -286,18 +387,16 @@ var getElementById = function(elementId) {
 		}
 	};
 
-// var ifEverythingIsLoaded = setInterval(function() {
-// 	if (/loaded|complete/.test(document.readyState)) {
-		// clearInterval(ifEverythingIsLoaded);
-		preloadImages(); // this is the function that gets called when everything is loaded
-// 	}
-// }, 8);
-
-document.onreadystatechange = function () {
+document.onreadystatechange = function() {
     if (document.readyState == "complete") {
-    	setTimeout(initiate, 1000);
         console.log("Document State:", document.readyState);
     } else {
 		console.log("Document State:", document.readyState);
     }
 }
+
+window.addEventListener('load', function() {
+	setIcon(); // Set icon
+	iconAnimation();
+	preloadImages(); // this is the function that gets called when everything is loaded
+}, false);
