@@ -286,9 +286,18 @@ var getElementById = function(elementId) {
 		}
 	};
 
-var ifEverythingIsLoaded = setInterval(function() {
-	if (/loaded|complete/.test(document.readyState)) {
-		clearInterval(ifEverythingIsLoaded);
-		preloadImages(); // this is the function that gets called when everything is loaded
-	}
-}, 8);
+// var ifEverythingIsLoaded = setInterval(function() {
+// 	if (/loaded|complete/.test(document.readyState)) {
+// 		clearInterval(ifEverythingIsLoaded);
+// 		// preloadImages(); // this is the function that gets called when everything is loaded
+// 	}
+// }, 8);
+
+document.onreadystatechange = function () {
+    if (document.readyState == "complete") {
+    	setTimeout(initiate, 1000);
+        console.log("Document State:", document.readyState);
+    } else {
+		console.log("Document State:", document.readyState);
+    }
+}
