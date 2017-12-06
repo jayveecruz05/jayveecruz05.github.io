@@ -17,7 +17,7 @@ var imageLoaded = 0,
 
 function initiate() {
 	// Display The Website
-	select('html, body').setStyle({
+	select('#mainContainer').setStyle({
 		'display': 'block'
 	});
 

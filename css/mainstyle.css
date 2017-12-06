@@ -32,7 +32,6 @@
 body, html {
     height: 100%;
     background-color: #0071bc;
-    display: none;
 }
 
 .title {
@@ -147,6 +146,7 @@ body, html {
 #mainContainer {
 	overflow: hidden;
 	cursor: default;
+	display: none;
 }
 
 .background1 {
