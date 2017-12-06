@@ -210,7 +210,7 @@ var getElementById = function(elementId) {
 		imageLoaded++;
 
 		if (imageLoaded === images.length) {
-			setTimeout(initiate, 1000);
+			// setTimeout(initiate, 1000);
 		}
 	},
 	checkIfVisibleById = function(elementId) {
@@ -288,8 +288,8 @@ var getElementById = function(elementId) {
 
 // var ifEverythingIsLoaded = setInterval(function() {
 // 	if (/loaded|complete/.test(document.readyState)) {
-// 		clearInterval(ifEverythingIsLoaded);
-// 		// preloadImages(); // this is the function that gets called when everything is loaded
+		// clearInterval(ifEverythingIsLoaded);
+		preloadImages(); // this is the function that gets called when everything is loaded
 // 	}
 // }, 8);
 
