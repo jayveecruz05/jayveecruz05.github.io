@@ -30,7 +30,7 @@ function initiate() {
 		select('#loadingScreen').setStyle({
 			'display': "none"
 		});
-		
+
 		// Custom Style
 		customStyle();
 
@@ -82,7 +82,7 @@ function iconAnimation() {
 
 			var loadingIconAnimation = setTimeout(iconAnimation, 500);
 		}, 500);
-	} else {
+	} else if (document.readyState == "complete") {
 		setTimeout(initiate, 500);
 	}
 }
@@ -390,14 +390,6 @@ var userDevice = { // Check user device
 			// console.log(selected_element, style);
 		}
 	};
-
-document.onreadystatechange = function() {
-    if (document.readyState == "complete") {
-        console.log("Document State:", document.readyState);
-    } else {
-		console.log("Document State:", document.readyState);
-    }
-}
 
 window.addEventListener('load', function() {
 	setIcon(); // Set icon
