@@ -73,7 +73,7 @@ function iconAnimation() {
 		'transform': 'scale(1) perspective(1000px)'
 	});
 
-	if (loadingIconAnimationCount < 5) {
+	if (loadingIconAnimationCount < 3) {
 		setTimeout(function() {
 			select('#loadingIcon').setStyle({
 				'opacity': "0.5",
