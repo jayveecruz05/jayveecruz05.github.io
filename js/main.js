@@ -27,6 +27,10 @@ function initiate() {
 	});
 
 	setTimeout(function() {
+		select('#loadingScreen').setStyle({
+			'display': "none"
+		});
+		
 		// Custom Style
 		customStyle();
 

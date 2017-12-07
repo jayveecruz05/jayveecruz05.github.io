@@ -170,6 +170,7 @@ body, html {
 	background-image: url("../assets/my_icon_v2.png");
 	background-repeat: no-repeat;
 	background-size: contain;
+	background-position: center;
 	margin: 0 auto;
 	opacity: 0;
 
