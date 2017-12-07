@@ -393,6 +393,6 @@ var userDevice = { // Check user device
 
 window.addEventListener('load', function() {
 	setIcon(); // Set icon
-	iconAnimation();
+	iconAnimation(); // Loading icon animation
 	preloadImages(); // this is the function that gets called when everything is loaded
 }, false);
