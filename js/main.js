@@ -70,14 +70,14 @@ function iconAnimation() {
 
 	select('#loadingIcon').setStyle({
 		'opacity': "1",
-		'transform': 'scale(0.3) perspective(1000px)'
+		'transform': 'scale(1) perspective(1000px)'
 	});
 
 	if (loadingIconAnimationCount < 5) {
 		setTimeout(function() {
 			select('#loadingIcon').setStyle({
 				'opacity': "0.5",
-				'transform': 'scale(0.25) perspective(1000px)'
+				'transform': 'scale(0.95) perspective(1000px)'
 			});
 
 			var loadingIconAnimation = setTimeout(iconAnimation, 500);
