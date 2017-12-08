@@ -64,8 +64,7 @@ function setIcon() {
 	}
 }
 
-var loadingIconAnimation,
-	loadingIconAnimationCount = 0;
+var loadingIconAnimationCount = 0;
 
 function iconAnimation() {
 	loadingIconAnimationCount++;
@@ -82,7 +81,7 @@ function iconAnimation() {
 				'transform': 'scale(0.95) perspective(1000px)'
 			});
 
-			var loadingIconAnimation = setTimeout(iconAnimation, 500);
+			setTimeout(iconAnimation, 500);
 		}, 500);
 	} else {
 		setTimeout(initiate, 500);
