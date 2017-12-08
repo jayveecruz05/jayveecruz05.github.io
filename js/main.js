@@ -84,7 +84,7 @@ function iconAnimation() {
 
 			var loadingIconAnimation = setTimeout(iconAnimation, 500);
 		}, 500);
-	} else if (document.readyState == "complete") {
+	} else {
 		setTimeout(initiate, 500);
 	}
 }
