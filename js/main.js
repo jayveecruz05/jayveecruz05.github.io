@@ -8,6 +8,8 @@ localStorage['creativeName'] = '';
 var imageLoaded = 0,
 	images = [
 		'iconv1.ico',
+		'iconv2.ico',
+		'my_icon_v2.png',
 		'background1.jpg',
 		'background2.jpg',
 		'monitor.png',
