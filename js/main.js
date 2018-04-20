@@ -142,7 +142,57 @@ function checkElementIfVisible() {
 	}
 
 	if (checkIfVisibleById('contentsHolder2')) {
-		select('.contentCaption').setStyle({
+		select('#websites .contentCaption').setStyle({
+			'opacity': 1,
+			'transform': 'perspective(1000px) scale(1)',
+			'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
+		});
+
+		if (checkIfVisibleById('website1')) {
+			if (getElementById('website1').classList.value.indexOf('active') == -1) {
+				select('#contentsHolder2 #website1').setStyle({
+					'opacity': 1,
+					'transform': 'perspective(1000px) scale(0.8)',
+					'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
+				});
+			}
+		}
+
+		// if (checkIfVisibleById('website2')) {
+		// 	if (getElementById('website2').classList.value.indexOf('active') == -1) {
+		// 		select('#contentsHolder2 #website2').setStyle({
+		// 			'opacity': 1,
+		// 			'transform': 'perspective(1000px) scale(0.8)',
+		// 			'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
+		// 		});
+		// 	}
+		// }
+	}
+
+	// if (checkIfVisibleById('contentsHolder3')) {
+	// 	if (checkIfVisibleById('website3')) {
+	// 		if (getElementById('website3').classList.value.indexOf('active') == -1) {
+	// 			select('#contentsHolder3 #website3').setStyle({
+	// 				'opacity': 1,
+	// 				'transform': 'perspective(1000px) scale(0.8)',
+	// 				'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
+	// 			});
+	// 		}
+	// 	}
+
+	// 	if (checkIfVisibleById('website4')) {
+	// 		if (getElementById('website4').classList.value.indexOf('active') == -1) {
+	// 			select('#contentsHolder3 #website4').setStyle({
+	// 				'opacity': 1,
+	// 				'transform': 'perspective(1000px) scale(0.8)',
+	// 				'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
+	// 			});
+	// 		}
+	// 	}
+	// }
+
+	if (checkIfVisibleById('contentsHolder4')) {
+		select('#richMedia .contentCaption').setStyle({
 			'opacity': 1,
 			'transform': 'perspective(1000px) scale(1)',
 			'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
@@ -150,7 +200,7 @@ function checkElementIfVisible() {
 
 		if (checkIfVisibleById('richMedia1')) {
 			if (getElementById('richMedia1').classList.value.indexOf('active') == -1) {
-				select('#contentsHolder2 #richMedia1').setStyle({
+				select('#contentsHolder4 #richMedia1').setStyle({
 					'opacity': 1,
 					'transform': 'perspective(1000px) scale(1)',
 					'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
@@ -163,7 +213,7 @@ function checkElementIfVisible() {
 
 		if (checkIfVisibleById('richMedia2')) {
 			if (getElementById('richMedia2').classList.value.indexOf('active') == -1) {
-				select('#contentsHolder2 #richMedia2').setStyle({
+				select('#contentsHolder4 #richMedia2').setStyle({
 					'opacity': 1,
 					'transform': 'perspective(1000px) scale(1)',
 					'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
@@ -175,11 +225,10 @@ function checkElementIfVisible() {
 		}
 	}
 
-	if (checkIfVisibleById('contentsHolder3')) {
-
+	if (checkIfVisibleById('contentsHolder5')) {
 		if (checkIfVisibleById('richMedia3')) {
 			if (getElementById('richMedia3').classList.value.indexOf('active') == -1) {
-				select('#contentsHolder3 #richMedia3').setStyle({
+				select('#contentsHolder5 #richMedia3').setStyle({
 					'opacity': 1,
 					'transform': 'perspective(1000px) scale(1)',
 					'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
@@ -192,7 +241,7 @@ function checkElementIfVisible() {
 
 		if (checkIfVisibleById('richMedia4')) {
 			if (getElementById('richMedia4').classList.value.indexOf('active') == -1) {
-				select('#contentsHolder3 #richMedia4').setStyle({
+				select('#contentsHolder5 #richMedia4').setStyle({
 					'opacity': 1,
 					'transform': 'perspective(1000px) scale(1)',
 					'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'

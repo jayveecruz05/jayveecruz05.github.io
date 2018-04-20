@@ -70,14 +70,14 @@ body, html {
 }
 
 .contentsHolder {
-	display: table;
+	/*display: table;*/
 	margin: 0 auto;
 }
 
-.content {
+.content, .website {
 	width: 30em;
 	margin: 0 auto;
-	display: table-cell;
+	display: inline-block;
 	padding: 15px 15px 40px 15px;
 	font-family: CourierNew, sans-serif;
 	color: #FFF;
@@ -110,7 +110,7 @@ body, html {
 	padding: 0 0 20px 0;
 	font-weight: bold;
 	font-size: 2em;
-	display: table-caption;
+	/*display: table-caption;*/
 	opacity: 0;
 
 	-webkit-transform: perspective(1000px) scale(0.8);
@@ -287,6 +287,42 @@ body, html {
 .creations .content {
 	width: 25em;
 	padding: 15px 0 40px 0;
+	display: inline-block;
+}
+
+#websites .contentsHolder {
+    margin: 0 auto 50px auto;
+    width: 90%;
+}
+
+.creations .website {
+	width: 100%;
+	max-width: 45%;
+    height: 25em;
+	display: inline-block;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	padding: 0px 0 40px 0;
+	margin: -20px -20px;
+	border: 5px solid #FFF;
+    border-radius: 20px;
+	opacity: 0;
+	cursor: pointer;
+
+	-webkit-transform: perspective(1000px) scale(0.6);
+    -moz-transform: perspective(1000px) scale(0.6);
+    -ms-transform: perspective(1000px) scale(0.6);
+    transform: perspective(1000px) scale(0.6);
+}
+
+.creations .website:hover {
+	box-shadow: 0px 0px 30px 10px #0071bc;
+}
+
+#website1 {
+	opacity: 1;
+	background-image: url('../assets/italienaLotto.jpg');
 }
 
 .footer {
