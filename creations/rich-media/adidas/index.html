@@ -558,12 +558,11 @@
 						'opacity': '1'
 					});
 
-					var animationGo = setInterval(function() {
-						if (localStorage['creativeName'].indexOf('adidas') > -1) {
-							clearInterval(animationGo);
+					window.onmessage = function(event) {
+						if (event.data.action == 'run-animation') {
 							setTimeout(animation1, 1000);
 						}
-					}, 1000);
+					};
 
 					// setTimeout(animation1, 3000);
 				}

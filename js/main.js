@@ -3,8 +3,6 @@
 	Author: Jayvee O. Cruz
 */
 
-localStorage['creativeName'] = '';
-
 var imageLoaded = 0,
 	images = [
 		'iconv1.ico',
@@ -149,44 +147,53 @@ function checkElementIfVisible() {
 		});
 
 		if (checkIfVisibleById('website1')) {
-			if (getElementById('website1').classList.value.indexOf('active') == -1) {
+			console.log(getElementById('richMedia1').className.indexOf('active'));
+			if (getElementById('website1').className.indexOf('active') == -1) {
 				select('#contentsHolder2 #website1').setStyle({
 					'opacity': 1,
 					'transform': 'perspective(1000px) scale(0.8)',
 					'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
 				});
+
+				getElementById('website1').className += ' active';
 			}
 		}
 
 		// if (checkIfVisibleById('website2')) {
-		// 	if (getElementById('website2').classList.value.indexOf('active') == -1) {
+		// 	if (getElementById('website2').className.indexOf('active') == -1) {
 		// 		select('#contentsHolder2 #website2').setStyle({
 		// 			'opacity': 1,
 		// 			'transform': 'perspective(1000px) scale(0.8)',
 		// 			'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
 		// 		});
+
+		// 		getElementById('website2').className += ' active';
 		// 	}
 		// }
 	}
 
 	// if (checkIfVisibleById('contentsHolder3')) {
 	// 	if (checkIfVisibleById('website3')) {
-	// 		if (getElementById('website3').classList.value.indexOf('active') == -1) {
+	// 		if (getElementById('website3').className.indexOf('active') == -1) {
 	// 			select('#contentsHolder3 #website3').setStyle({
 	// 				'opacity': 1,
 	// 				'transform': 'perspective(1000px) scale(0.8)',
 	// 				'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
 	// 			});
+
+	// 			getElementById('website3').className += ' active';
 	// 		}
 	// 	}
 
 	// 	if (checkIfVisibleById('website4')) {
-	// 		if (getElementById('website4').classList.value.indexOf('active') == -1) {
+	// 		if (getElementById('website4').className.indexOf('active') == -1) {
 	// 			select('#contentsHolder3 #website4').setStyle({
 	// 				'opacity': 1,
 	// 				'transform': 'perspective(1000px) scale(0.8)',
 	// 				'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
 	// 			});
+
+	// 			getElementById('website4').className += ' active';
 	// 		}
 	// 	}
 	// }
@@ -199,56 +206,68 @@ function checkElementIfVisible() {
 		});
 
 		if (checkIfVisibleById('richMedia1')) {
-			if (getElementById('richMedia1').classList.value.indexOf('active') == -1) {
+			if (getElementById('richMedia1').className.indexOf('active') == -1) {
 				select('#contentsHolder4 #richMedia1').setStyle({
 					'opacity': 1,
 					'transform': 'perspective(1000px) scale(1)',
 					'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
 				});
 
-				localStorage['creativeName'] += 'adidas,';
-				getElementById('richMedia1').classList.add('active');
+				getElementById('richMedia1').children[0].contentWindow.postMessage({
+					action: 'run-animation'
+				}, window.location.origin);
+
+				getElementById('richMedia1').className += ' active';
 			}
 		}
 
 		if (checkIfVisibleById('richMedia2')) {
-			if (getElementById('richMedia2').classList.value.indexOf('active') == -1) {
+			if (getElementById('richMedia2').className.indexOf('active') == -1) {
 				select('#contentsHolder4 #richMedia2').setStyle({
 					'opacity': 1,
 					'transform': 'perspective(1000px) scale(1)',
 					'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
 				});
 
-				localStorage['creativeName'] += 'pill-pockets,';
-				getElementById('richMedia2').classList.add('active');
+				getElementById('richMedia2').children[0].contentWindow.postMessage({
+					action: 'run-animation'
+				}, window.location.origin);
+
+				getElementById('richMedia2').className += ' active';
 			}
 		}
 	}
 
 	if (checkIfVisibleById('contentsHolder5')) {
 		if (checkIfVisibleById('richMedia3')) {
-			if (getElementById('richMedia3').classList.value.indexOf('active') == -1) {
+			if (getElementById('richMedia3').className.indexOf('active') == -1) {
 				select('#contentsHolder5 #richMedia3').setStyle({
 					'opacity': 1,
 					'transform': 'perspective(1000px) scale(1)',
 					'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
 				});
 
-				localStorage['creativeName'] += 'servpro,';
-				getElementById('richMedia3').classList.add('active');
+				getElementById('richMedia3').children[0].contentWindow.postMessage({
+					action: 'run-animation'
+				}, window.location.origin);
+
+				getElementById('richMedia3').className += ' active';
 			}
 		}
 
 		if (checkIfVisibleById('richMedia4')) {
-			if (getElementById('richMedia4').classList.value.indexOf('active') == -1) {
+			if (getElementById('richMedia4').className.indexOf('active') == -1) {
 				select('#contentsHolder5 #richMedia4').setStyle({
 					'opacity': 1,
 					'transform': 'perspective(1000px) scale(1)',
 					'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
 				});
 
-				localStorage['creativeName'] += 'maui-jim,';
-				getElementById('richMedia4').classList.add('active');
+				getElementById('richMedia4').children[0].contentWindow.postMessage({
+					action: 'run-animation'
+				}, window.location.origin);
+
+				getElementById('richMedia4').className += ' active';
 			}
 		}
 	}

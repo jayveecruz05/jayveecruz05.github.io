@@ -633,12 +633,11 @@
 						'opacity': '1'
 					});
 
-					var animationGo = setInterval(function() {
-						if (localStorage['creativeName'].indexOf('pill-pockets') > -1) {
-							clearInterval(animationGo);
+					window.onmessage = function(event) {
+						if (event.data.action == 'run-animation') {
 							setTimeout(animation1, 1000);
 						}
-					}, 1000);
+					};
 
 					// if (labAd.dpr > 1) {
 					// 	setTimeout(animation1, 2000);
