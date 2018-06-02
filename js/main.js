@@ -147,7 +147,6 @@ function checkElementIfVisible() {
 		});
 
 		if (checkIfVisibleById('website1')) {
-			console.log(getElementById('richMedia1').className.indexOf('active'));
 			if (getElementById('website1').className.indexOf('active') == -1) {
 				select('#contentsHolder2 #website1').setStyle({
 					'opacity': 1,
