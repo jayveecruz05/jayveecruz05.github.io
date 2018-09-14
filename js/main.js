@@ -36,7 +36,9 @@ function initiate() {
 
 		// Check If The Element Is Visible
 		checkElementIfVisible();
-		window.addEventListener('scroll', checkElementIfVisible);
+
+		getElementById('mainContainer').addEventListener('scroll', checkElementIfVisible);
+		// window.addEventListener('scroll', checkElementIfVisible);
 
 		// Initiate Word Cloud
 		tagCanvas();
@@ -44,11 +46,20 @@ function initiate() {
 		// Rich Media
 		richMediaIframe();
 
-		setTimeout(function() {
-			select('body, html').setStyle({
-				'overflow': 'visible'
-			});
-		}, 1000);
+		select('#mainContainer').setStyle({
+			'position': 'absolute',
+			'top': '0',
+			'bottom': '0',
+			'left': '0',
+			'right': (!userDevice.isMobile()) ? '-17px' : '0',
+			'overflow-y': 'scroll'
+		});
+
+		// setTimeout(function() {
+		// 	select('body, html').setStyle({
+		// 		'overflow': 'visible'
+		// 	});
+		// }, 1000);
 	}, 1000);
 }
 
@@ -158,17 +169,17 @@ function checkElementIfVisible() {
 			}
 		}
 
-		// if (checkIfVisibleById('website2')) {
-		// 	if (getElementById('website2').className.indexOf('active') == -1) {
-		// 		select('#contentsHolder2 #website2').setStyle({
-		// 			'opacity': 1,
-		// 			'transform': 'perspective(1000px) scale(0.8)',
-		// 			'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
-		// 		});
+		if (checkIfVisibleById('website2')) {
+			if (getElementById('website2').className.indexOf('active') == -1) {
+				select('#contentsHolder2 #website2').setStyle({
+					'opacity': 1,
+					'transform': 'perspective(1000px) scale(0.8)',
+					'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
+				});
 
-		// 		getElementById('website2').className += ' active';
-		// 	}
-		// }
+				getElementById('website2').className += ' active';
+			}
+		}
 	}
 
 	// if (checkIfVisibleById('contentsHolder3')) {

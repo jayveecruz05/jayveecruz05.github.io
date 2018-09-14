@@ -33,6 +33,7 @@ body, html {
     height: 100%;
     background-color: #0071bc;
 	overflow: hidden;
+	position: relative;
 }
 
 .title {
@@ -322,8 +323,13 @@ body, html {
 }
 
 #website1 {
-	opacity: 1;
+	opacity: 0;
 	background-image: url('../assets/italienaLotto.jpg');
+}
+
+#website2 {
+	opacity: 0;
+	background-image: url('../assets/6686Navigation.jpg');
 }
 
 .footer {
