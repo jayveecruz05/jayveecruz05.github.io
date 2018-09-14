@@ -149,6 +149,9 @@ body, html {
 	overflow: hidden;
 	cursor: default;
 	opacity: 0;
+	-webkit-overflow-scrolling: touch;
+	-moz-overflow-scrolling: touch;
+	-ms-overflow-scrolling: touch;
 }
 
 #loadingScreen {
