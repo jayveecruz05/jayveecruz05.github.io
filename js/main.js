@@ -64,13 +64,16 @@ function initiate() {
 }
 
 function setIcon() {
-	if (userDevice.isMobile()) {
-		getElementById('iconLink1').href = 'assets/iconv2.ico';
-		getElementById('iconLink1').href = 'assets/iconv2.ico';
-	} else {
-		getElementById('iconLink1').href = 'assets/iconv1.ico';
-		getElementById('iconLink1').href = 'assets/iconv1.ico';
-	}
+	getElementById('iconLink1').href = 'assets/iconv1.ico';
+	getElementById('iconLink1').href = 'assets/iconv1.ico';
+
+	// if (userDevice.isMobile()) {
+	// 	getElementById('iconLink1').href = 'assets/iconv2.ico';
+	// 	getElementById('iconLink1').href = 'assets/iconv2.ico';
+	// } else {
+	// 	getElementById('iconLink1').href = 'assets/iconv1.ico';
+	// 	getElementById('iconLink1').href = 'assets/iconv1.ico';
+	// }
 }
 
 var loadingIconAnimationCount = 0;
