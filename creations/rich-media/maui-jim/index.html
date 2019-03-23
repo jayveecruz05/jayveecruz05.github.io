@@ -221,11 +221,11 @@
 						try {
 							labAd.ids.loc = parent.testProps.zip;
 							labAd.testVars.loc = parent.testProps.zip;
-							console.log("TestProps ZipCode: " + labAd.ids.loc);
+							// console.log("TestProps ZipCode: " + labAd.ids.loc);
 							labAd.tracking.dfpClick = "";
 						} catch(err) {
 							labAd.ids.loc = labAd.testVars.loc;
-							console.log("TestVars ZipCode: " + labAd.ids.loc);
+							// console.log("TestVars ZipCode: " + labAd.ids.loc);
 							labAd.tracking.dfpClick = "";
 						}
 
@@ -264,11 +264,11 @@
 					// 	exitClick();
 					// });
 
-					console.log(labAd);
+					// console.log(labAd);
 				}catch(err){
 					labAd.errors.push(err);
 					showDefault(err.message);
-					console.log(labAd.errors);
+					// console.log(labAd.errors);
 				}
 			});
 
@@ -370,11 +370,11 @@
 
 					getMonth = ['JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER'];
 
-					console.log('City Name: ' + cityname);
-					console.log('State Name: ' + statename);
-					console.log('Month: ' + getMonth[month]);
-					console.log('Day: ' + parseInt(day));
-					console.log('Temperature: ' + temp);
+					// console.log('City Name: ' + cityname);
+					// console.log('State Name: ' + statename);
+					// console.log('Month: ' + getMonth[month]);
+					// console.log('Day: ' + parseInt(day));
+					// console.log('Temperature: ' + temp);
 
 					cityName.innerHTML = cityname + ',&nbsp;' + statename;
 					monthDay.innerHTML = getMonth[month] + '&nbsp;' + parseInt(day);
@@ -397,7 +397,7 @@
 				}catch(err){
 					labAd.errors.push(err);
 					showDefault(err.message);
-					console.log(labAd.errors);
+					// console.log(labAd.errors);
 				}
 			}
 			
@@ -455,12 +455,12 @@
 				}catch(err){
 					labAd.errors.push(err);
 					showDefault(err.message);
-					console.log(labAd.errors);
+					// console.log(labAd.errors);
 				}
 			}
 
 			function exitClick() {
-				console.log("exitClick");
+				// console.log("exitClick");
 				window.open(labAd.tracking.dfpClick + labAd.tracking.clickTAG,"_blank");
 			}
 
@@ -483,7 +483,7 @@
 							adVars.cityname = labAd.data.body[0].doc.cityNm;
 							adVars.statename = labAd.data.body[0].doc.stCd;
 							adVars.temp = parent.testProps.temp;
-							console.log('Current Date: ' + parent.testProps.dates);
+							// console.log('Current Date: ' + parent.testProps.dates);
 							adVars.month = parent.testProps.dates.slice(5, 7) - 1;
 							adVars.day = parent.testProps.dates.slice(8);
 						// For Local LiveTest
@@ -504,7 +504,7 @@
 				}catch(err){
 					labAd.errors.push(err);
 					showDefault(err.message);
-					console.log(labAd.errors);
+					// console.log(labAd.errors);
 				}
 			}
 
@@ -527,7 +527,7 @@
 					$('#labAd').append('<span style="display:none;">'+reason+'</span>');
 				}catch(err){
 					labAd.errors.push(err);
-					console.log(labAd.errors);
+					// console.log(labAd.errors);
 				}
 			}
 

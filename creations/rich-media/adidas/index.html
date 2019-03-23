@@ -301,11 +301,11 @@
 						try {
 							labAd.ids.loc = parent.testProps.zip;
 							labAd.testVars.loc = parent.testProps.zip;
-							console.log("TestProps ZipCode: " + labAd.ids.loc);
+							// console.log("TestProps ZipCode: " + labAd.ids.loc);
 							labAd.tracking.dfpClick = "";
 						} catch(err) {
 							labAd.ids.loc = labAd.testVars.loc;
-							console.log("TestVars ZipCode: " + labAd.ids.loc);
+							// console.log("TestVars ZipCode: " + labAd.ids.loc);
 							labAd.tracking.dfpClick = "";
 						}
 
@@ -348,11 +348,11 @@
 					// 	productExitClick();
 					// });
 
-					console.log(labAd);
+					// console.log(labAd);
 				}catch(err){
 					labAd.errors.push(err);
 					showDefault(err.message);
-					console.log(labAd.errors);
+					// console.log(labAd.errors);
 				}
 			});
 
@@ -484,8 +484,8 @@
 
 					weather += (dayOrNight === 'night') ? 'night' : '';
 
-					console.log('Day Or Night:', dayOrNight);
-					console.log('Weather:', weather);
+					// console.log('Day Or Night:', dayOrNight);
+					// console.log('Weather:', weather);
 
 					for (i = 1; i <= totalObjects; i++) {
 						carousel.innerHTML += '<div id="object' + i + '" class="object object' + i + '"></div>';
@@ -514,7 +514,7 @@
 				}catch(err){
 					labAd.errors.push(err);
 					showDefault(err.message);
-					console.log(labAd.errors);
+					// console.log(labAd.errors);
 				}
 			}
 			
@@ -536,12 +536,12 @@
 
 							if (!showSideObjects) {
 								translateInto0(currentObject);
-								console.log('CO: ' + currentObject + ' - PRO: ' + pastRightObject);
+								// console.log('CO: ' + currentObject + ' - PRO: ' + pastRightObject);
 							} else {
 								translateLesser(pastLeftObject);
 								translateInto0(currentObject);
 								translateGreater(pastRightObject);
-								console.log('PLO: ' + pastLeftObject + ' - CO: ' + currentObject + ' - PRO: ' + pastRightObject + ' - FO: ' + futureObject);
+								// console.log('PLO: ' + pastLeftObject + ' - CO: ' + currentObject + ' - PRO: ' + pastRightObject + ' - FO: ' + futureObject);
 							}
 							
 							init();
@@ -645,7 +645,7 @@
 
 					return dayOrNight;
 				} catch (error) {
-					console.log('Error:', error);
+					// console.log('Error:', error);
 					dayOrNight = 'day';
 					// console.log('Day Or Night:', dayOrNight);
 					return dayOrNight;
@@ -688,7 +688,7 @@
 
 			function eventTypeAndPreventEvent(e) {
 				// console.log(e);
-				console.log('Event Type: ' + e.type);
+				// console.log('Event Type: ' + e.type);
 				try {
 					e.stopImmediatePropagation();
 					event.stopImmediatePropagation();
@@ -778,7 +778,7 @@
 					if (!showSideObjects) {
 						pastRightObject = currentObject;
 						currentObject = totalObjects;
-						console.log('CO: ' + currentObject + ' - PRO: ' + pastRightObject);
+						// console.log('CO: ' + currentObject + ' - PRO: ' + pastRightObject);
 					} else {
 						pastRightObject = currentObject;
 
@@ -796,13 +796,13 @@
 							pastLeftObject = (currentObject - 1);
 						}
 
-						console.log('PLO: ' + pastLeftObject + ' - CO: ' + currentObject + ' - PRO: ' + pastRightObject + ' - FO: ' + futureObject);
+						// console.log('PLO: ' + pastLeftObject + ' - CO: ' + currentObject + ' - PRO: ' + pastRightObject + ' - FO: ' + futureObject);
 					}
 				} else {
 					if (!showSideObjects) {
 						pastRightObject = currentObject;
 						currentObject--;
-						console.log('CO: ' + currentObject + ' - PRO: ' + pastRightObject);
+						// console.log('CO: ' + currentObject + ' - PRO: ' + pastRightObject);
 					} else {
 						pastRightObject = currentObject;
 
@@ -820,7 +820,7 @@
 							pastLeftObject = (currentObject - 1);
 						}
 
-						console.log('PLO: ' + pastLeftObject + ' - CO: ' + currentObject + ' - PRO: ' + pastRightObject + ' - FO: ' + futureObject);
+						// console.log('PLO: ' + pastLeftObject + ' - CO: ' + currentObject + ' - PRO: ' + pastRightObject + ' - FO: ' + futureObject);
 					}
 				}
 
@@ -875,7 +875,7 @@
 					if (!showSideObjects) {
 						pastLeftObject = currentObject;
 						currentObject = 1;
-						console.log('PLO: ' + pastLeftObject + ' CO: ' + currentObject);
+						// console.log('PLO: ' + pastLeftObject + ' CO: ' + currentObject);
 					} else {
 						pastLeftObject = currentObject;
 
@@ -893,13 +893,13 @@
 							pastRightObject = (currentObject + 1);
 						}
 
-						console.log('FO: ' + futureObject + ' - PLO: ' + pastLeftObject + ' - CO: ' + currentObject + ' - PRO: ' + pastRightObject);
+						// console.log('FO: ' + futureObject + ' - PLO: ' + pastLeftObject + ' - CO: ' + currentObject + ' - PRO: ' + pastRightObject);
 					}
 				} else {
 					if (!showSideObjects) {
 						pastLeftObject = currentObject;
 						currentObject++;
-						console.log('PLO: ' + pastLeftObject + ' CO: ' + currentObject);
+						// console.log('PLO: ' + pastLeftObject + ' CO: ' + currentObject);
 					} else {
 						pastLeftObject = currentObject;
 
@@ -917,7 +917,7 @@
 							pastRightObject = (currentObject + 1);
 						}
 
-						console.log('FO: ' + futureObject + ' - PLO: ' + pastLeftObject + ' - CO: ' + currentObject + ' - PRO: ' + pastRightObject);
+						// console.log('FO: ' + futureObject + ' - PLO: ' + pastLeftObject + ' - CO: ' + currentObject + ' - PRO: ' + pastRightObject);
 					}
 				}
 
@@ -975,17 +975,17 @@
 				}catch(err){
 					labAd.errors.push(err);
 					showDefault(err.message);
-					console.log(labAd.errors);
+					// console.log(labAd.errors);
 				}
 			}
 
 			function exitClick() {
-				console.log("exitClick");
+				// console.log("exitClick");
 				window.open(labAd.tracking.dfpClick + labAd.tracking.clickTAG,"_blank");
 			}
 
 			function productExitClick() {
-				console.log("productExitClick");
+				// console.log("productExitClick");
 				window.open(labAd.tracking.dfpClick + labAd.tracking.productClickTAG[currentObject - 1],"_blank");
 			}
 
@@ -1007,7 +1007,7 @@
 							adVars.sky = parent.testProps.weatherConditionSky;
 							adVars.weather = initAdCond(adVars.sky).b.toLowerCase();
 							adVars.dayOrNight = parent.testProps.dayOrNight;
-							console.log('Data Status: Data From TestProps');
+							// console.log('Data Status: Data From TestProps');
 						// /For Local LiveTest
 						} catch(err) {
 						// For Local Test
@@ -1015,7 +1015,7 @@
 							adVars.sky = labAd.data.body[0].doc.MOData.sky;
 							adVars.weather = initAdCond(adVars.sky).b.toLowerCase();
 							adVars.dayOrNight = getDayOrNight();
-							console.log('Data Status: Data From DSX Server');
+							// console.log('Data Status: Data From DSX Server');
 						// /For Local Test
 						}
 					}
@@ -1027,10 +1027,10 @@
 					if (labAd.urlTest.test == true) {
 					   adVars.weather = getUrlParameter('cond').toLowerCase();
 
-					   console.log("Url Test: " + labAd.urlTest.test);
-					   console.log(labAd.urlTest);
+					//    console.log("Url Test: " + labAd.urlTest.test);
+					//    console.log(labAd.urlTest);
 					} else {
-					   console.log("Url Test: " + labAd.urlTest.test);
+					//    console.log("Url Test: " + labAd.urlTest.test);
 					}
 
 					// create vars to store the specific info the ad needs from loaded data
@@ -1039,7 +1039,7 @@
 				}catch(err){
 					labAd.errors.push(err);
 					showDefault(err.message);
-					console.log(labAd.errors);
+					// console.log(labAd.errors);
 				}
 			}
 
@@ -1078,7 +1078,7 @@
 			   } catch(err) {
 					labAd.errors.push(err);
 					showDefault(err.message);
-					console.log(labAd.errors);
+					// console.log(labAd.errors);
 			   }
 			}
 
@@ -1103,10 +1103,10 @@
 					// $('#labAd').click(function(event) {
 					// 	exitClick();
 					// });
-					console.log(reason);
+					// console.log(reason);
 				}catch(err){
 					labAd.errors.push(err);
-					console.log(labAd.errors);
+					// console.log(labAd.errors);
 				}
 			}
 

@@ -188,11 +188,11 @@
 						try {
 							labAd.ids.loc = parent.testProps.zip;
 							labAd.testVars.loc = parent.testProps.zip;
-							console.log("TestProps ZipCode: " + labAd.ids.loc);
+							// console.log("TestProps ZipCode: " + labAd.ids.loc);
 							labAd.tracking.dfpClick = "";
 						} catch(err) {
 							labAd.ids.loc = labAd.testVars.loc;
-							console.log("TestVars ZipCode: " + labAd.ids.loc);
+							// console.log("TestVars ZipCode: " + labAd.ids.loc);
 							labAd.tracking.dfpClick = "";
 						}
 
@@ -231,11 +231,11 @@
 					// 	exitClick();
 					// });
 
-					console.log(labAd);
+					// console.log(labAd);
 				}catch(err){
 					labAd.errors.push(err);
 					showDefault(err.message);
-					console.log(labAd.errors);
+					// console.log(labAd.errors);
 				}
 			});
 
@@ -348,7 +348,7 @@
 						break;
 					}
 
-					console.log("Current Weather:", weather);
+					// console.log("Current Weather:", weather);
 					
 					/* Array of Images */
 						images = new Array(
@@ -370,7 +370,7 @@
 				}catch(err){
 					labAd.errors.push(err);
 					showDefault(err.message);
-					console.log(labAd.errors);
+					// console.log(labAd.errors);
 				}
 			}
 			
@@ -439,12 +439,12 @@
 				}catch(err){
 					labAd.errors.push(err);
 					showDefault(err.message);
-					console.log(labAd.errors);
+					// console.log(labAd.errors);
 				}
 			}
 
 			function exitClick() {
-				console.log("exitClick");
+				// console.log("exitClick");
 				window.open(labAd.tracking.dfpClick + labAd.tracking.clickTAG,"_blank");
 			}
 
@@ -464,14 +464,14 @@
 							// adVars.temperature = parent.testProps.temperature;
 							adVars.sky = parent.testProps.weatherConditionSky;
 							adVars.weather = initAdCond(adVars.sky).b.toLowerCase();
-							console.log('Data Status: Data From TestProps');
+							// console.log('Data Status: Data From TestProps');
 						// /For Local LiveTest
 						} catch(err) {
 						// For Local Test
 							// adVars.temperature = labAd.data.body[1].doc.MOData.tmpF;
 							adVars.sky = labAd.data.body[0].doc.MOData.sky;
 							adVars.weather = initAdCond(adVars.sky).b.toLowerCase();
-							console.log('Data Status: Data From DSX Server');
+							// console.log('Data Status: Data From DSX Server');
 						// /For Local Test
 						}
 					}
@@ -483,10 +483,10 @@
 					if (labAd.urlTest.test == true) {
 					   adVars.weather = getUrlParameter('cond').toLowerCase();
 
-					   console.log("Url Test: " + labAd.urlTest.test);
-					   console.log(labAd.urlTest);
+					//    console.log("Url Test: " + labAd.urlTest.test);
+					//    console.log(labAd.urlTest);
 					} else {
-					   console.log("Url Test: " + labAd.urlTest.test);
+					//    console.log("Url Test: " + labAd.urlTest.test);
 					}
 
 					// create vars to store the specific info the ad needs from loaded data
@@ -495,7 +495,7 @@
 				}catch(err){
 					labAd.errors.push(err);
 					showDefault(err.message);
-					console.log(labAd.errors);
+					// console.log(labAd.errors);
 				}
 			}
 
@@ -534,7 +534,7 @@
 			   } catch(err) {
 					labAd.errors.push(err);
 					showDefault(err.message);
-					console.log(labAd.errors);
+					// console.log(labAd.errors);
 			   }
 			}
 
@@ -556,10 +556,10 @@
 					$("#labAd").children().hide();
 					$("#border").show();
 					$('#labAd').append('<span style="display:none;">'+reason+'</span>');
-					console.log(reason);
+					// console.log(reason);
 				}catch(err){
 					labAd.errors.push(err);
-					console.log(labAd.errors);
+					// console.log(labAd.errors);
 				}
 			}
 

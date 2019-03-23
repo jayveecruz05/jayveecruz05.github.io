@@ -432,11 +432,11 @@
 						try {
 							labAd.ids.loc = parent.testProps.zip;
 							labAd.testVars.loc = parent.testProps.zip;
-							console.log("TestProps ZipCode: " + labAd.ids.loc);
+							// console.log("TestProps ZipCode: " + labAd.ids.loc);
 							labAd.tracking.dfpClick = "";
 						} catch(err) {
 							labAd.ids.loc = labAd.testVars.loc;
-							console.log("TestVars ZipCode: " + labAd.ids.loc);
+							// console.log("TestVars ZipCode: " + labAd.ids.loc);
 							labAd.tracking.dfpClick = "";
 						}
 
@@ -475,11 +475,11 @@
 					// 	exitClick();
 					// });
 
-					console.log(labAd);
+					// console.log(labAd);
 				}catch(err){
 					labAd.errors.push(err);
 					showDefault(err.message);
-					console.log(labAd.errors);
+					// console.log(labAd.errors);
 				}
 			});
 
@@ -559,7 +559,7 @@
 
 					var randomWeatherSky = Math.floor((Math.random() * 5));
 					cityname = cityName[randomWeatherSky].toLowerCase();
-					console.log('City Name: ' + cityname);
+					// console.log('City Name: ' + cityname);
 					
 					/* Array of Images */
 						images = new Array(
@@ -591,7 +591,7 @@
 				}catch(err){
 					labAd.errors.push(err);
 					showDefault(err.message);
-					console.log(labAd.errors);
+					// console.log(labAd.errors);
 				}
 			}
 			
@@ -744,12 +744,12 @@
 				}catch(err){
 					labAd.errors.push(err);
 					showDefault(err.message);
-					console.log(labAd.errors);
+					// console.log(labAd.errors);
 				}
 			}
 
 			function exitClick() {
-				console.log("exitClick");
+				// console.log("exitClick");
 				window.open(labAd.tracking.dfpClick + labAd.tracking.clickTAG,"_blank");
 			}
 
@@ -785,7 +785,7 @@
 				}catch(err){
 					labAd.errors.push(err);
 					showDefault(err.message);
-					console.log(labAd.errors);
+					// console.log(labAd.errors);
 				}
 			}
 
@@ -808,7 +808,7 @@
 					$('#labAd').append('<span style="display:none;">'+reason+'</span>');
 				}catch(err){
 					labAd.errors.push(err);
-					console.log(labAd.errors);
+					// console.log(labAd.errors);
 				}
 			}
 
