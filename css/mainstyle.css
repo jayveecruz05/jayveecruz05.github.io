@@ -79,6 +79,7 @@ body, html {
 	width: 30em;
 	margin: 0 auto;
 	display: inline-block;
+	vertical-align: top;
 	padding: 15px 15px 40px 15px;
 	font-family: CourierNew, sans-serif;
 	color: #FFF;
