@@ -299,10 +299,10 @@ function tagCanvas() {
 		animTiming: 'Smooth',
 		wheelZoom: false,
 		noMouse: true,
-		reverse: true,
+		reverse: false,
 		initial: [0.1, 0.05],
 		depth: 1,
-    	maxSpeed: 0.1,
+    	maxSpeed: 0.05,
 	});
 }
 
