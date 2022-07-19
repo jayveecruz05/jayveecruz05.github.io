@@ -150,11 +150,11 @@ body, html {
 	display: inline-block;
 }
 
-.subTaglineText .subTaglineText1 {
+.subTaglineText .text1 {
 	padding-right: 15px;
 }
 
-.subTaglineText .subTaglineText2 {
+.subTaglineText .text2 {
 	padding-left: 15px;
 }
 
