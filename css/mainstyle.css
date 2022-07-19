@@ -146,6 +146,18 @@ body, html {
 	background-color: #FFF;
 }
 
+.subTaglineText span {
+	display: inline-block;
+}
+
+.subTaglineText .subTaglineText1 {
+	padding-right: 15px;
+}
+
+.subTaglineText .subTaglineText2 {
+	padding-left: 15px;
+}
+
 #mainContainer {
 	overflow: hidden;
 	cursor: default;

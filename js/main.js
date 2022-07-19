@@ -302,7 +302,7 @@ function tagCanvas() {
 		reverse: false,
 		initial: [0.1, 0.05],
 		depth: 1,
-    	maxSpeed: 0.05,
+    maxSpeed: 0.02,
 	});
 }
 
