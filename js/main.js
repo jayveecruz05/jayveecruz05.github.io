@@ -211,7 +211,7 @@ function checkElementIfVisible() {
 	// 	}
 	// }
 
-	if (checkIfVisibleById('contentsHolder4')) {
+	if (checkIfVisibleById('contentsHolder3')) {
 		select('#richMedia .contentCaption').setStyle({
 			'opacity': 1,
 			'transform': 'perspective(1000px) scale(1)',
@@ -220,7 +220,7 @@ function checkElementIfVisible() {
 
 		if (checkIfVisibleById('richMedia1')) {
 			if (getElementById('richMedia1').className.indexOf('active') == -1) {
-				select('#contentsHolder4 #richMedia1').setStyle({
+				select('#contentsHolder3 #richMedia1').setStyle({
 					'opacity': 1,
 					'transform': 'perspective(1000px) scale(1)',
 					'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
@@ -236,7 +236,7 @@ function checkElementIfVisible() {
 
 		if (checkIfVisibleById('richMedia2')) {
 			if (getElementById('richMedia2').className.indexOf('active') == -1) {
-				select('#contentsHolder4 #richMedia2').setStyle({
+				select('#contentsHolder3 #richMedia2').setStyle({
 					'opacity': 1,
 					'transform': 'perspective(1000px) scale(1)',
 					'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
@@ -251,10 +251,10 @@ function checkElementIfVisible() {
 		}
 	}
 
-	if (checkIfVisibleById('contentsHolder5')) {
+	if (checkIfVisibleById('contentsHolder4')) {
 		if (checkIfVisibleById('richMedia3')) {
 			if (getElementById('richMedia3').className.indexOf('active') == -1) {
-				select('#contentsHolder5 #richMedia3').setStyle({
+				select('#contentsHolder4 #richMedia3').setStyle({
 					'opacity': 1,
 					'transform': 'perspective(1000px) scale(1)',
 					'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
@@ -270,7 +270,7 @@ function checkElementIfVisible() {
 
 		if (checkIfVisibleById('richMedia4')) {
 			if (getElementById('richMedia4').className.indexOf('active') == -1) {
-				select('#contentsHolder5 #richMedia4').setStyle({
+				select('#contentsHolder4 #richMedia4').setStyle({
 					'opacity': 1,
 					'transform': 'perspective(1000px) scale(1)',
 					'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'

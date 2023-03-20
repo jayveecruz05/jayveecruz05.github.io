@@ -30,8 +30,8 @@
 }
 
 body, html {
-    height: 100%;
-    background-color: #0071bc;
+	height: 100%;
+	background-color: #0071bc;
 	overflow: hidden;
 	position: relative;
 }
@@ -42,16 +42,16 @@ body, html {
 	font-size: 2.5em;
 	text-align: center;
 	color: #0071bc;
-	/*text-shadow: 0px 0px 30px #2A2D34;*/
+	/* text-shadow: 0px 0px 30px #2A2D34; */
 	background-color: #FFF;
 	margin: 10px 0 50px 0;
-    display: inline-block;
+	display: inline-block;
 	opacity: 0;
 
 	-webkit-transform: perspective(1000px) scale(0.8);
-    -moz-transform: perspective(1000px) scale(0.8);
-    -ms-transform: perspective(1000px) scale(0.8);
-    transform: perspective(1000px) scale(0.8);
+	-moz-transform: perspective(1000px) scale(0.8);
+	-ms-transform: perspective(1000px) scale(0.8);
+	transform: perspective(1000px) scale(0.8);
 }
 
 .subTitle {
@@ -62,16 +62,16 @@ body, html {
 	color: #0071bc;
 	text-shadow: 0px 0px 30px #2A2D34;
 	padding: 10px 0 50px 0;
-	/*opacity: 0;*/
+	/* opacity: 0; */
 
 	-webkit-transform: perspective(1000px) scale(0.8);
-    -moz-transform: perspective(1000px) scale(0.8);
-    -ms-transform: perspective(1000px) scale(0.8);
-    transform: perspective(1000px) scale(0.8);
+	-moz-transform: perspective(1000px) scale(0.8);
+	-ms-transform: perspective(1000px) scale(0.8);
+	transform: perspective(1000px) scale(0.8);
 }
 
 .contentsHolder {
-	/*display: table;*/
+	/* display: table; */
 	margin: 0 auto;
 }
 
@@ -87,9 +87,9 @@ body, html {
 	opacity: 0;
 
 	-webkit-transform: perspective(1000px) scale(0.8);
-    -moz-transform: perspective(1000px) scale(0.8);
-    -ms-transform: perspective(1000px) scale(0.8);
-    transform: perspective(1000px) scale(0.8);
+	-moz-transform: perspective(1000px) scale(0.8);
+	-ms-transform: perspective(1000px) scale(0.8);
+	transform: perspective(1000px) scale(0.8);
 }
 
 .contentIcon {
@@ -112,13 +112,13 @@ body, html {
 	padding: 0 0 20px 0;
 	font-weight: bold;
 	font-size: 2em;
-	/*display: table-caption;*/
+	/* display: table-caption; */
 	opacity: 0;
 
 	-webkit-transform: perspective(1000px) scale(0.8);
-    -moz-transform: perspective(1000px) scale(0.8);
-    -ms-transform: perspective(1000px) scale(0.8);
-    transform: perspective(1000px) scale(0.8);
+	-moz-transform: perspective(1000px) scale(0.8);
+	-ms-transform: perspective(1000px) scale(0.8);
+	transform: perspective(1000px) scale(0.8);
 }
 
 .contentTitle {
@@ -136,9 +136,9 @@ body, html {
 
 .contentIframe {
 	width: 300px;
-    height: 250px;
-    border: none;
-    overflow: hidden;
+	height: 250px;
+	border: none;
+	overflow: hidden;
 }
 
 .subTaglineText {
@@ -222,19 +222,19 @@ body, html {
 }
 
 .tagline #taglineParagraph {
-    /*text-shadow: 0px 0px 30px #2A2D34;*/
-    font-family: CourierNew, sans-serif;
-    font-weight: bold;
+	/* text-shadow: 0px 0px 30px #2A2D34; */
+	font-family: CourierNew, sans-serif;
+	font-weight: bold;
 	text-align: center;
 	font-size: 3.5em;
-    color: #FFF;
-    line-height: 140%;
-    opacity: 0;
+	color: #FFF;
+	line-height: 140%;
+	opacity: 0;
     
-    -webkit-transform: translate3d(0px, 30px, 0px);
-    -moz-transform: translate3d(0px, 30px, 0px);
-    -ms-transform: translate3d(0px, 30px, 0px);
-    transform: translate3d(0px, 30px, 0px);
+	-webkit-transform: translate3d(0px, 30px, 0px);
+	-moz-transform: translate3d(0px, 30px, 0px);
+	-ms-transform: translate3d(0px, 30px, 0px);
+	transform: translate3d(0px, 30px, 0px);
 }
 
 .whatIDo {
@@ -284,14 +284,14 @@ body, html {
 	opacity: 0;
 
 	-webkit-transform: perspective(1000px) scale(0.8);
-    -moz-transform: perspective(1000px) scale(0.8);
-    -ms-transform: perspective(1000px) scale(0.8);
-    transform: perspective(1000px) scale(0.8);
+	-moz-transform: perspective(1000px) scale(0.8);
+	-ms-transform: perspective(1000px) scale(0.8);
+	transform: perspective(1000px) scale(0.8);
 }
 
 .wordCloud {
 	width: 100%;
-    max-width: 75em;
+	max-width: 75em;
 }
 
 .creations {
@@ -309,14 +309,14 @@ body, html {
 }
 
 #websites .contentsHolder {
-    margin: 0 auto 50px auto;
-    width: 90%;
+	margin: 0 auto 50px auto;
+	width: 90%;
 }
 
 .creations .website {
 	width: 100%;
 	max-width: 45%;
-    height: 25em;
+	height: 25em;
 	display: inline-block;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -324,14 +324,14 @@ body, html {
 	padding: 0px 0 40px 0;
 	margin: -20px -20px;
 	border: 5px solid #FFF;
-    border-radius: 20px;
+	border-radius: 20px;
 	opacity: 0;
 	cursor: pointer;
 
 	-webkit-transform: perspective(1000px) scale(0.6);
-    -moz-transform: perspective(1000px) scale(0.6);
-    -ms-transform: perspective(1000px) scale(0.6);
-    transform: perspective(1000px) scale(0.6);
+	-moz-transform: perspective(1000px) scale(0.6);
+	-ms-transform: perspective(1000px) scale(0.6);
+	transform: perspective(1000px) scale(0.6);
 }
 
 .creations .website:hover {
@@ -345,7 +345,7 @@ body, html {
 
 #website2 {
 	opacity: 0;
-	background-image: url('../assets/upstream.png');
+	background-image: url('../assets/morivy.png');
 }
 
 .footer {
@@ -373,7 +373,7 @@ body, html {
 
 #number {
 	word-spacing: -0.3em;
-    font-size: 1.4em;
+	font-size: 1.4em;
 }
 
 #number a {
