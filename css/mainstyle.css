@@ -76,7 +76,7 @@ body, html {
 }
 
 .content, .website {
-	width: 30em;
+	max-width: 30em;
 	margin: 0 auto;
 	display: inline-block;
 	vertical-align: top;
