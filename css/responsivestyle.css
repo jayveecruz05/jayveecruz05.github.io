@@ -32,9 +32,8 @@
 	}
 
 	.creations .website {
-		/* width: 100vw; */
-		max-width: 90%;
-		height: 25em;
+		max-width: 70%;
+		height: 20em;
 	}
 }
 
@@ -76,6 +75,7 @@
 
 	.wordCloud {
 		width: 100%;
+		height: 30vh;
 
 		-webkit-transform: perspective(1000px) scale(1.7);
 		-moz-transform: perspective(1000px) scale(1.7);
@@ -100,9 +100,7 @@
 	}
 
 	.creations .website {
-		width: 100vw;
-		/* max-width: 100%; */
-		height: 15em;
-		margin: 0px;
+		width: 75vw;
+		height: 10em;
 	}
 }

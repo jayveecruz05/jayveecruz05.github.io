@@ -107,81 +107,99 @@ function customStyle() {
 
 function checkElementIfVisible() {
 	if (checkIfVisibleById('taglineParagraph')) {
-		select('#taglineParagraph').setStyle({
-			'opacity': 1,
-			'transform': 'translate3d(0px, 0px, 0px)',
-			'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
-		});
+		setTimeout(() => {
+			select('#taglineParagraph').setStyle({
+				'opacity': 1,
+				'transform': 'translate3d(0px, 0px, 0px)',
+				'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
+			});
+		}, 300);
 	}
 
 	if (checkIfVisibleById('title1')) {
-		select('#title1').setStyle({
-			'opacity': 1,
-			'transform': 'perspective(1000px) scale(1)',
-			'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
-		});
+		setTimeout(() => {
+			select('#title1').setStyle({
+				'opacity': 1,
+				'transform': 'translate3d(0px, 0px, 0px)',
+				'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
+			});
+		}, 300);
 	}
 
 	if (checkIfVisibleById('contentsHolder1')) {
-		select('#contentsHolder1 .content').setStyle({
-			'opacity': 1,
-			'transform': 'perspective(1000px) scale(1)',
-			'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
-		});
+		setTimeout(() => {
+			select('#contentsHolder1 .content').setStyle({
+				'opacity': 1,
+				'transform': 'translate3d(0px, 0px, 0px)',
+				'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
+			});
+		}, 300);
 	}
 
 	if (checkIfVisibleById('title2')) {
-		select('#title2').setStyle({
-			'opacity': 1,
-			'transform': 'perspective(1000px) scale(1)',
-			'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
-		});
+		setTimeout(() => {
+			select('#title2').setStyle({
+				'opacity': 1,
+				'transform': 'translate3d(0px, 0px, 0px)',
+				'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
+			});
+		}, 300);
 	}
 
 	if (checkIfVisibleById('wordCloudContainer')) {
-		select('#wordCloudContainer').setStyle({
-			'opacity': 1,
-			'transform': 'perspective(1000px) scale(1)',
-			'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
-		});
+		setTimeout(() => {
+			select('#wordCloudContainer').setStyle({
+				'opacity': 1,
+				'transform': 'translate3d(0px, 0px, 0px)',
+				'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
+			});
+		}, 300);
 	}
 
 	if (checkIfVisibleById('title3')) {
-		select('#title3').setStyle({
-			'opacity': 1,
-			'transform': 'perspective(1000px) scale(1)',
-			'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
-		});
+		setTimeout(() => {
+			select('#title3').setStyle({
+				'opacity': 1,
+				'transform': 'translate3d(0px, 0px, 0px)',
+				'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
+			});
+		}, 300);
 	}
 
 	if (checkIfVisibleById('contentsHolder2')) {
-		select('#websites .contentCaption').setStyle({
-			'opacity': 1,
-			'transform': 'perspective(1000px) scale(1)',
-			'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
-		});
+		setTimeout(() => {
+			select('#websites .contentCaption').setStyle({
+				'opacity': 1,
+				'transform': 'translate3d(0px, 0px, 0px)',
+				'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
+			});
+		}, 300);
 
 		if (checkIfVisibleById('website1')) {
 			if (getElementById('website1').className.indexOf('active') == -1) {
-				select('#contentsHolder2 #website1').setStyle({
-					'opacity': 1,
-					'transform': 'perspective(1000px) scale(0.8)',
-					'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
-				});
+				setTimeout(() => {
+					select('#contentsHolder2 #website1').setStyle({
+						'opacity': 1,
+						'transform': 'translate3d(0px, 0px, 0px)',
+						'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
+					});
 
-				getElementById('website1').className += ' active';
+					getElementById('website1').className += ' active';
+				}, 300);
 			}
 		}
 
 		if (checkIfVisibleById('website2')) {
 			if (getElementById('website2').className.indexOf('active') == -1) {
-				select('#contentsHolder2 #website2').setStyle({
-					'opacity': 1,
-					'transform': 'perspective(1000px) scale(0.8)',
-					'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
-				});
+				setTimeout(() => {
+					select('#contentsHolder2 #website2').setStyle({
+						'opacity': 1,
+						'transform': 'translate3d(0px, 0px, 0px)',
+						'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
+					});
 
-				getElementById('website2').className += ' active';
+					getElementById('website2').className += ' active';
+				}, 300);
 			}
 		}
 	}
@@ -189,65 +207,75 @@ function checkElementIfVisible() {
 	// if (checkIfVisibleById('contentsHolder3')) {
 	// 	if (checkIfVisibleById('website3')) {
 	// 		if (getElementById('website3').className.indexOf('active') == -1) {
-	// 			select('#contentsHolder3 #website3').setStyle({
-	// 				'opacity': 1,
-	// 				'transform': 'perspective(1000px) scale(0.8)',
-	// 				'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
-	// 			});
+	// 			setTimeout(() => {
+	// 				select('#contentsHolder3 #website3').setStyle({
+	// 					'opacity': 1,
+	// 					'transform': 'translate3d(0px, 0px, 0px)',
+	// 					'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
+	// 				});
 
-	// 			getElementById('website3').className += ' active';
+	// 				getElementById('website3').className += ' active';
+	// 			}, 300);
 	// 		}
 	// 	}
 
 	// 	if (checkIfVisibleById('website4')) {
 	// 		if (getElementById('website4').className.indexOf('active') == -1) {
-	// 			select('#contentsHolder3 #website4').setStyle({
-	// 				'opacity': 1,
-	// 				'transform': 'perspective(1000px) scale(0.8)',
-	// 				'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
-	// 			});
+	// 			setTimeout(() => {
+	// 				select('#contentsHolder3 #website4').setStyle({
+	// 					'opacity': 1,
+	// 					'transform': 'translate3d(0px, 0px, 0px)',
+	// 					'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
+	// 				});
 
-	// 			getElementById('website4').className += ' active';
+	// 				getElementById('website4').className += ' active';
+	// 			}, 300);
 	// 		}
 	// 	}
 	// }
 
 	if (checkIfVisibleById('contentsHolder3')) {
-		select('#richMedia .contentCaption').setStyle({
-			'opacity': 1,
-			'transform': 'perspective(1000px) scale(1)',
-			'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
-		});
+		setTimeout(() => {
+			select('#richMedia .contentCaption').setStyle({
+				'opacity': 1,
+				'transform': 'translate3d(0px, 0px, 0px)',
+				'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
+			});
+		}, 300);
 
 		if (checkIfVisibleById('richMedia1')) {
 			if (getElementById('richMedia1').className.indexOf('active') == -1) {
-				select('#contentsHolder3 #richMedia1').setStyle({
-					'opacity': 1,
-					'transform': 'perspective(1000px) scale(1)',
-					'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
-				});
+				setTimeout(() => {
+					select('#contentsHolder3 #richMedia1').setStyle({
+						'opacity': 1,
+						'transform': 'translate3d(0px, 0px, 0px)',
+						'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
+					});
 
-				getElementById('richMedia1').children[0].contentWindow.postMessage({
-					action: 'run-animation'
-				}, window.location.origin);
+					getElementById('richMedia1').children[0].contentWindow.postMessage({
+						action: 'run-animation'
+					}, window.location.origin);
 
-				getElementById('richMedia1').className += ' active';
+					getElementById('richMedia1').className += ' active';
+				}, 300);
 			}
 		}
 
 		if (checkIfVisibleById('richMedia2')) {
 			if (getElementById('richMedia2').className.indexOf('active') == -1) {
-				select('#contentsHolder3 #richMedia2').setStyle({
-					'opacity': 1,
-					'transform': 'perspective(1000px) scale(1)',
-					'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
-				});
+				setTimeout(() => {
+					select('#contentsHolder3 #richMedia2').setStyle({
+						'opacity': 1,
+						'transform': 'translate3d(0px, 0px, 0px)',
+						'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
+					});
 
-				getElementById('richMedia2').children[0].contentWindow.postMessage({
-					action: 'run-animation'
-				}, window.location.origin);
+					getElementById('richMedia2').children[0].contentWindow.postMessage({
+						action: 'run-animation'
+					}, window.location.origin);
 
-				getElementById('richMedia2').className += ' active';
+					getElementById('richMedia2').className += ' active';
+				}, 300);
 			}
 		}
 	}
@@ -255,33 +283,37 @@ function checkElementIfVisible() {
 	if (checkIfVisibleById('contentsHolder4')) {
 		if (checkIfVisibleById('richMedia3')) {
 			if (getElementById('richMedia3').className.indexOf('active') == -1) {
-				select('#contentsHolder4 #richMedia3').setStyle({
-					'opacity': 1,
-					'transform': 'perspective(1000px) scale(1)',
-					'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
-				});
+				setTimeout(() => {
+					select('#contentsHolder4 #richMedia3').setStyle({
+						'opacity': 1,
+						'transform': 'translate3d(0px, 0px, 0px)',
+						'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
+					});
 
-				getElementById('richMedia3').children[0].contentWindow.postMessage({
-					action: 'run-animation'
-				}, window.location.origin);
+					getElementById('richMedia3').children[0].contentWindow.postMessage({
+						action: 'run-animation'
+					}, window.location.origin);
 
-				getElementById('richMedia3').className += ' active';
+					getElementById('richMedia3').className += ' active';
+				}, 300);
 			}
 		}
 
 		if (checkIfVisibleById('richMedia4')) {
 			if (getElementById('richMedia4').className.indexOf('active') == -1) {
-				select('#contentsHolder4 #richMedia4').setStyle({
-					'opacity': 1,
-					'transform': 'perspective(1000px) scale(1)',
-					'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
-				});
+				setTimeout(() => {
+					select('#contentsHolder4 #richMedia4').setStyle({
+						'opacity': 1,
+						'transform': 'translate3d(0px, 0px, 0px)',
+						'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
+					});
 
-				getElementById('richMedia4').children[0].contentWindow.postMessage({
-					action: 'run-animation'
-				}, window.location.origin);
+					getElementById('richMedia4').children[0].contentWindow.postMessage({
+						action: 'run-animation'
+					}, window.location.origin);
 
-				getElementById('richMedia4').className += ' active';
+					getElementById('richMedia4').className += ' active';
+				}, 300);
 			}
 		}
 	}
