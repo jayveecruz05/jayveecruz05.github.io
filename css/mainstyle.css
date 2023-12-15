@@ -70,6 +70,16 @@ body, html {
 	transform: perspective(1000px) scale(0.8);
 }
 
+.contentWrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	min-height: 100vh;
+	scroll-snap-align: start;
+	box-sizing: border-box;
+}
+
 .contentsHolder {
 	/* display: table; */
 	margin: 0 auto;
@@ -132,6 +142,7 @@ body, html {
 .contentParagraph {
 	color: #FFF;
 	text-align: center;
+	font-size: 1.2em;
 }
 
 .contentIframe {
@@ -239,7 +250,7 @@ body, html {
 
 .whatIDo {
 	background-color: #022B3A;
-	padding: 50px 0 30px 0;
+	padding: 50px 0;
 	text-align: center;
 }
 
@@ -267,8 +278,12 @@ body, html {
 }
 
 .whatIUseContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
 	width: 100%;
-	height: auto;
+	min-height: inherit;
 	text-align: center;
 	background-color: rgba(42, 45, 52, 0.7);
 	text-align: center;
@@ -298,19 +313,20 @@ body, html {
 	width: 100%;
 	height: auto;
 	background-color: #022B3A;
-	padding: 50px 0 20px 0;
+	padding: 50px 0;
 	text-align: center;
 }
 
 .creations .content {
-	width: 25em;
-	padding: 15px 0 40px 0;
+	/* width: 25em; */
+	padding: 20px;
 	display: inline-block;
+	box-sizing: border-box;
 }
 
 #websites .contentsHolder {
 	margin: 0 auto 50px auto;
-	width: 90%;
+	width: 90vw;
 }
 
 .creations .website {
@@ -357,6 +373,7 @@ body, html {
 	text-align: center;
 	color: #FFF;
 	padding: 3em 0;
+	scroll-snap-align: end;
 }
 
 .footer p {
