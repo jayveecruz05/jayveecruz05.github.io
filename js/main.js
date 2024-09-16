@@ -202,6 +202,20 @@ function checkElementIfVisible() {
 				}, 300);
 			}
 		}
+
+		if (checkIfVisibleById('website3')) {
+			if (getElementById('website3').className.indexOf('active') == -1) {
+				setTimeout(() => {
+					select('#contentsHolder2 #website3').setStyle({
+						'opacity': 1,
+						'transform': 'translate3d(0px, 0px, 0px)',
+						'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
+					});
+
+					getElementById('website3').className += ' active';
+				}, 300);
+			}
+		}
 	}
 
 	// if (checkIfVisibleById('contentsHolder3')) {
@@ -359,56 +373,56 @@ function richMediaIframe() {
 // Automatic Functions
 var userDevice = { // Check user device
 		isWindows: function() {
-	        if (navigator.platform.indexOf("Win") > -1) {
-	            return true;
-	        } else {
-	            return false;
-	        }
-	    },
-	    isMacintosh: function() {
-	        if (navigator.platform.indexOf("Mac") > -1) {
-	            return true;
-	        } else {
-	            return false;
-	        }
-	    },
-	    isMobile: function() {
-	        if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-	            return true;
-	        } else {
-	            return false;
-	        }
-	    }
+			if (navigator.platform.indexOf("Win") > -1) {
+				return true;
+			} else {
+				return false;
+			}
+		},
+		isMacintosh: function() {
+			if (navigator.platform.indexOf("Mac") > -1) {
+				return true;
+			} else {
+				return false;
+			}
+		},
+		isMobile: function() {
+			if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+				return true;
+			} else {
+				return false;
+			}
+		}
 	},
 	userBrowser = { // Check user browser
 		isChrome: function() {
-	        if (/Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor)) {
-	            return true;
-	        } else {
-	            return false;
-	        }
-	    },
-	    isFireFox: function() {
-	        if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
-	            return true;
-	        } else {
-	            return false;
-	        }
-	    },
-	    isSafari: function() {
-	        if (navigator.vendor.indexOf('Apple') > -1) {
-	            return true;
-	        } else {
-	            return false;
-	        }
-	    },
-	    isMsie: function() {
-	        if (window.navigator.userAgent.indexOf("MSIE ") > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
-	            return true;   
-	        } else {
-	            return false;
-	        }
-	    }
+			if (/Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor)) {
+				return true;
+			} else {
+				return false;
+			}
+		},
+		isFireFox: function() {
+			if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
+				return true;
+			} else {
+				return false;
+			}
+		},
+		isSafari: function() {
+			if (navigator.vendor.indexOf('Apple') > -1) {
+				return true;
+			} else {
+				return false;
+			}
+		},
+		isMsie: function() {
+			if (window.navigator.userAgent.indexOf("MSIE ") > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+				return true;
+			} else {
+				return false;
+			}
+		}
 	},
 	getElementById = function(elementId) {
 		var element_id = document.getElementById(elementId);
@@ -422,8 +436,8 @@ var userDevice = { // Check user device
 	preloadImages = function() {
 		for (var i = 0; i < images.length; i++) {
 			var image = new Image();
-				image.src = 'assets/' + images[i];
-				image.addEventListener('load', checkIfImagesIsLoaded, false);
+					image.src = 'assets/' + images[i];
+					image.addEventListener('load', checkIfImagesIsLoaded, false);
 		}
 	},
 	checkIfImagesIsLoaded = function() {

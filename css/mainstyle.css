@@ -5,10 +5,9 @@
 
 @font-face {
     font-family: 'CourierNew';
+		font-display: swap;
     src: url('../assets/CourierNew.eot');
-    src: url('../assets/CourierNew.eot') format('embedded-opentype'),
-         url('../assets/CourierNew.woff') format('woff'),
-         url('../assets/CourierNew.ttf') format('truetype');
+    src: url('../assets/CourierNew.eot') format('embedded-opentype'), url('../assets/CourierNew.woff') format('woff'), url('../assets/CourierNew.ttf') format('truetype');
 }
 
 * {
@@ -356,12 +355,17 @@ body, html {
 
 #website1 {
 	opacity: 0;
-	background-image: url('../assets/tayocash.png');
+	background-image: url('../assets/fastdoc.png');
 }
 
 #website2 {
 	opacity: 0;
 	background-image: url('../assets/morivy.png');
+}
+
+#website3 {
+	opacity: 0;
+	background-image: url('../assets/tayocash.png');
 }
 
 .footer {
