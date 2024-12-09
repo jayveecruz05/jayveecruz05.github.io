@@ -47,8 +47,9 @@
 		font-size: 6.5vw;
 	}
 
-	.contentsHolder1 .content {
-		width: auto !important;
+	#contentsHolder1 .content {
+		max-width: 100%;
+		width: auto;
 		display: block;
 	}
 }

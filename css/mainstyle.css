@@ -84,6 +84,11 @@ body, html {
 	margin: 0 auto;
 }
 
+#contentsHolder1 .content:first-child {
+	display: block;
+	max-width: 80vw;
+}
+
 .content, .website {
 	max-width: 30em;
 	margin: 0 auto;
