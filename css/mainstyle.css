@@ -360,15 +360,20 @@ body, html {
 
 #website1 {
 	opacity: 0;
-	background-image: url('../assets/fastdoc.png');
+	background-image: url('../assets/kasha.png');
 }
 
 #website2 {
 	opacity: 0;
-	background-image: url('../assets/morivy.png');
+	background-image: url('../assets/fastdoc.png');
 }
 
 #website3 {
+	opacity: 0;
+	background-image: url('../assets/morivy.png');
+}
+
+#website4 {
 	opacity: 0;
 	background-image: url('../assets/tayocash.png');
 }

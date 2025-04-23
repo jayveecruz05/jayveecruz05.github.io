@@ -216,6 +216,20 @@ function checkElementIfVisible() {
 				}, 300);
 			}
 		}
+
+		if (checkIfVisibleById('website4')) {
+			if (getElementById('website4').className.indexOf('active') == -1) {
+				setTimeout(() => {
+					select('#contentsHolder2 #website4').setStyle({
+						'opacity': 1,
+						'transform': 'translate3d(0px, 0px, 0px)',
+						'transition': 'opacity 1s ease-in-out, transform 1s ease-in-out'
+					});
+
+					getElementById('website4').className += ' active';
+				}, 300);
+			}
+		}
 	}
 
 	// if (checkIfVisibleById('contentsHolder3')) {
