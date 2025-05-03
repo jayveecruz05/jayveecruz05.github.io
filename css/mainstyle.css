@@ -14,13 +14,13 @@
 	margin: 0;
 	padding: 0;
 
-	-webkit-touch-callout: none;
+	/* -webkit-touch-callout: none;
 	-webkit-user-select: none;
 	-khtml-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-	outline: none;
+	outline: none; */
 
 	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);  /* mobile webkit */
 	-moz-tap-highlight-color: rgba(255, 255, 255, 0);
@@ -175,7 +175,6 @@ body, html {
 
 #mainContainer {
 	overflow: hidden;
-	cursor: default;
 	opacity: 0;
 	-webkit-overflow-scrolling: touch;
 	-moz-overflow-scrolling: touch;
