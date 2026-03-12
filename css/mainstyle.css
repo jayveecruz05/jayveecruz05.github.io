@@ -94,7 +94,7 @@ body, html {
 	margin: 0 auto;
 	display: inline-block;
 	vertical-align: top;
-	padding: 15px 15px 40px 15px;
+	padding: 15px 40px 40px 40px;
 	font-family: CourierNew, sans-serif;
 	color: #FFF;
 	text-align: center;
@@ -145,8 +145,9 @@ body, html {
 
 .contentParagraph {
 	color: #FFF;
-	text-align: center;
+	text-align: left;
 	font-size: 1.2em;
+	padding-bottom: 20px;
 }
 
 .contentIframe {
