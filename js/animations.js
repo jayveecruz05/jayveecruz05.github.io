@@ -542,6 +542,33 @@ const setupAnimations = () => {
       pauseStart: 500
     });
   }
+
+  // Initialize scroll indicator visibility
+  createScrollIndicator();
+};
+
+// ================================
+// SCROLL INDICATOR (Home Section Only)
+// ================================
+const createScrollIndicator = () => {
+  const scrollIndicator = document.querySelector('.home__scroll-indicator');
+  const homeSection = document.getElementById('home');
+
+  if (!scrollIndicator || !homeSection) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        scrollIndicator.classList.add('visible');
+      } else {
+        scrollIndicator.classList.remove('visible');
+      }
+    });
+  }, {
+    threshold: 0.5
+  });
+
+  observer.observe(homeSection);
 };
 
 // Export for use in main.js

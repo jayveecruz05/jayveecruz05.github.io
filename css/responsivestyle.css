@@ -175,7 +175,21 @@
   }
 
   .home__scroll-indicator {
+    bottom: var(--space-lg);
+  }
+
+  .scroll-indicator__mouse {
+    width: 20px;
+    height: 32px;
+  }
+
+  .scroll-indicator__text--desktop {
     display: none;
+  }
+
+  .scroll-indicator__text--mobile {
+    display: block;
+    font-size: var(--font-size-xs);
   }
 
   /* Service Cards */
@@ -476,10 +490,6 @@
   .home__photo-frame {
     width: 150px;
     height: 150px;
-  }
-
-  .home__scroll-indicator {
-    display: none;
   }
 }
 
