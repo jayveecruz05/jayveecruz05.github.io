@@ -1,0 +1,163 @@
+/*
+  File Name: variables.css
+  Author: Jayvee O. Cruz
+  Purpose: CSS Custom Properties for Design System
+*/
+
+:root {
+  /* ================================
+     COLORS
+     ================================ */
+
+  /* Primary Colors */
+  --color-primary: #0071BC;
+  --color-primary-light: #00A3E0;
+  --color-primary-dark: #005A96;
+
+  /* Accent Colors */
+  --color-accent-1: #00D4FF;
+  --color-accent-2: #7B2FFF;
+  --color-accent-3: #FF6B6B;
+
+  /* Dark Tones */
+  --color-dark-1: #0A0A0F;
+  --color-dark-2: #022B3A;
+  --color-dark-3: #2A2D34;
+  --color-dark-4: #1A1A2E;
+
+  /* Light Tones */
+  --color-white: #FFFFFF;
+  --color-off-white: #F5F5F7;
+  --color-gray: #B8C4E0;
+  --color-gray-light: #E2E8F5;
+
+  /* ================================
+     GRADIENTS
+     ================================ */
+  --gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent-2) 100%);
+  --gradient-glow: linear-gradient(90deg, var(--color-accent-1), var(--color-accent-2), var(--color-primary));
+  --gradient-dark: linear-gradient(180deg, var(--color-dark-1) 0%, var(--color-dark-2) 100%);
+  --gradient-hero: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent-2) 50%, var(--color-accent-1) 100%);
+  --gradient-card: linear-gradient(135deg, rgba(0, 113, 188, 0.1) 0%, rgba(123, 47, 255, 0.05) 100%);
+
+  /* ================================
+     GLASS EFFECT
+     ================================ */
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-bg-hover: rgba(255, 255, 255, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-hover: rgba(255, 255, 255, 0.15);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --glass-blur: blur(20px);
+
+  /* ================================
+     TYPOGRAPHY
+     ================================ */
+  --font-primary: 'CourierNew', 'Courier New', monospace;
+
+  /* Font Sizes - Fluid Typography */
+  --font-size-xs: clamp(0.7rem, 1.5vw, 0.75rem);
+  --font-size-sm: clamp(0.8rem, 1.8vw, 0.875rem);
+  --font-size-base: clamp(0.9rem, 2vw, 1rem);
+  --font-size-lg: clamp(1rem, 2.2vw, 1.125rem);
+  --font-size-xl: clamp(1.1rem, 2.5vw, 1.25rem);
+  --font-size-2xl: clamp(1.25rem, 3vw, 1.5rem);
+  --font-size-3xl: clamp(1.5rem, 4vw, 2rem);
+  --font-size-4xl: clamp(2rem, 5vw, 2.5rem);
+  --font-size-5xl: clamp(2.5rem, 6vw, 3.5rem);
+  --font-size-home: clamp(3rem, 10vw, 8rem);
+
+  /* Letter Spacing */
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.1em;
+  --letter-spacing-wider: 0.15em;
+
+  /* Line Height */
+  --line-height-tight: 1.1;
+  --line-height-normal: 1.6;
+  --line-height-relaxed: 1.8;
+
+  /* ================================
+     SPACING
+     ================================ */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 5rem;
+  --space-3xl: 8rem;
+  --space-4xl: 12rem;
+
+  /* ================================
+     BORDER RADIUS
+     ================================ */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius-full: 9999px;
+
+  /* ================================
+     SHADOWS
+     ================================ */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.2);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.25);
+  --shadow-glow: 0 0 40px rgba(0, 113, 188, 0.4);
+  --shadow-glow-accent: 0 0 40px rgba(0, 212, 255, 0.3);
+  --shadow-glow-purple: 0 0 40px rgba(123, 47, 255, 0.3);
+
+  /* ================================
+     TRANSITIONS
+     ================================ */
+  --transition-fast: 150ms ease;
+  --transition-base: 300ms ease;
+  --transition-slow: 500ms ease;
+  --transition-slower: 800ms ease;
+  --transition-slowest: 1000ms ease;
+
+  /* ================================
+     EASING FUNCTIONS
+     ================================ */
+  --ease-linear: linear;
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-out-cubic: cubic-bezier(0.33, 1, 0.68, 1);
+  --ease-in-out-cubic: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --ease-elastic: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+  /* ================================
+     Z-INDEX SCALE
+     ================================ */
+  --z-below: -1;
+  --z-normal: 1;
+  --z-tooltip: 10;
+  --z-sticky: 100;
+  --z-fixed: 200;
+  --z-overlay: 500;
+  --z-modal: 1000;
+  --z-cursor: 9999;
+
+  /* ================================
+     LAYOUT
+     ================================ */
+  --max-width: 1400px;
+  --max-width-content: 1200px;
+  --max-width-narrow: 800px;
+
+  /* ================================
+     ANIMATION DURATIONS
+     ================================ */
+  --duration-loading: 2500ms;
+  --duration-reveal: 800ms;
+  --duration-orb-float: 15s;
+  --duration-gradient-shift: 5s;
+  --duration-typewriter: 100ms;
+}

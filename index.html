@@ -1,83 +1,232 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<!--
 		File Name: index.html
 		Author: Jayvee O. Cruz
+		Portfolio - Bold & Creative Design
 	-->
 
-	<title>Jayvee O. Cruz</title>
-	<!-- Icon -->
-		<link id="iconLink1" rel="shortcut icon" type="image/x-icon" />
-		<link id="iconLink2" rel="icon" type="image/x-icon" />
-	<!-- /Icon -->
+	<title>Jayvee O. Cruz | Web Developer</title>
 
-	<!-- Meta's Codes -->
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<meta name="theme-color" content="#0071bc" />
-	<!-- /Meta's Codes -->
+	<!-- Preload Critical Assets -->
+	<link rel="preload" href="assets/CourierNew.woff" as="font" type="font/woff" crossorigin>
+	<link rel="preload" href="assets/background1.jpg" as="image">
 
-	<!-- CSS Style -->
-		<link rel="stylesheet" type="text/css" href="css/mainstyle.css" />
-		<link rel="stylesheet" type="text/css" href="css/responsivestyle.css" />
-	<!-- /CSS Style -->
+	<!-- Favicon -->
+	<link id="iconLink2" rel="shortcut icon" type="image/x-icon" />
+	<link id="iconLink1" rel="icon" type="image/x-icon" />
+
+	<!-- Meta Tags -->
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="theme-color" content="#0071bc" />
+	<meta name="description" content="Jayvee O. Cruz - Front-End Web Developer specializing in Vue.js, React.js, and creative web experiences" />
+	<meta name="author" content="Jayvee O. Cruz" />
+
+	<!-- Open Graph -->
+	<meta property="og:title" content="Jayvee O. Cruz | Web Developer" />
+	<meta property="og:description" content="Front-End Web Developer specializing in Vue.js, React.js, and creative web experiences" />
+	<meta property="og:type" content="website" />
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" type="text/css" href="css/cssreset.css" />
+	<link rel="stylesheet" type="text/css" href="css/variables.css" />
+	<link rel="stylesheet" type="text/css" href="css/animations.css" />
+	<link rel="stylesheet" type="text/css" href="css/mainstyle.css" />
+	<link rel="stylesheet" type="text/css" href="css/responsivestyle.css" />
 </head>
 <body>
-	<div id="loadingScreen">
-		<div id="iconHolder">
-			<div id="loadingIcon" class="loadingIcon"></div>
+	<!-- Loading Screen -->
+	<div id="loadingScreen" class="loading-screen">
+		<div class="loading-screen__content">
+			<div id="loadingIcon" class="loading-screen__icon"></div>
+			<div class="loading-screen__progress">
+				<div class="loading-screen__progress-bar"></div>
+			</div>
+			<p class="loading-screen__text">Loading...</p>
 		</div>
 	</div>
-	<div id="mainContainer">
-		<div id="background1" class="contentWrapper background1">
-			<div id="tagline" class="tagline">
-				<h1 id="taglineParagraph">
-					<span>Hello I’m Jayvee</span><br/>
-					<span>An Awesome</span>
-					<span class="subTaglineText">
-						<span class="text1">&#123;&nbsp;Web</span><span class="text2">Developer&nbsp;&#125;</span>
-					</span>
+
+	<!-- Navigation -->
+	<nav id="mainNav" class="nav nav--hidden">
+		<div class="nav__logo">
+			<a href="#home">
+				<img src="assets/my_icon_v1.png" alt="JC Icon" />
+			</a>
+		</div>
+		<div class="nav__links">
+			<a href="#home" class="nav__link" data-section="home">Home</a>
+			<a href="#services" class="nav__link" data-section="services">Services</a>
+			<a href="#skills" class="nav__link" data-section="skills">Skills</a>
+			<a href="#projects" class="nav__link" data-section="projects">Projects</a>
+			<a href="#contact" class="nav__link" data-section="contact">Contact</a>
+		</div>
+		<button class="nav__hamburger" aria-label="Toggle navigation menu">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+	</nav>
+
+	<!-- Mobile Navigation Overlay -->
+	<div id="mobileNav" class="mobile-nav">
+		<div class="mobile-nav__content">
+			<a href="#home" class="mobile-nav__link" data-section="home">Home</a>
+			<a href="#services" class="mobile-nav__link" data-section="services">Services</a>
+			<a href="#skills" class="mobile-nav__link" data-section="skills">Skills</a>
+			<a href="#projects" class="mobile-nav__link" data-section="projects">Projects</a>
+			<a href="#contact" class="mobile-nav__link" data-section="contact">Contact</a>
+		</div>
+	</div>
+
+	<!-- Main Content Container -->
+	<main id="mainContainer" class="main-container">
+
+		<!-- Section 1: Home -->
+		<section id="home" class="section section--home">
+			<div class="home__background">
+				<div class="home__gradient-orbs">
+					<div class="orb orb--1"></div>
+					<div class="orb orb--2"></div>
+					<div class="orb orb--3"></div>
+				</div>
+				<div class="home__noise-overlay"></div>
+			</div>
+
+			<div class="home__content">
+				<p class="home__greeting reveal">Hello, I'm</p>
+				<h1 class="home__title">
+					<span class="home__name gradient-text">Jayvee</span>
 				</h1>
-			</div>
-		</div>
-		
-		<div id="whatIDo" class="contentWrapper whatIDo">
-			<h1 id="title1" class="title">&#123; What I Do &#125;</h1>
-
-			<div id="contentsHolder1" class="contentsHolder">
-				<div class="content">
-					<div id="monitor" class="contentIcon"></div>
-					<p class="contentTitle">Front End</p>
-					<p class="contentParagraph">I specialize in building modern, responsive front-end websites using a wide range of technologies, including HTML5, CSS3, SASS, LESS, and Styled Components.</p>
-					<p class="contentParagraph">My development toolkit includes JavaScript, TypeScript, and JQuery, as well as advanced frameworks and libraries like Vue.js, Nuxt.js, Vuex, Pinia, Vite, React.js, Next.js, Redux, and TanStack Query.</p>
-					<p class="contentParagraph">AI tools such as Claude Code help enable faster and more efficient development.</p>
-					<p class="contentParagraph">I’m experienced with UI frameworks such as Vuetify, Element UI, Ant Design, MUI, Bootstrap, and Tailwind CSS.</p>
-					<p class="contentParagraph">I also work with design systems using Storybook and Figma, ensure quality through Cypress testing, and integrate with REST APIs via Axios.</p>
-					<p class="contentParagraph">My projects often leverage cloud platforms and DevOps tools like Kubesphere, Microsoft Azure, AWS, and more.</p>
+				<div class="home__role reveal">
+					<span class="home__bracket">&#123;</span>
+					<span id="typewriter" class="home__role-text">Web Developer</span>
+					<span class="home__bracket">&#125;</span>
 				</div>
-
-				<div class="content">
-					<div id="gear" class="contentIcon"></div>
-					<p class="contentTitle">Back End</p>
-					<p class="contentParagraph">I specialize in back-end web development using technologies such as Node.js, PHP, MongoDB, MySQL, and various modern frameworks.</p>
-				</div>
-
-				<div class="content">
-					<div id="megaphone" class="contentIcon"></div>
-					<p class="contentTitle">Rich Media</p>
-					<p class="contentParagraph">I specialize in designing and coding rich media ads of any size using HTML5, CSS, JavaScript, and leading rich media ad platforms.</p>
+				<div class="home__cta reveal stagger">
+					<a href="#projects" class="btn btn--primary magnetic">
+						<span>View My Work</span>
+						<svg class="btn__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+							<path d="M5 12h14M12 5l7 7-7 7"/>
+						</svg>
+					</a>
+					<a href="#contact" class="btn btn--outline magnetic">
+						<span>Get In Touch</span>
+					</a>
 				</div>
 			</div>
-		</div>
 
-		<div id="background2" class="contentWrapper background2">
-			<div id="whatIUseContainer" class="whatIUseContainer">
-				<h1 id="title2" class="title">&#123; What I Use &#125;</h1>
-				
-				<div id="wordCloudContainer" class="wordCloudContainer">
-					<canvas id="wordCloud" class="wordCloud" width="1000" height="450"></canvas>
+			<div class="home__scroll-indicator">
+				<div class="scroll-indicator">
+					<div class="scroll-indicator__mouse">
+						<div class="scroll-indicator__wheel"></div>
+					</div>
+					<span class="scroll-indicator__text">Scroll Down</span>
+				</div>
+			</div>
+		</section>
+
+		<!-- Section 2: Services (What I Do) -->
+		<section id="services" class="section section--services">
+			<div class="section__header">
+				<h2 class="section__title reveal">
+					<span class="bracket">&#123;</span> What I Do <span class="bracket">&#125;</span>
+				</h2>
+				<div class="section__line"></div>
+			</div>
+
+			<div class="services__grid stagger">
+				<article class="service-card service-card--featured reveal" data-service="frontend">
+					<div class="service-card__icon-wrapper">
+						<div class="service-card__icon" style="background-image: url('assets/monitor.png')"></div>
+						<div class="service-card__icon-glow"></div>
+					</div>
+					<h3 class="service-card__title">Front End</h3>
+					<p class="service-card__description">
+						I specialize in building modern, responsive front-end websites using HTML5, CSS3, SASS, LESS, and Styled Components. My development toolkit includes JavaScript, TypeScript, Vue.js, Nuxt.js, React.js, and Next.js.
+					</p>
+					<p class="service-card__description">
+						I leverage AI tools like Claude Code for faster development and work with UI frameworks including Vuetify, Element UI, Ant Design, MUI, Bootstrap, and Tailwind CSS.
+					</p>
+					<div class="service-card__tech-stack">
+						<span class="tech-tag">Vue.js</span>
+						<span class="tech-tag">React.js</span>
+						<span class="tech-tag">Nuxt.js</span>
+						<span class="tech-tag">Next.js</span>
+						<span class="tech-tag">TypeScript</span>
+						<span class="tech-tag">Vuex</span>
+						<span class="tech-tag">Pinia</span>
+						<span class="tech-tag">Context API</span>
+						<span class="tech-tag">Redux</span>
+						<span class="tech-tag">TanStack Query</span>
+						<span class="tech-tag">Claude Code</span>
+						<span class="tech-tag">Styled Components</span>
+						<span class="tech-tag">Tailwind CSS</span>
+						<span class="tech-tag">StoryBook</span>
+						<span class="tech-tag">Cypress</span>
+						<span class="tech-tag">Figma</span>
+						<span class="tech-tag">REST APIs</span>
+						<span class="tech-tag">Axios</span>
+						<span class="tech-tag">Claude Code</span>
+					</div>
+					<div class="service-card__hover-effect"></div>
+				</article>
+
+				<article class="service-card reveal" data-service="backend">
+					<div class="service-card__icon-wrapper">
+						<div class="service-card__icon" style="background-image: url('assets/gear.png')"></div>
+						<div class="service-card__icon-glow"></div>
+					</div>
+					<h3 class="service-card__title">Back End</h3>
+					<p class="service-card__description">
+						I specialize in back-end web development using technologies such as Node.js, PHP, MongoDB, MySQL, and various modern frameworks.
+					</p>
+					<div class="service-card__tech-stack">
+						<span class="tech-tag">Node.js</span>
+						<span class="tech-tag">PHP</span>
+						<span class="tech-tag">MongoDB</span>
+						<span class="tech-tag">MySQL</span>
+					</div>
+					<div class="service-card__hover-effect"></div>
+				</article>
+
+				<article class="service-card reveal" data-service="richmedia">
+					<div class="service-card__icon-wrapper">
+						<div class="service-card__icon" style="background-image: url('assets/megaphone.png')"></div>
+						<div class="service-card__icon-glow"></div>
+					</div>
+					<h3 class="service-card__title">Rich Media</h3>
+					<p class="service-card__description">
+						I specialize in designing and coding rich media ads of any size using HTML5, CSS, JavaScript, and leading rich media ad platforms.
+					</p>
+					<div class="service-card__tech-stack">
+						<span class="tech-tag">HTML5 Ads</span>
+						<span class="tech-tag">CSS Animation</span>
+						<span class="tech-tag">JavaScript</span>
+					</div>
+					<div class="service-card__hover-effect"></div>
+				</article>
+			</div>
+		</section>
+
+		<!-- Section 3: Skills (What I Use) -->
+		<section id="skills" class="section section--skills">
+			<div class="skills__background">
+				<div class="skills__overlay"></div>
+			</div>
+
+			<div class="section__header">
+				<h2 class="section__title reveal">
+					<span class="bracket">&#123;</span> What I Use <span class="bracket">&#125;</span>
+				</h2>
+				<div class="section__line"></div>
+			</div>
+
+			<div class="skills__container reveal">
+				<div id="wordCloudContainer" class="word-cloud-container">
+					<canvas id="wordCloud" class="word-cloud" width="1000" height="450"></canvas>
 					<div id="tags" class="tags">
 						<a href="">HTML5</a>
 						<a href="">CSS3</a>
@@ -133,59 +282,150 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 
-		<div id="creations" class="contentWrapper creations">
-			<h1 id="title3" class="title">&#123; My Creations &#125;</h1>
+		<!-- Section 4: Projects (My Creations) -->
+		<section id="projects" class="section section--projects">
+			<div class="section__header">
+				<h2 class="section__title reveal">
+					<span class="bracket">&#123;</span> My Creations <span class="bracket">&#125;</span>
+				</h2>
+				<div class="section__line"></div>
+			</div>
 
-			<div id="websites" class="contentsHolder">
-				<h2 class="contentCaption">Websites</h2>
+			<!-- Websites Subsection -->
+			<div class="projects__category" data-category="websites">
+				<h3 class="projects__category-title reveal">Websites</h3>
 
-				<div id="contentsHolder2" class="contentsHolder">
-					<a id="website1" class="website" href="https://kasha.io" target="_blank"></a>
-					<a id="website2" class="website" href="https://fastdoc.com" target="_blank"></a>
-					<a id="website3" class="website" href="https://www.morivy.com" target="_blank"></a>
-					<a id="website4" class="website" href="https://tayocash.com" target="_blank"></a>
+				<div class="projects__showcase stagger">
+					<article class="project-card reveal" data-project="kasha">
+						<a href="https://kasha.io" target="_blank" rel="noopener noreferrer" class="project-card__link">
+							<div class="project-card__image-wrapper">
+								<img src="assets/kasha.png" alt="Kasha" class="project-card__image" loading="lazy" />
+								<div class="project-card__overlay"></div>
+							</div>
+							<div class="project-card__info">
+								<h4 class="project-card__title">Kasha</h4>
+								<p class="project-card__tech">React.js, Next.js</p>
+							</div>
+						</a>
+					</article>
+
+					<article class="project-card reveal" data-project="fastdoc">
+						<a href="https://fastdoc.com" target="_blank" rel="noopener noreferrer" class="project-card__link">
+							<div class="project-card__image-wrapper">
+								<img src="assets/fastdoc.png" alt="FastDoc" class="project-card__image" loading="lazy" />
+								<div class="project-card__overlay"></div>
+							</div>
+							<div class="project-card__info">
+								<h4 class="project-card__title">FastDoc</h4>
+								<p class="project-card__tech">Vue.js, Nuxt.js</p>
+							</div>
+						</a>
+					</article>
+
+					<article class="project-card reveal" data-project="morivy">
+						<a href="https://www.morivy.com" target="_blank" rel="noopener noreferrer" class="project-card__link">
+							<div class="project-card__image-wrapper">
+								<img src="assets/morivy.png" alt="Morivy" class="project-card__image" loading="lazy" />
+								<div class="project-card__overlay"></div>
+							</div>
+							<div class="project-card__info">
+								<h4 class="project-card__title">Morivy</h4>
+								<p class="project-card__tech">Vue.js, Nuxt.js, React.js</p>
+							</div>
+						</a>
+					</article>
+
+					<article class="project-card reveal" data-project="tayocash">
+						<a href="https://tayocash.com" target="_blank" rel="noopener noreferrer" class="project-card__link">
+							<div class="project-card__image-wrapper">
+								<img src="assets/tayocash.png" alt="TayoCash" class="project-card__image" loading="lazy" />
+								<div class="project-card__overlay"></div>
+							</div>
+							<div class="project-card__info">
+								<h4 class="project-card__title">TayoCash</h4>
+								<p class="project-card__tech">Vue.js, Vuetify</p>
+							</div>
+						</a>
+					</article>
 				</div>
 			</div>
 
-			<div id="richMedia" class="contentsHolder">
-				<h2 class="contentCaption">Rich Media</h2>
+			<!-- Rich Media Subsection -->
+			<div class="projects__category" data-category="richmedia">
+				<h3 class="projects__category-title reveal">Rich Media</h3>
 
-				<div id="contentsHolder3" class="contentsHolder">
-					<div id="richMedia1" class="content">
-						<iframe class="contentIframe" src="creations/rich-media/adidas/index.html"></iframe>
+				<div class="projects__rich-media-grid stagger">
+					<div class="rich-media-card reveal" data-media="adidas">
+						<div class="rich-media-card__frame">
+							<iframe class="rich-media-card__iframe" src="creations/rich-media/adidas/index.html" loading="lazy"></iframe>
+						</div>
+						<div class="rich-media-card__label">Adidas Campaign</div>
 					</div>
-					<div id="richMedia2" class="content">
-						<iframe class="contentIframe" src="creations/rich-media/pill-pockets/index.html"></iframe>
-					</div>
-				</div>
 
-				<div id="contentsHolder4" class="contentsHolder">
-					<div id="richMedia3" class="content">
-						<iframe class="contentIframe" src="creations/rich-media/servpro/index.html"></iframe>
+					<div class="rich-media-card reveal" data-media="pill-pockets">
+						<div class="rich-media-card__frame">
+							<iframe class="rich-media-card__iframe" src="creations/rich-media/pill-pockets/index.html" loading="lazy"></iframe>
+						</div>
+						<div class="rich-media-card__label">Pill Pockets Campaign</div>
 					</div>
-					<div id="richMedia4" class="content">
-						<iframe class="contentIframe" src="creations/rich-media/maui-jim/index.html"></iframe>
+
+					<div class="rich-media-card reveal" data-media="servpro">
+						<div class="rich-media-card__frame">
+							<iframe class="rich-media-card__iframe" src="creations/rich-media/servpro/index.html" loading="lazy"></iframe>
+						</div>
+						<div class="rich-media-card__label">ServPro Campaign</div>
+					</div>
+
+					<div class="rich-media-card reveal" data-media="maui-jim">
+						<div class="rich-media-card__frame">
+							<iframe class="rich-media-card__iframe" src="creations/rich-media/maui-jim/index.html" loading="lazy"></iframe>
+						</div>
+						<div class="rich-media-card__label">Maui Jim Campaign</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 
-		<div id="footer" class="footer">
-			<p id="email">jayveecruz05@gmail.com</p>
-			<!-- <p id="number">+63 930 630 1773</p> -->
-			<p id="copyright">
-				<span>Copyright&copy; 2026</span>
-				<span>Jayvee O. Cruz</span>
-				<span>All Rights Reserved.</span>
-			</p>
-		</div>
+		<!-- Section 5: Contact / Footer -->
+		<section id="contact" class="section section--contact">
+			<div class="contact__background">
+				<div class="contact__gradient"></div>
+			</div>
+
+			<div class="contact__content">
+				<h2 class="contact__title reveal">Let's Work Together</h2>
+				<p class="contact__subtitle reveal">Have a project in mind? Let's create something amazing.</p>
+
+				<div class="contact__info reveal">
+					<a href="mailto:jayveecruz05@gmail.com" class="contact__email magnetic">
+						<span class="contact__email-text">jayveecruz05@gmail.com</span>
+					</a>
+				</div>
+			</div>
+
+			<footer class="footer">
+				<p class="footer__copyright">
+					<span>Copyright &copy; 2026</span>
+					<span class="footer__divider">|</span>
+					<span>Jayvee O. Cruz</span>
+					<span class="footer__divider">|</span>
+					<span>All Rights Reserved.</span>
+				</p>
+			</footer>
+		</section>
+	</main>
+
+	<!-- Custom Cursor (Desktop Only) -->
+	<div id="cursor" class="cursor">
+		<div class="cursor__dot"></div>
+		<div class="cursor__outline"></div>
 	</div>
 
-	<!-- Script -->
-		<script type="text/javascript" src="js/tagcanvas.min.js"></script>
-		<script type="text/javascript" src="js/main.js"></script>
-	<!-- /Script -->
+	<!-- Scripts -->
+	<script type="text/javascript" src="js/tagcanvas.min.js"></script>
+	<script type="text/javascript" src="js/animations.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
