@@ -152,17 +152,37 @@ const createCustomCursor = () => {
   const init = () => {
     if (!cursor || isMobile()) return;
 
-    cursor.classList.add('active');
+    let started = false;
+
+    const startCursor = (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      outlineX = mouseX;
+      outlineY = mouseY;
+
+      cursorDot.style.left = `${mouseX}px`;
+      cursorDot.style.top = `${mouseY}px`;
+      cursorOutline.style.left = `${outlineX}px`;
+      cursorOutline.style.top = `${outlineY}px`;
+
+      cursor.classList.add('active');
+      cursor.style.opacity = '1';
+      started = true;
+
+      animateOutline();
+    };
 
     document.addEventListener('mousemove', (e) => {
+      if (!started) {
+        startCursor(e);
+      }
+
       mouseX = e.clientX;
       mouseY = e.clientY;
 
       cursorDot.style.left = `${mouseX}px`;
       cursorDot.style.top = `${mouseY}px`;
     });
-
-    animateOutline();
 
     const hoverTargets = document.querySelectorAll('a, button, .magnetic, .project-card, .service-card');
     hoverTargets.forEach(target => {
@@ -171,7 +191,11 @@ const createCustomCursor = () => {
     });
 
     document.addEventListener('mouseleave', () => cursor.style.opacity = '0');
-    document.addEventListener('mouseenter', () => cursor.style.opacity = '1');
+    document.addEventListener('mouseenter', (e) => {
+      if (started) {
+        cursor.style.opacity = '1';
+      }
+    });
   };
 
   init();
