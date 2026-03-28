@@ -80,6 +80,7 @@ button {
   overflow-y: scroll;
   overflow-x: hidden;
   scroll-snap-type: y proximity;
+  scroll-behavior: smooth;
   opacity: 0;
   transition: opacity 1s var(--ease-out-expo);
   -webkit-overflow-scrolling: touch;

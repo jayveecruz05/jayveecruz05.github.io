@@ -343,6 +343,19 @@ const createSmoothNavigation = () => {
       });
     });
 
+    // Smooth scroll for CTA buttons and logo link
+    document.querySelectorAll('.home__cta a[href^="#"], .nav__logo a[href^="#"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').slice(1);
+        const targetSection = document.getElementById(targetId);
+
+        if (targetSection) {
+          targetSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
     if (hamburger) {
       hamburger.addEventListener('click', toggleMobileNav);
     }
