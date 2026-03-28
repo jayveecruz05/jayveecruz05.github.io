@@ -298,12 +298,18 @@ const createSmoothNavigation = () => {
   const updateActiveLink = () => {
     let currentSection = '';
 
-    sections.forEach(section => {
-      const rect = section.getBoundingClientRect();
-      if (rect.top <= 150 && rect.bottom >= 150) {
-        currentSection = section.id;
-      }
-    });
+    const atBottom = scrollContainer ? (scrollContainer.scrollTop + scrollContainer.clientHeight) >= (scrollContainer.scrollHeight - 2) : false;
+
+    if (atBottom) {
+      currentSection = sections[sections.length - 1]?.id || '';
+    } else {
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= 150 && rect.bottom >= 150) {
+          currentSection = section.id;
+        }
+      });
+    }
 
     navLinks.forEach(link => {
       link.classList.remove('active');
